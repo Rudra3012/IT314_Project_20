@@ -12,3 +12,7 @@ def login(request):
     print(request.POST.get("username"))
 
     return render(request, "login.html")
+
+
+def create_crossword(request):
+    return render(request, "create_crossword.html")

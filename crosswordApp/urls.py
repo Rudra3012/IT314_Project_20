@@ -20,4 +20,5 @@ from crosswordApp import views
 
 urlpatterns = [
     path("login/", views.login, name="login"),
+    path("create_crossword/", views.create_crossword, name="create_crossword"),
 ]
