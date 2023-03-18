@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    This is login page
+</h1>
+{%  csrf_token %}
+<div id="host_login_content">
+        <form action="/login/" method="POST">
+            {% csrf_token %}
+
+            <div class="HostLogin_form_input">
+                <label class="host_form_label">Username: </label>
+                <input type="text" name="username" required>
+            </div>
+
+            <div class="HostLogin_form_input">
+                <label class="host_form_label">Password</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <div class="HostLogin_form_input">
+                <label class="host_form_label">Email</label>
+                <input type="email" name="email" required>
+            </div>
+
+         <div class="submit_btn_div">
+             <button id = "host_submit_btn" type="submit">submit</button>
+        </div>
+        <br>
+        </form>
+    </div>
+</body>
+</html>
