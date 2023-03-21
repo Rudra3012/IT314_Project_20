@@ -15,4 +15,11 @@ def login(request):
 
 
 def create_crossword(request):
-    return render(request, "create_crossword.html")
+    return render(request, "create_crossword_automatic.html")
+
+
+def crossword_list_view(request):
+    return render(request, "sample.html")
+
+def create_crossword_automatic(request):
+    return render(request, "create_crossword_automatic.html")

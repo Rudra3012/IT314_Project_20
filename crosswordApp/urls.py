@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from crosswordApp import views
 
 urlpatterns = [
     path("login/", views.login, name="login"),
     path("create_crossword/", views.create_crossword, name="create_crossword"),
+    path("unicorn/", include("django_unicorn.urls")),
+    path("crossword_list_view/", views.crossword_list_view, name="crossword_list_view"),
+    path("create_crossword_automatic/", views.create_crossword_automatic, name="create_crossword_automatic"),
 ]

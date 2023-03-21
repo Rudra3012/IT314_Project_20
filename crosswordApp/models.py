@@ -11,10 +11,15 @@ class user(models.Model):
 
 
 class crossword(models.Model):
+    # _id = models.ObjectIdField()
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=50)
     width = models.IntegerField()
     height = models.IntegerField()
+    creator = models.CharField(max_length=50, default="admin")
+
+    grid= models.CharField(max_length=1000, default="")
 
     class Meta:
         abstract = False
+
