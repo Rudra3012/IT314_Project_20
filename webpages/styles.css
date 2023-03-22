@@ -1,3 +1,47 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -30,8 +74,7 @@
 }
 
 .sidebar-header img {
-    margin-right: 5px;
-    margin-left: -8px;
+    margin-right: 10px;
     width: 20%;
     height: 20%;
 }
@@ -124,4 +167,71 @@ a.article:hover {
     padding-top: 10%;
 }
 
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
 
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 130vh;
+    transition: all 0.3s;
+}
+
+.image-valu {
+    position:absolute;
+    padding-bottom: 10%;
+}
+
+.text-valu {
+    padding-top: 20%;
+    padding-left: 55%;
+    position: relative;
+}
+
+.button-valu {
+    position: relative;
+    padding-left: 55%;
+    padding-top: 6%;
+    /* padding-top: 0%; */
+}
+
+.solve {
+    margin-right: 5%;
+    margin-left: 0%;
+}
+
+.create {
+    margin-left: 5%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------
+    Footer
+----------------------------------------------------- */
+
+.white-section {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
