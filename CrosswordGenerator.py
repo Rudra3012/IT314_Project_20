@@ -3,6 +3,7 @@ import itertools
 import math
 import numpy as np
 import random
+from datetime import datetime
 
 
 @enum.unique
@@ -242,7 +243,7 @@ class Grid:
 
 
 def generate_crossword(words):
-    random.seed(10)
+    random.seed(datetime.now().timestamp())
     g = Grid()
     g.scan_and_insert_all_words(words)
     g = g.crop()

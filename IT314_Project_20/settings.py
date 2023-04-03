@@ -76,18 +76,18 @@ WSGI_APPLICATION = "IT314_Project_20.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'CrossWordManagement',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test?retryWrites=true&w=majority',
-            'username': 'Group20',
-            'password': 'Group20',
-        }
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'CrossWordManagement',
+#         'ENFORCE_SCHEMA': False,
+#         'CLIENT': {
+#             'host': 'mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test?retryWrites=true&w=majority',
+#             'username': 'Group20',
+#             'password': 'Group20',
+#         }
+#     }
+# }
 
 
 # Password validation
