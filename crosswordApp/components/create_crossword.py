@@ -31,7 +31,7 @@ class CreateCrosswordView(UnicornView):
         print("Description: " + self.description)
         print("Words and clues: " + str(self.clues_and_words))
 
-        words = [word for word, clue in self.clues_and_words]
+        words = [word for clue, word in self.clues_and_words]
 
         grid=cg.generate_crossword(words)
         print(grid)
@@ -52,5 +52,9 @@ class CreateCrosswordView(UnicornView):
             # print("Description: " + self.description)
             # print("Words and clues: " + str(self.clues_and_words))
             # print("Crossword grid: " + str(self.crossword_grid))
-
-            crossword.objects.create(title=self.title, description=self.description, width=10, height=10)
+            grid_dict = {}
+            for i in range(len(self.crossword_grid)):
+                for j in range(len(self.crossword_grid[i])):
+                    grid_dict[(i,j)] = self.crossword_grid[i][j]
+            print(grid_dict)
+            crossword.objects.create(title=self.title, description=self.description, width=len(self.crossword_grid), height=len(self.crossword_grid[0]) , grid=grid_dict)
