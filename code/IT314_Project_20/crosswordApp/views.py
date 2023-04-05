@@ -5,9 +5,9 @@ from django.shortcuts import render, redirect
 from django.template import loader
 from .Classes import User
 
-
 client = MongoClient('mongodb+srv://Group20:g7uxB5fMdWcstCt4@cluster0.zjgczqo.mongodb.net/?retryWrites=true&w=majority')
-db=client['CrossWordManagement']
+db = client['CrossWordManagement']
+
 
 def SignupPage(request):
     collections = db['crosswordApp_user']
@@ -22,11 +22,12 @@ def SignupPage(request):
         else:
 
             new_user = User.User(uname, email, pass1)
-            collections.insert_one(new_user.__dict__,)
+            collections.insert_one(new_user.__dict__, )
 
             return redirect('login')
 
     return render(request, 'signup.html')
+
 
 def LoginPage(request):
     collections = db['crosswordApp_user']
@@ -34,16 +35,17 @@ def LoginPage(request):
         username = request.POST.get('username')
         pass1 = request.POST.get('pass')
         # user = authenticate(request, username=username, password=pass1)
-        reply=collections.find_one({"username": username})
+        reply = collections.find_one({"username": username})
         if reply is not None:
-            if reply["password"]==pass1:
+            if reply["password"] == pass1:
+                request.session['username'] = username
                 return redirect('home')
             else:
                 template = loader.get_template("login.html")
-                context ={
+                context = {
                     "fail": True,
                 }
-                return HttpResponse(template.render(context,request))
+                return HttpResponse(template.render(context, request))
 
     return render(request, 'login.html')
 
@@ -55,11 +57,40 @@ def create_crossword(request):
 def crossword_list_view(request):
     return render(request, "sample.html")
 
+
 def create_crossword_automatic(request):
     return render(request, "create_crossword_automatic.html")
+
 
 def create_crossword_manual(request):
     return render(request, "create_crossword_manual.html")
 
+
 def creation(request):
     return render(request, "creation.html")
+
+
+def home(request):
+    print(request.session.get('username'))
+
+    userpresent = True
+
+    if request.session.get('username') is None:
+        userpresent = False
+
+    context = {
+        "username": request.session.get('username'),
+        "userpresent": userpresent,
+    }
+    return HttpResponse(render(request, "home.html", context))
+
+
+def logout(request):
+    request.session.flush()
+    context = {
+        "username": None,
+        "userpresent": False,
+    }
+    # redirect('')
+    return HttpResponse(render(request, "home.html", context))
+
