@@ -1,0 +1,16 @@
+<div>
+    <h2>Crossword List</h2>
+    <hr />
+
+    <input type="text" unicorn:model="name"/>
+    <button unicorn:click="add_crossword">Add</button>
+
+    <ul>
+        {% for crossword in Crosswords %}
+            <li>
+                {{ crossword.title }}
+                <button unicorn:click="remove_crossword('{{ crossword.title }}')" >Delete</button>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

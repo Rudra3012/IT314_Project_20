@@ -1,0 +1,17 @@
+{%  load unicorn %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> crossword list view</title>
+    {% unicorn_scripts %}
+</head>
+<body>
+    {%  csrf_token %}
+    <div class="header">Excellent crossword app </div>
+    <main>
+        {% unicorn 'crosswordlist' %}
+    </main>
+</body>
+</html>

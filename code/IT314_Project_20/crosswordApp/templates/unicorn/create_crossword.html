@@ -1,0 +1,45 @@
+<div>
+    <h1> This is create crossword App </h1>
+    <label> Enter Title:</label>
+    <input unicorn:model="title" type="text" placeholder="title">
+    <br>
+    <label> Enter Description:</label>
+    <input unicorn:model="description" type="text" placeholder="description">
+    <br>
+    <div>
+        <label> Enter new clue: </label>
+        <input unicorn:model="clue" type="text" placeholder="new clue">
+        <label> Enter new word: </label>
+        <input unicorn:model="word" type="text" placeholder="new word">
+        <button unicorn:click="add_clue_and_word" >Create</button>
+    </div>
+    <br>
+    {% if clues_and_words %}
+    <table>
+        <th><td>Clues</td> <td>Words</td></th>
+     {%  for clue, word in clues_and_words %}
+         <tr>
+         <td>{{ clue }} </td> <td>{{ word }}</td>
+        </tr>
+     {% endfor %}
+    </table>
+    {% endif %}
+    <button unicorn:click="reset_page" >Reset</button>
+    <button unicorn:click="generate" >Generate</button>
+
+    <div>
+        <table >
+
+        {% for row in crossword_grid %}
+            <tr>
+                {% for cell in row %}
+                    <td>
+                    {{ cell }}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <button unicorn:click="save_crossword" >Save</button>
+</div>

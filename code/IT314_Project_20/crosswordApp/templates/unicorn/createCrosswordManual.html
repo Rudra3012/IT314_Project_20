@@ -1,0 +1,70 @@
+<div>
+
+    <h1> create crossword manually </h1>
+
+    <label> Enter Title:</label>
+    <input unicorn:model="title" type="text" placeholder="title">
+    <br>
+
+    <label> Enter Description:</label>
+    <input unicorn:model="description" type="text" placeholder="description">
+    <br>
+
+    <label> Enter Rows:</label>
+    <input  unicorn:model.lazy="rows" type="number" placeholder="rows" min="1">
+    <br>
+
+    <label> Enter Columns:</label>
+    <input  unicorn:model.lazy="columns" type="number" placeholder="columns" min="1">
+    <br>
+    <p>
+        Number of rows: {{rows}}
+        Number of columns: {{columns}}
+    </p>
+    <button unicorn:click="createGrid">Create Grid</button>
+    <br>
+    <br>
+    <table style="border: 1px solid black">
+        {%  for row in grid %}
+            <tr>
+            {% for col in row %}
+                {%  if col == '_' %}
+                <td style="border: 1px solid black; width: 30px;text-align: center;background-color: black">
+                    <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))">
+                        {{ col }}
+                    </div>
+                </td>
+                {%  else %}
+                    <td style="border: 1px solid black; width: 30px;text-align: center">
+                    <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))">
+                        {{ col }}
+                    </div>
+                </td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <table style="border: 1px solid black">
+    <tr>
+        {% for char in characters %}
+            {% if char == '_' %}
+                <td  style="border: 1px solid black;width: 25px;text-align: center;background-color: black">
+                    <div unicorn:click="setActiveChar('{{ char }}')" >
+                        {{ char }}
+                    </div>
+                </td>
+            {% else %}
+                <td  style="border: 1px solid black;width: 25px;text-align: center">
+                    <div unicorn:click="setActiveChar('{{ char }}')" >
+                        {{ char }}
+                    </div>
+                </td>
+            {% endif %}
+
+        {% endfor %}
+    </tr>
+    </table>
+    <p>Active character: {{ activeChar }}</p>
+</div>

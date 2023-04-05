@@ -1,0 +1,17 @@
+{%  load unicorn %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create crossword manually</title>
+    {% unicorn_scripts %}
+
+</head>
+<body>
+    {%  csrf_token %}
+    <main>
+        {% unicorn 'createCrosswordManual' %}
+    </main>
+</body>
+</html>
