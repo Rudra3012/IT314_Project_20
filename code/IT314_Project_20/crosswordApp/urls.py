@@ -19,7 +19,8 @@ from django.urls import path, include
 from crosswordApp import views
 
 urlpatterns = [
-    path("login/", views.login, name="login"),
+    path("login/", views.LoginPage, name="login"),
+    path("signup/",views.SignupPage, name='signup'),
     path("create_crossword/", views.create_crossword, name="create_crossword"),
     path("unicorn/", include("django_unicorn.urls")),
     path("crossword_list_view/", views.crossword_list_view, name="crossword_list_view"),
