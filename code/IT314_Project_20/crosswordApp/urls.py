@@ -26,4 +26,5 @@ urlpatterns = [
     path("crossword_list_view/", views.crossword_list_view, name="crossword_list_view"),
     path("create_crossword_automatic/", views.create_crossword_automatic, name="create_crossword_automatic"),
     path("create_crossword_manual/", views.create_crossword_manual, name="create_crossword_manual"),
+    path("creation", views.creation, name="creation"),
 ]

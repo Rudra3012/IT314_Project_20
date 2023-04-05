@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{#    <link rel="stylesheet" href="IT314_Project_20/code/IT314_Project_20/crosswordApp/static/crosswordCreation/style1.css">#}
+      <link rel="stylesheet" href="{% static 'crosswordCreation/style1.css' %}">
+      <link rel="script" href="{% static 'crosswordCreation/creation.js' %}">
+    <title>Create Crossword</title>
+</head>
+<body>
+  <h1>Create Puzzle</h1>
+  <div class="container">
+  <form action="" method="POST">
+    <div id="formfield">
+      <p>Crossword Name</p>
+      <input type="text" name="text" class="text" size="50" placeholder="Crossword Name" required>
+      <input type="text" name="text" class="text" size="50" placeholder="Creator Name" required>
+      <input type="text" name="text" class="text" size="50" placeholder="Word" required>
+    </div>
+    <input name="submit" type="Submit" value="Submit">
+  </form>
+  <div class="controlls">
+    <button class="add" onclick="add()">Add</button>
+    <button class="remove" onclick="remove()">Remove</button>
+  </div>
+</div>
+{#<script src="IT314_Project_20\code\IT314_Project_20\crosswordApp\static\crosswordCreation\creation.js"></script>#}
+</body>
+</html>

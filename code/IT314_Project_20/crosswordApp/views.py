@@ -60,3 +60,6 @@ def create_crossword_automatic(request):
 
 def create_crossword_manual(request):
     return render(request, "create_crossword_manual.html")
+
+def creation(request):
+    return render(request, "creation.html")
