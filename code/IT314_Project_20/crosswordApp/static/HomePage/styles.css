@@ -1,0 +1,94 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 130vh;
+    transition: all 0.3s;
+}
+
+.image-valu {
+    position:absolute;
+    padding-bottom: 10%;
+}
+
+.text-valu {
+    padding-top: 20%;
+    padding-left: 55%;
+    position: relative;
+}
+
+.button-valu {
+    position: relative;
+    padding-left: 55%;
+    padding-top: 6%;
+    /* padding-top: 0%; */
+}
+
+.solve {
+    margin-right: 5%;
+    margin-left: -5%;
+}
+
+.create {
+    margin-left: 5%;
+}
+
+.logo {
+    position: absolute;
+    margin-left: -1.25%;
+    margin-top: 4px;
+    margin-right: 10%;
+}
+
+.login-solve-create {
+    position: relative;
+    margin-left: 8%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------
+    Footer
+----------------------------------------------------- */
+
+.white-section {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
