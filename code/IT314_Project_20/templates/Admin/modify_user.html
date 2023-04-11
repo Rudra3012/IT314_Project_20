@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Modify User</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <style>
+        /* Reset default margin and padding */
+        body,
+        table {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style for h1 and h2 headings */
+        h1,
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Style for form */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Style for labels */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Style for input fields */
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            color: #777;
+        }
+
+        /* Style for submit button */
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for submit button */
+        input[type="submit"]:hover {
+            opacity: 0.8;
+        }
+
+        /* Style for container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Modify User</h1>
+    <form id="modify-user-form" method="post">
+        <label for="user-id">ID:</label>
+        <input type="text" id="user-id" name="user-id" readonly>
+        <label for="user-name">Name:</label>
+        <input type="text" id="user-name" name="user-name">
+        <label for="user-email">Email:</label>
+        <input type="email" id="user-email" name="user-email">
+        <input type="submit" value="Save">
+    </form>
+
+</body>
+
+</html>

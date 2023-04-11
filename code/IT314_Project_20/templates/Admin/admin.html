@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #010810;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      max-width: 100px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .button-container button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #0056b3;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      background-color: #0056b3;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+
+    <div class="button-container">
+      <button onclick="goToUserList()">User List</button>
+      <button onclick="goToCrosswordList()">Crossword List</button>
+    </div>
+  </div>
+  <script>
+    function goToUserList() {
+      // Redirect to User List page
+      window.location.href = "userlist.html";
+    }
+
+    function goToCrosswordList() {
+      // Redirect to Crossword List page
+      window.location.href = "crosswordlist.html";
+    }
+  </script>
+</body>
+
+</html>
