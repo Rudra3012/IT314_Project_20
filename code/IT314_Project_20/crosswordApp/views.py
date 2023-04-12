@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.template import loader
 from .Classes import User
 
-client = MongoClient('mongodb+srv://Group20:g7uxB5fMdWcstCt4@cluster0.zjgczqo.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test')
 db = client['CrossWordManagement']
 
 
@@ -46,7 +46,12 @@ def LoginPage(request):
                     "fail": True,
                 }
                 return HttpResponse(template.render(context, request))
-
+        else:
+            template = loader.get_template("login.html")
+            context = {
+                "fail": True,
+            }
+            return HttpResponse(template.render(context, request))
     return render(request, 'login.html')
 
 
@@ -94,3 +99,47 @@ def logout(request):
     # redirect('')
     return HttpResponse(render(request, "home.html", context))
 
+
+def creatorProfile(request):
+    return render(request, "creatorProfile.html")
+
+
+def adminPage(request):
+    return render(request, "Admin/admin.html")
+
+
+def AdminUserListPage(request):
+    users = db['crosswordApp_user'].find({})
+
+    users = list(users)
+    print(users)
+    context = {
+        "Users": users,
+    }
+    return render(request, "Admin/userlist.html", context)
+
+
+def AdminCrosswordListPage(request):
+    return render(request, "Admin/crosswordlist.html")
+
+
+def AdminModifyCrosswordPage(request):
+    return render(request, "Admin/modify_crossword.html")
+
+
+def ProcessModifyUserRequest(request, username):
+
+    print('Processing Modify User Request for user: ', username)
+
+    collections = db['crosswordApp_user']
+
+    reply = collections.find_one({"username": username})
+    print(reply)
+    if reply is not None:
+        context = {
+            "user": reply,
+        }
+        return render(request, "Admin/modify_user.html", context)
+
+
+    return render(request, "Admin/modify_user.html")

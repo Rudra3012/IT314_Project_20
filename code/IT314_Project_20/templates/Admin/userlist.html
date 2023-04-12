@@ -1,9 +1,12 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="style_1.css">
+    <link rel="stylesheet" type="text/css" href="{% static "AdminPage/style_1.css" %}">
 </head>
 
 <body>
@@ -11,25 +14,39 @@
     <h2>User List</h2>
     <table id="user-list">
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Action</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>john.doe@example.com</td>
-            <td>
-                <button class="modify-btn" onclick="redirectToModifyPageUser()">Modify</button>
-                <script>
-                    function redirectToModifyPageUser() {
-                        window.location.href = "modify_user.html";
-                    }
-                </script>
-                <button class="delete-btn">Delete</button>
-            </td>
-        </tr>
+        {% for User in Users %}
+            <tr>
+                <td>{{ User.username }}</td>
+                <td>{{ User.email }}</td>
+                <td>
+                    <button class="modify-btn" onclick="redirectToModifyPageUser()">Modify</button>
+                    <script>
+                        function redirectToModifyPageUser() {
+                            window.location.href = "modify_user.html";
+                        }
+                    </script>
+                    <button class="delete-btn">Delete</button>
+                </td>
+            </tr>
+        {% endfor %}
+{#        <tr>#}
+{#            <td>1</td>#}
+{#            <td>John Doe</td>#}
+{#            <td>john.doe@example.com</td>#}
+{#            <td>#}
+{#                <button class="modify-btn" onclick="redirectToModifyPageUser()">Modify</button>#}
+{#                <script>#}
+{#                    function redirectToModifyPageUser() {#}
+{#                        window.location.href = "modify_user.html";#}
+{#                    }#}
+{#                </script>#}
+{#                <button class="delete-btn">Delete</button>#}
+{#            </td>#}
+{#        </tr>#}
 
 
     </table>

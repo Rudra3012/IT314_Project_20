@@ -4,7 +4,7 @@ from crosswordApp.Classes.Crossword import Crossword, gridCell
 from pymongo import MongoClient
 import json
 
-client = MongoClient('mongodb+srv://Group20:g7uxB5fMdWcstCt4@cluster0.zjgczqo.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test')
 db = client['CrossWordManagement']
 
 

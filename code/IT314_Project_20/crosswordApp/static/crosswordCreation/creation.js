@@ -1,6 +1,7 @@
 let formfield = document.getElementById('formfield');
 
 function add() {
+	console.log("Clicked");
 	let newField = document.createElement('input');
 	newField.setAttribute('type', 'text');
 	newField.setAttribute('name', 'text');

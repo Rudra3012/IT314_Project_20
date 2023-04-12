@@ -17,8 +17,8 @@ class Crossword:
     width: int
     height: int
     cluesUp = []
-    AnswersUp = []
-    AnswersDown = []
+    AnswersHor = []
+    AnswersVer = []
     cluesDown = []
     timeOfCreation: str
     clueAnswers={}
@@ -31,8 +31,8 @@ class Crossword:
         self.description = description
         self.width = width
         self.height = height
-        self.AnswersUp = WordsUp
-        self.AnswersDown = WordsDown
+        self.AnswersHor = WordsUp
+        self.AnswersVer = WordsDown
         self.grid = gridList
         self.cluesUp = cluesUp
         self.cluesDown = cluesDown

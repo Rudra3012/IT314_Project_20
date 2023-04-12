@@ -28,5 +28,13 @@ urlpatterns = [
     path("create_crossword_manual/", views.create_crossword_manual, name="create_crossword_manual"),
     path("creation", views.creation, name="creation"),
     path("",views.home, name="home"),
-    path("logout/", views.logout, name="logout")
+    path("logout/", views.logout, name="logout"),
+    path("creatorProfile/", views.creatorProfile, name="creatorProfile"),
+    path("admin", views.adminPage, name="adminPage"),
+    # path("admin/crosswordList/<int:crossword_id>/", views.AdminCrosswordListPage, name="AdminCrosswordListPage"),
+    path("admin/crosswordList", views.AdminCrosswordListPage, name="AdminCrosswordListPage"),
+    # path("admin/crosswordList/<int:crossword_id>/delete/", views.AdminCrosswordDelete, name="AdminCrosswordDeletePage"),
+    path("admin/userList", views.AdminUserListPage, name="AdminUserListPage"),
+    # path("admin/userList/<int:user_id>/", views.AdminUserListPage, name="AdminUserListPage"),
+    path("admin/modifyUserRequest/<str:username>/", views.ProcessModifyUserRequest, name="ProcessModifyUserRequest"),
 ]

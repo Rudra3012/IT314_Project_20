@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,7 +24,7 @@ SECRET_KEY = "django-insecure-#iw3!7hqn_y%r++t3oav*j2@z3hmhthk@d9*8&i0pcg#vfk3ht
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io', '.ngrok-free.app']
 
 # Application definition
 
@@ -63,6 +63,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+
             ],
         },
     },
@@ -130,5 +131,6 @@ SESSION_ENGINE = "django.contrib.sessions.backends.file"
 SESSION_FILE_PATH = BASE_DIR / "sessions"
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.ngrok.io'
+    'https://*.ngrok.io',
+    'https://*.ngrok-free.app'
 ]

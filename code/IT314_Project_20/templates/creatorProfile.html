@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crossword Creator Profile</title>
+    <link rel="stylesheet" type="text/css" href="{%  static "creatorProfile/style.css" %}">
+</head>
+
+<body>
+    <header>
+        <h1>Crossword Creator Profile</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Crossword Puzzles</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="subscribe"><a href="#">Subscribe</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="profile">
+            <img src="profilePic.jpeg" alt="Profile Picture">
+            <h2>About Me</h2>
+            <p>Hi, I'm John, and I create crossword puzzles for a living. I have been doing this for over 10 years now
+                and I really enjoy it. When I'm not creating crossword puzzles, I like to read books and play video
+                games.</p>
+        </div>
+        <div class="crosswords">
+            <h2>My Crossword Puzzles</h2>
+            <p>Number of puzzles: 3</p> <!-- add the number of puzzles here -->
+            <ul>
+                <li><a href="#">Crossword Puzzle 1</a></li>
+                <li><a href="#">Crossword Puzzle 2</a></li>
+                <li><a href="#">Crossword Puzzle 3</a></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Crossword Creator Profile. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
