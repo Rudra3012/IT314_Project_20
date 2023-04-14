@@ -1,0 +1,219 @@
+.creation_body{
+    /*background-color: #f3f7fa;*/
+}
+
+.verticalLine{
+    border-left: 5px solid #003e8c;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.crosswordCreateInputLeft{
+
+    height: 10%;
+    width: 49.8%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.StepsRoadMap{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 80px;
+    /*background-color: #dde7f1;*/
+    /*border: 1px solid #003e8c;*/
+    display: flex;
+}
+
+.horizontalLine{
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #003e8c;
+    top: 50%;
+}
+
+#RoadMapBackBtn{
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background-color: #bdd5ee;
+    border: 2px solid #003e8c;
+    color: #003e8c;
+    font-size: 15px;
+}
+
+#horizontalLineLeftDiff{
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #003e8c;
+    top: 18%;
+    left: 0;
+}
+
+.LeftInputMainDiv{
+    position: absolute;
+    top: 20%;
+    width: 49%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*background-color: #dde7f1;*/
+    color: #003e8c;
+    font-size: 16px;
+}
+
+#LeftNextBtn{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: #bdd5ee;
+    border: 2px solid #003e8c;
+    color: #003e8c;
+    font-size: 15px;
+    bottom: 5%;
+    left: 22%;
+}
+
+.StepsRoadMapStatus{
+    position: relative;
+    width: 100%;
+    color: #012f64;
+    font-size: 16px;
+    /*border: 1px solid #003e8c*/
+}
+
+.statusLabel{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: 70%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.statusCircle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 40%;
+    border-radius: 50%;
+    background-color: #003e8c;
+    border: 1px solid #003e8c;
+    margin-left: 40%;
+}
+
+.statusCircleEmpty{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 40%;
+    border-radius: 50%;
+    background-color: #dde7f1;
+    border: 3px solid #003e8c;
+    margin-left: 40%;
+}
+
+.inputTable{
+    position: relative;
+    width: 50%;
+    margin-top: -20%;
+}
+
+#createGridButton {
+    position: relative;
+    width: 15%;
+    height: 35px;
+    margin-left: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    visibility: hidden;
+
+}
+
+.characterInputTable{
+    position: relative;
+    width: 50%;
+    left: 20%;
+    border: 1px solid #003e8c;
+    margin-top: 10px;
+        visibility: hidden;
+
+}
+
+.characterInputTable td{
+    border: 1px solid black;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+}
+
+.crosswordCreatedGridRight {
+    /*background-color: #e5ecf8;*/
+    height: 100%;
+    width: 49.8%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.manualCrosswordGrid {
+    background-color: #e5ecf8;
+    position: relative;
+    border: 1px solid #003e8c;
+}
+
+.crosswordGridCellNorm {
+    border: 1px solid black;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+}
+
+.crosswordGridCellBlock {
+    border: 1px solid black;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    background-color: #333333;
+}
+
+#finalizeButton {
+    margin-top: 10px;
+}
+
+.gridCellDiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#currentActiveCharDiv{
+    position: relative;
+    margin-top: 4%;
+    margin-left: 40%;
+}
+
+#displayCurrentActiveCharDiv {
+    position: relative;
+    width: 10%;
+    height: 10%;
+    background-color: #333333;
+}

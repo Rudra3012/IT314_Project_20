@@ -6,11 +6,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Create crossword manually</title>
-    <link rel="stylesheet" href="{% static 'crosswordCreation/style.css' %}">
+    <link rel="stylesheet" href="{% static 'crosswordCreationManual/style.css' %}">
     {% unicorn_scripts %}
 
 </head>
-<body>
+<body class="creation_body">
     {%  csrf_token %}
     <main>
         {% unicorn 'createCrosswordManual' %}

@@ -22,7 +22,7 @@ def SignupPage(request):
         else:
 
             new_user = User.User(uname, email, pass1)
-            collections.insert_one(new_user.__dict__, )
+            collections.insert_one(new_user.__dict__)
 
             return redirect('login')
 
@@ -128,7 +128,6 @@ def AdminModifyCrosswordPage(request):
 
 
 def ProcessModifyUserRequest(request, username):
-
     print('Processing Modify User Request for user: ', username)
 
     collections = db['crosswordApp_user']
@@ -140,6 +139,5 @@ def ProcessModifyUserRequest(request, username):
             "user": reply,
         }
         return render(request, "Admin/modify_user.html", context)
-
 
     return render(request, "Admin/modify_user.html")

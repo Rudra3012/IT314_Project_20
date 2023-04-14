@@ -1,100 +1,150 @@
+{% load custom_filters %}
+{% load static %}
+
 <div>
+    <link rel="stylesheet" href="{% static 'crosswordCreationManual/style.css' %}">
+    <div class="verticalLine"></div>
+{#    <h1> Create New Crossword</h1>#}
+    <div class="crosswordCreateInputLeft">
+        <button id="RoadMapBackBtn">Back</button>
 
-    <h1> create crossword manually </h1>
+        <div class="StepsRoadMap">
+            <div class="horizontalLine"></div>
+            <div class="StepsRoadMapStatus">
+                 <div class="statusCircle"></div>
+                 <div class="statusLabel"> Title and Description</div>
+            </div>
+            <div class="StepsRoadMapStatus">
+                <div class="statusCircle{{ roadMapStatusLabel2 }}"></div>
+                <div class="statusLabel"> Generate Grid</div>
+            </div>
+            <div class="StepsRoadMapStatus">
+                 <div class="statusCircleEmpty"></div>
+                <div class="statusLabel"> Fill Grid</div>
+            </div>
+            <div class="StepsRoadMapStatus">
+                 <div class="statusCircleEmpty"></div>
+                <div class="statusLabel"> Enter clues</div>
+            </div>
+            <div class="StepsRoadMapStatus">
+                <div class="statusCircleEmpty"></div>
+                <div class="statusLabel"> Save</div>
+            </div>
+        </div>
+        <div id="horizontalLineLeftDiff"></div>
+        {% if activeStep == 1 %}
+            <div class="LeftInputMainDiv">
+                    <table class="inputTable">
+                    <tr>
+                        <td><label> Enter Title:</label></td>
+                        <td><input unicorn:model="title" type="text" placeholder="title" /></td>
+                    </tr>
+                    <tr>
+                        <td><label> Enter Description:</label></td>
+                        <td><textarea unicorn:model="description" type="text" placeholder="description" rows="5" cols="20" ></textarea></td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+        {% elif activeStep == 2 %}
+             <div class="LeftInputMainDiv">
+                    <table class="inputTable">
+                    <tr>
+                        <td><label> Enter Rows:</label></td>#}
+                        <td><input  type="number" unicorn:model.lazy="rows" id="EnterRowText"  placeholder="rows" min="1" /></td>
+                    </tr>
+                    <tr>
+                        <td><label> Enter Columns:</label></td>#}
+                        <td><input  type="number" unicorn:model.lazy="columns" id="EnterColumnText"  placeholder="columns" min="1" /></td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </table>
+            </div>
+        {% endif %}
+        <button id="LeftNextBtn" unicorn:click="incrementStep">Next</button>
 
-    <label> Enter Title:</label>
-    <input unicorn:model="title" type="text" placeholder="title">
-    <br>
-
-    <label> Enter Rows:</label>
-    <input  unicorn:model.lazy="rows" type="number" placeholder="rows" min="1">
-    <br>
-
-    <label> Enter Columns:</label>
-    <input  unicorn:model.lazy="columns" type="number" placeholder="columns" min="1">
-    <br>
-
-    <label> Enter Description:</label>
-    <input unicorn:model="description" type="text" placeholder="description">
-    <br>
-
-    <p>
-        Number of rows: {{rows}}
-        Number of columns: {{columns}}
-    </p>
-    <button unicorn:click="createGrid" id="demor">Create Grid</button>
-    <br>
-    <br>
-    <table style="border: 1px solid black">
-        {%  for row in grid %}
-            <tr>
-            {% for col in row %}
-                {%  if col == '_' %}
-                <td style="border: 1px solid black; width: 30px;text-align: center;background-color: black">
-                    <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))">
-                        {{ col }}
-                    </div>
-                </td>
-                {%  else %}
-                    <td style="border: 1px solid black; width: 30px;text-align: center">
-                    <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))">
-                        {{ col }}
-                    </div>
-                </td>
-                {% endif %}
+        {#        <table class="inputTable">#}
+{#            <tr>#}
+{#                <td><label> Enter Title:</label></td>#}
+{#                <td><input unicorn:model="title" type="text" placeholder="title" /></td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <td><label> Enter Description:</label></td>#}
+{#                <td><textarea unicorn:model="description" type="text" placeholder="description" rows="5" cols="20" ></textarea></td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <td><label> Enter Rows:</label></td>#}
+{#                <td><input  type="number" unicorn:model.lazy="rows" id="EnterRowText"  placeholder="rows" min="1" /></td>#}
+{#            </tr>#}
+{#            <tr>#}
+{#                <td><label> Enter Columns:</label></td>#}
+{#                <td><input  type="number" unicorn:model.lazy="columns" id="EnterColumnText"  placeholder="columns" min="1" /></td>#}
+{#            </tr>#}
+{#        </table>#}
+{##}
+{#        <button unicorn:click="createGrid" id="createGridButton">Create Grid</button>#}
+{##}
+{#        <table class="characterInputTable">#}
+{#            {% with divisor=7 %}#}
+{#            <tr>#}
+{##}
+{#            {% for char in characters %}#}
+{#                {% if char == '_' %}#}
+{#                    <td  style="background-color: #333333">#}
+{#                        <div unicorn:click="setActiveChar('{{ char }}')" >#}
+{#                            {{ char }}#}
+{#                        </div>#}
+{#                    </td>#}
+{#                {% else %}#}
+{#                    <td >#}
+{#                        <div unicorn:click="setActiveChar('{{ char }}')" >#}
+{#                            {{ char }}#}
+{#                        </div>#}
+{#                    </td>#}
+{#                {% endif %}#}
+{#                {%  if forloop.counter0 != 0 and forloop.counter0|mod:divisor == 0 %}#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#            {% endwith %}#}
+{#            </tr>#}
+{#        </table>#}
+{#        <div id="currentActiveCharDiv">Active character:#}
+{#            {% if activeChar == '_' %}#}
+{#                <div id="displayCurrentActiveCharDiv"></div>#}
+{#            {% else %}#}
+{#                {{ activeChar }}#}
+{#            {% endif %}#}
+{#        </div>#}
+    </div>
+    <div class="crosswordCreatedGridRight">
+        <table class="manualCrosswordGrid">
+            {%  for row in grid %}
+                <tr>
+                    {% for col in row %}
+                        {%  if col == '_' %}
+                        <td class="crosswordGridCellBlock">
+                            <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))" class="gridCellDiv">
+                                {{ col }}
+                            </div>
+                        </td>
+                        {%  else %}
+                            <td class="crosswordGridCellNorm">
+                                <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))" class="gridCellDiv">
+                                    {{ col }}
+                                </div>
+                            </td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
             {% endfor %}
-            </tr>
-        {% endfor %}
-    </table>
-    <div>
-        <button>
-            Add Column Left
-        </button>
-        <button>
-            Add Column Right
-        </button>
-        <button>
-            Add Row Top
-        </button>
-        <button>
-            Add Row Bottom
-        </button>
+        </table>
+        <div>
+            <button id="finalizeButton">Finalize</button>
+        </div>
     </div>
-    <div>
-        <button>
-            Delete Column Left
-        </button>
-        <button>
-            Delete Column Right
-        </button>
-        <button>
-            Delete Row Top
-        </button>
-        <button>
-            Delete Row Bottom
-        </button>
-    </div>
-        <br>
 
-    <table style="border: 1px solid black">
-    <tr>
-        {% for char in characters %}
-            {% if char == '_' %}
-                <td  style="border: 1px solid black;width: 25px;text-align: center;background-color: black">
-                    <div unicorn:click="setActiveChar('{{ char }}')" >
-                        {{ char }}
-                    </div>
-                </td>
-            {% else %}
-                <td  style="border: 1px solid black;width: 25px;text-align: center">
-                    <div unicorn:click="setActiveChar('{{ char }}')" >
-                        {{ char }}
-                    </div>
-                </td>
-            {% endif %}
-
-        {% endfor %}
-    </tr>
-    </table>
-    <p>Active character: {{ activeChar }}</p>
 </div>
