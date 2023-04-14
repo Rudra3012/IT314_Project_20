@@ -141,3 +141,18 @@ def ProcessModifyUserRequest(request, username):
         return render(request, "Admin/modify_user.html", context)
 
     return render(request, "Admin/modify_user.html")
+
+def forget_password(request):
+    collections = db['crosswordApp_user']
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        reply =  collections.find_one({"email":email})
+        if reply is not None:
+            token = str(uuid.uuid4())
+            subject='Your forget password link'
+            mssg = f'Hi , click on the link to reset your password http://127.0.0.1:8000/change-password/{token}/'
+            send_mail(email, subject, mssg)
+            messages.success(request, 'An email is sent.')
+            return redirect("/forget_password/")
+
+    return render(request, 'forget_password.html')
