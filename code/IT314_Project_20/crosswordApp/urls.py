@@ -37,5 +37,6 @@ urlpatterns = [
     path("admin/userList", views.AdminUserListPage, name="AdminUserListPage"),
     # path("admin/userList/<int:user_id>/", views.AdminUserListPage, name="AdminUserListPage"),
     path("admin/modifyUserRequest/<str:username>/", views.ProcessModifyUserRequest, name="ProcessModifyUserRequest"),
-    path('forget_password/', views.forget_password, name='forget_password')
+    path('forget_password/', views.forget_password, name='forget_password'),
+    path('change-password/<token>/<email>/', views.ChangePassword, name="change_password"),
 ]
