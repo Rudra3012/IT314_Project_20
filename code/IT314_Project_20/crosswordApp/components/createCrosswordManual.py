@@ -41,3 +41,5 @@ class CreatecrosswordmanualView(UnicornView):
         print("Active char: ", clickChar)
         self.activeChar = clickChar
         print("Active char: ", self.activeChar)
+
+

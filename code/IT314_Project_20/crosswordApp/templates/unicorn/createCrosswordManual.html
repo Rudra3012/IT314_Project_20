@@ -6,10 +6,6 @@
     <input unicorn:model="title" type="text" placeholder="title">
     <br>
 
-    <label> Enter Description:</label>
-    <input unicorn:model="description" type="text" placeholder="description">
-    <br>
-
     <label> Enter Rows:</label>
     <input  unicorn:model.lazy="rows" type="number" placeholder="rows" min="1">
     <br>
@@ -17,11 +13,16 @@
     <label> Enter Columns:</label>
     <input  unicorn:model.lazy="columns" type="number" placeholder="columns" min="1">
     <br>
+
+    <label> Enter Description:</label>
+    <input unicorn:model="description" type="text" placeholder="description">
+    <br>
+
     <p>
         Number of rows: {{rows}}
         Number of columns: {{columns}}
     </p>
-    <button unicorn:click="createGrid" id="demo">Create Grid</button>
+    <button unicorn:click="createGrid" id="demor">Create Grid</button>
     <br>
     <br>
     <table style="border: 1px solid black">
@@ -45,6 +46,35 @@
             </tr>
         {% endfor %}
     </table>
+    <div>
+        <button>
+            Add Column Left
+        </button>
+        <button>
+            Add Column Right
+        </button>
+        <button>
+            Add Row Top
+        </button>
+        <button>
+            Add Row Bottom
+        </button>
+    </div>
+    <div>
+        <button>
+            Delete Column Left
+        </button>
+        <button>
+            Delete Column Right
+        </button>
+        <button>
+            Delete Row Top
+        </button>
+        <button>
+            Delete Row Bottom
+        </button>
+    </div>
+        <br>
 
     <table style="border: 1px solid black">
     <tr>

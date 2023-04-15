@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="C:/Users\aashk\Desktop\swe_205\IT314_Project_20\code\IT314_Project_20\crosswordApp\static\crosswordCreation"> -->
+    <link rel="stylesheet" href="{%  static 'crosswordCreation/style1.css' %}">
+    <link rel="script" href="{%  static 'crosswordCreation/creation.js' %}">
+      <script>
+          let formfield = document.getElementById('formfield');
+
+        function add() {
+            console.log("Clicked");
+            let newField = document.createElement('input');
+            newField.setAttribute('type', 'text');
+            newField.setAttribute('name', 'text');
+            newField.setAttribute('class', 'text');
+            newField.setAttribute('siz', 50);
+            newField.setAttribute('placeholder', 'Optional Field');
+            document.getElementById('formfield').appendChild(newField);
+        }
+
+        function remove() {
+            let input_tags = formfield.getElementsByTagName('input');
+
+            if (input_tags.length > 2) {
+                formfield.removeChild(input_tags[(input_tags.length) - 1]);
+            }
+        }
+      </script>
+      <title>Create Crossword</title>
+</head>
+<body>
+  <h1>Create Puzzle</h1>
+  <div class="container">
+  <form action="" method="POST">
+    <div id="formfield">
+      <label for="Crossword Name"><b>CrosswordName</b></label>
+      <input type="text" name="text" class="text" size="50" placeholder="Crossword Name" required>
+      <label for="Creator Name"><b>CreatorName</b></label>
+      <input type="text" name="text" class="text" size="50" placeholder="Creator Name" required>
+      <label for="Word"><b>Word</b></label>
+      <input type="text" name="text" class="text" size="50" placeholder="Word" required>
+    </div>
+    <input name="submit" type="Submit" value="Submit">
+  </form>
+  <div class="controlls">
+    <button class="add" onclick="add()">Add</button>
+    <button class="remove" onclick="remove()">Remove</button>
+  </div>
+</div>
+<!-- <script src="IT314_Project_20\code\IT314_Project_20\crosswordApp\static\crosswordCreation\creation.js"></script> -->
+</body>
+</html>

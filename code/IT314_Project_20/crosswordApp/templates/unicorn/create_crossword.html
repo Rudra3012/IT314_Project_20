@@ -15,8 +15,8 @@
     </div>
     <br>
     {% if clues_and_words %}
-    <table>
-        <th><td>Clues</td> <td>Words</td></th>
+    <table style="border: 1px solid black">
+        <tr ><td >Clues</td> <td>Words</td></tr>
      {%  for clue, word in clues_and_words %}
          <tr>
          <td>{{ clue }} </td> <td>{{ word }}</td>
@@ -24,18 +24,27 @@
      {% endfor %}
     </table>
     {% endif %}
+<br>
     <button unicorn:click="reset_page" >Reset</button>
     <button unicorn:click="generate" >Generate</button>
 
     <div>
-        <table >
+        <table class="gridTable" >
 
         {% for row in crossword_grid %}
             <tr>
                 {% for cell in row %}
-                    <td>
-                    {{ cell }}
-                    </td>
+                    {% if cell == '-' %}
+                        <td class="gridCellBlock">
+                            {{ cell }}
+
+                        </td>
+                    {% else %}
+                        <td class="gridCell">
+                            {{ cell }}
+                        </td>
+                    {% endif %}
+
                 {% endfor %}
             </tr>
         {% endfor %}
