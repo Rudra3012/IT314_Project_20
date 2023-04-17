@@ -1,9 +1,13 @@
+import uuid
+
+from django.contrib import messages
 from django.shortcuts import render
 from pymongo import MongoClient
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
 from .Classes import User
+from .helper import send_mail
 
 client = MongoClient('mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test')
 db = client['CrossWordManagement']
@@ -164,3 +168,21 @@ def forget_password(request):
             return redirect("/forget_password/")
 
     return render(request, 'forget_password.html')
+
+def ChangePassword(request, token,email):
+    collections = db['crosswordApp_user']
+
+    if request.method == 'POST':
+        pass1 = request.POST.get('new_password')
+        pass2 = request.POST.get('reconfirm_password')
+        if pass1 != pass2:
+            messages.success(request, 'both should  be equal.')
+            return redirect(f'/change-password/{token}/{email}/')
+        # rely = collections.find_one({"email":email})
+        prev={"email":email}
+        nexxt={"$set":{"password":pass1}}
+        collections.update_one(prev,nexxt)
+        return redirect('login')
+
+    return render(request, 'change-password.html')
+
