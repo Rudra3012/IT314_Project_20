@@ -1,100 +1,155 @@
+{% load custom_filters %}
+{% load static %}
+
 <div>
-
-    <h1> create crossword manually </h1>
-
-    <label> Enter Title:</label>
-    <input unicorn:model="title" type="text" placeholder="title">
-    <br>
-
-    <label> Enter Rows:</label>
-    <input  unicorn:model.lazy="rows" type="number" placeholder="rows" min="1">
-    <br>
-
-    <label> Enter Columns:</label>
-    <input  unicorn:model.lazy="columns" type="number" placeholder="columns" min="1">
-    <br>
-
-    <label> Enter Description:</label>
-    <input unicorn:model="description" type="text" placeholder="description">
-    <br>
-
-    <p>
-        Number of rows: {{rows}}
-        Number of columns: {{columns}}
-    </p>
-    <button unicorn:click="createGrid" id="demor">Create Grid</button>
-    <br>
-    <br>
-    <table style="border: 1px solid black">
-        {%  for row in grid %}
-            <tr>
-            {% for col in row %}
-                {%  if col == '_' %}
-                <td style="border: 1px solid black; width: 30px;text-align: center;background-color: black">
-                    <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))">
-                        {{ col }}
+    <link rel="stylesheet" href="{% static 'crosswordCreationManual/style.css' %}">
+    <div class="verticalLine"></div>
+{#    <h1> Create New Crossword</h1>#}
+    <div class="crosswordCreateInputLeft">
+        {% if activeStep > 1 %}
+        <button id="RoadMapBackBtn" unicorn:click="roadMapBack">Back</button>
+        {% endif %}
+        <div class="StepsRoadMap">
+            <div class="horizontalLine"></div>
+            <div class="StepsRoadMapStatus">
+                 <div class="statusCircle{{ roadMapStatusLabel1 }}"></div>
+                 <div class="statusLabel"> Title and Description</div>
+            </div>
+            <div class="StepsRoadMapStatus">
+                <div class="statusCircle{{ roadMapStatusLabel2 }}"></div>
+                <div class="statusLabel"> Generate Grid</div>
+            </div>
+            <div class="StepsRoadMapStatus">
+                 <div class="statusCircle{{ roadMapStatusLabel3 }}"></div>
+                <div class="statusLabel"> Fill Grid</div>
+            </div>
+            <div class="StepsRoadMapStatus">
+                 <div class="statusCircle{{ roadMapStatusLabel4 }}"></div>
+                <div class="statusLabel"> Enter clues</div>
+            </div>
+{#            <div class="StepsRoadMapStatus">#}
+{#                <div class="statusCircle{{ roadMapStatusLabel5 }}"></div>#}
+{#                <div class="statusLabel"> Save</div>#}
+{#            </div>#}
+        </div>
+        <div id="horizontalLineLeftDiff"></div>
+        {% if activeStep == 1 %}
+            <div class="LeftInputMainDiv">
+                <div class="LeftInputMainSubDiv">
+                    <label id="enterTitleLabel"> Title:</label>
+                    <input unicorn:model="title" type="text" placeholder="title" />
+                </div>
+                <div class="LeftInputMainSubDiv">
+                    <label> Description:</label>
+                    <textarea unicorn:model="description" type="text" placeholder="description" rows="5" cols="20" ></textarea>
+                </div>
+                <div class="LeftInputMainSubDiv">
+                    <button id="LeftNextBtn" unicorn:click="incrementStep">Next</button>
+                </div>
+            </div>
+        {% elif activeStep == 2 %}
+             <div class="LeftInputMainDiv">
+                <div class="LeftInputMainSubDiv">
+                    <label> Rows:</label>
+                    <input  type="number" unicorn:model.lazy="rows" id="EnterRowText"  placeholder="rows" min="1" />
+                </div>
+                <div class="LeftInputMainSubDiv">
+                    <label> Columns:</label>
+                    <input  type="number" unicorn:model.lazy="columns" id="EnterColumnText"  placeholder="columns" min="1" />
+                </div>
+                     <div class="LeftInputMainSubDiv">
+                        <button id="LeftNextBtn" unicorn:click="createGrid">Next</button>
                     </div>
-                </td>
-                {%  else %}
-                    <td style="border: 1px solid black; width: 30px;text-align: center">
-                    <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))">
-                        {{ col }}
+            </div>
+        {% elif activeStep == 3 %}
+            <div class="LeftInputMainDiv">
+                <table class="characterInputTable">
+                    {% with divisor=7 %}
+                    <tr>
+                    {% for char in characters %}
+                        {% if char == '_' %}
+                            <td  unicorn:click="setActiveChar('{{ char }}')"  style="background-color: #333333">
+                                <div >
+                                    {{ char }}
+                                </div>
+                            </td>
+                        {% else %}
+                            <td unicorn:click="setActiveChar('{{ char }}')" >
+                                <div >
+                                    {{ char }}
+                                </div>
+                            </td>
+                        {% endif %}
+                        {%  if forloop.counter0 != 0 and forloop.counter0|mod:divisor == 0 %}
+                            </tr>
+                            <tr>
+                        {% endif %}
+                    {% endfor %}
+                    {% endwith %}
+                    </tr>
+                </table>
+                <div id="currentActiveCharDiv">
+                    Active character:
+                    {% if activeChar == '_' %}
+                        <div id="displayCurrentActiveCharDivBlock"></div>
+                    {% else %}
+                        <div id="displayCurrentActiveCharDiv">{{ activeChar }}</div>
+                    {% endif %}
+                </div>
+                <div class="LeftInputMainSubDiv">
+                    <button id="LeftNextBtnClues" unicorn:click="getWordOrient">Next</button>
+                </div>
+            </div>
+        {% elif activeStep == 4 %}
+            <div class="LeftInputSuperMainDiv">
+                <div id="fillClues">
+                    <div class="fillCluesColumn">
+                        <div class="fillCluesColumnHeading">
+                            Horizontal
+                        </div>
+                        {% for word in wordsHorizontal %}
+                            <textarea placeholder="Clue for word {{ word }}" class="fillCluesColumnClue" unicorn:model="horClue{{ forloop.counter }}" ></textarea>
+{#                                                                                                          unicorn:model="description"#}
+                        {% endfor %}
                     </div>
-                </td>
-                {% endif %}
+                    <div class="fillCluesColumn">
+                         <div class="fillCluesColumnHeading">
+                            Vertical
+                        </div>
+                        {% for word in wordsVertical %}
+                            <textarea placeholder="Clue for word {{ word }}" class="fillCluesColumnClue" unicorn:model="verClue{{ forloop.counter }}"></textarea>
+                        {% endfor %}
+                    </div>
+                    <br>
+                </div>
+                    <button unicorn:click="getClues" id="LeftNextBtnSetClues">Save</button>
+            </div>
+        {% endif %}
+
+        </div>
+
+    <div class="crosswordCreatedGridRight">
+        <table class="manualCrosswordGrid">
+            {%  for row in grid %}
+                <tr>
+                    {% for col in row %}
+                        {%  if col == '_' %}
+                        <td class="crosswordGridCellBlock">
+                            <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))" class="gridCellDiv">
+                                {{ col }}
+                            </div>
+                        </td>
+                        {%  else %}
+                            <td class="crosswordGridCellNorm">
+                                <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))" class="gridCellDiv">
+                                    {{ col }}
+                                </div>
+                            </td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
             {% endfor %}
-            </tr>
-        {% endfor %}
-    </table>
-    <div>
-        <button>
-            Add Column Left
-        </button>
-        <button>
-            Add Column Right
-        </button>
-        <button>
-            Add Row Top
-        </button>
-        <button>
-            Add Row Bottom
-        </button>
+        </table>
     </div>
-    <div>
-        <button>
-            Delete Column Left
-        </button>
-        <button>
-            Delete Column Right
-        </button>
-        <button>
-            Delete Row Top
-        </button>
-        <button>
-            Delete Row Bottom
-        </button>
-    </div>
-        <br>
 
-    <table style="border: 1px solid black">
-    <tr>
-        {% for char in characters %}
-            {% if char == '_' %}
-                <td  style="border: 1px solid black;width: 25px;text-align: center;background-color: black">
-                    <div unicorn:click="setActiveChar('{{ char }}')" >
-                        {{ char }}
-                    </div>
-                </td>
-            {% else %}
-                <td  style="border: 1px solid black;width: 25px;text-align: center">
-                    <div unicorn:click="setActiveChar('{{ char }}')" >
-                        {{ char }}
-                    </div>
-                </td>
-            {% endif %}
-
-        {% endfor %}
-    </tr>
-    </table>
-    <p>Active character: {{ activeChar }}</p>
 </div>
