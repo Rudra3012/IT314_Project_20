@@ -13,7 +13,8 @@
 <body class="creation_body">
     {%  csrf_token %}
     <main>
-        {% unicorn 'createCrosswordManual' %}
+
+        {% unicorn 'createCrosswordManual' username=Username %}
     </main>
 </body>
 </html>

@@ -68,7 +68,14 @@ def create_crossword_automatic(request):
 
 
 def create_crossword_manual(request):
-    return render(request, "create_crossword_manual.html")
+    user = request.session.get('username')
+
+    print("Current User: ", user)
+
+    context = {
+        "Username": user,
+    }
+    return render(request, "create_crossword_manual.html", context)
 
 
 def creation(request):
@@ -142,14 +149,15 @@ def ProcessModifyUserRequest(request, username):
 
     return render(request, "Admin/modify_user.html")
 
+
 def forget_password(request):
     collections = db['crosswordApp_user']
     if request.method == 'POST':
         email = request.POST.get('email')
-        reply =  collections.find_one({"email":email})
+        reply = collections.find_one({"email": email})
         if reply is not None:
             token = str(uuid.uuid4())
-            subject='Your forget password link'
+            subject = 'Your forget password link'
             mssg = f'Hi , click on the link to reset your password http://127.0.0.1:8000/change-password/{token}/'
             send_mail(email, subject, mssg)
             messages.success(request, 'An email is sent.')

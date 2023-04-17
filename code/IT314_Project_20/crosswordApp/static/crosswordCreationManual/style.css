@@ -38,16 +38,25 @@
     height: 5px;
     background-color: #003e8c;
     top: 50%;
+    border-radius: 20px;
 }
 
 #RoadMapBackBtn{
-    position: absolute;
-    width: 60px;
+    position: fixed;
+    top: -50px;
+    left: 0;
+    width: 70px;
     height: 40px;
-    background-color: #bdd5ee;
-    border: 2px solid #003e8c;
-    color: #003e8c;
+    background-color: #031286;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #fff;
     font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+    margin-top: 50px;
 }
 
 #horizontalLineLeftDiff{
@@ -59,31 +68,17 @@
     left: 0;
 }
 
-.LeftInputMainDiv{
-    position: absolute;
-    top: 20%;
-    width: 49%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /*background-color: #dde7f1;*/
-    color: #003e8c;
-    font-size: 16px;
-}
-
-#LeftNextBtn{
-    position: absolute;
-    width: 100px;
-    height: 40px;
-    background-color: #bdd5ee;
-    border: 2px solid #003e8c;
-    color: #003e8c;
-    font-size: 15px;
-    bottom: 5%;
-    left: 22%;
-}
+/*#LeftNextBtn{*/
+/*    position: absolute;*/
+/*    width: 100px;*/
+/*    height: 40px;*/
+/*    background-color: #bdd5ee;*/
+/*    border: 2px solid #003e8c;*/
+/*    color: #003e8c;*/
+/*    font-size: 15px;*/
+/*    bottom: 5%;*/
+/*    left: 22%;*/
+/*}*/
 
 .StepsRoadMapStatus{
     position: relative;
@@ -128,6 +123,15 @@
     position: relative;
     width: 50%;
     margin-top: -20%;
+
+}
+
+.inputTable td{
+    /*border: 1px solid black;*/
+    /*width: 30px;*/
+    text-align: left;
+    /*height: 30px;*/
+    margin-left: 50px;
 }
 
 #createGridButton {
@@ -143,19 +147,22 @@
 
 .characterInputTable{
     position: relative;
-    width: 50%;
-    left: 20%;
-    border: 1px solid #003e8c;
+    width: 80%;
+    left: 5%;
+    /*border: 1px solid #003e8c;*/
     margin-top: 10px;
-        visibility: hidden;
-
+    /*background-color: #dde7f1;*/
+    padding: 10px;
 }
 
 .characterInputTable td{
-    border: 1px solid black;
-    width: 30px;
+    border: 2px solid #003e8c;
+    width: 40px;
     text-align: center;
-    height: 30px;
+    height: 40px;
+    border-radius: 25%;
+    background-color: #e9f2ff;
+    cursor: pointer;
 }
 
 .crosswordCreatedGridRight {
@@ -207,13 +214,202 @@
 
 #currentActiveCharDiv{
     position: relative;
-    margin-top: 4%;
-    margin-left: 40%;
+    left: 20%;
+    margin-top: 30px;
+    /*background-color: #e8c45f;*/
+    width: 180px;
+    height: 15px;
+    float: left;
+    box-shadow:  inset 1px 1px 4px #BABECC, inset -1px -1px 4px #FFF;
+    padding: 16px;
+    /* text-shadow: 1px 1px 0 #FFF; */
+    color: #031286;
+    border: 2px solid #ccc;
+    border-color: #031286;
+    /* font-weight: bold; */
+    border-radius: 10px;
+    display: flex;
 }
 
 #displayCurrentActiveCharDiv {
     position: relative;
-    width: 10%;
-    height: 10%;
+    width: 20px;
+    height: 20px;
+    /*background-color: #333333;*/
+    letter-spacing: -0.2px;
+    margin-left: 10px;
+}
+
+#displayCurrentActiveCharDivBlock {
+    position: relative;
+    top: -5px;
+    width: 25px;
+    height: 25px;
     background-color: #333333;
+    letter-spacing: -0.2px;
+    margin-left: 10px;
+    border-radius: 10%;
+}
+
+.LeftInputMainDiv{
+    position: relative;
+    top: 50px;
+    left: 20%;
+    width: 450px;
+    height: 400px;
+    background-color: #fff;
+    /*border: 1px solid #ccc;*/
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 18px;
+}
+
+.LeftInputMainSubDiv{
+    margin-top: 80px;
+    width: 100%;
+    height: 10%;
+}
+
+.LeftInputMainSubDiv label{
+    width: 90px;
+    float: left;
+    background-color: #d9edff;
+    box-shadow:  inset 2px 2px 5px #BABECC, inset -2px -2px 5px #FFF;
+    padding: 16px;
+    /* text-shadow: 1px 1px 0 #FFF; */
+    color: #031286;
+    border: 2px solid #ccc;
+    border-color: #031286;
+    /* font-weight: bold; */
+    border-radius: 10px;
+
+}
+
+.LeftInputMainSubDiv input, textarea{
+    float: right;
+    width: 250px;
+    box-shadow:  inset 1px 1px 4px #BABECC, inset -2px -2px 5px #FFF;
+    border-radius: 10px;
+    padding: 16px;
+    text-shadow: 1px 1px 0 #FFF;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+}
+
+.LeftInputMainSubDiv input:focus, textarea:focus{
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.LeftInputMainSubDiv button{
+    position : fixed;
+    width: 420px;
+    height: 40px;
+    background-color: #031286;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.LeftInputMainSubDiv button:hover{
+
+}
+
+#LeftNextBtnClues{
+    position: fixed;
+    left: 10%;
+}
+
+#fillClues{
+    width: 80%;
+    display: flex;
+    /*background-color: #e8c45f;*/
+}
+
+
+.fillCluesColumn{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    /*border: 2px solid #003e8c;*/
+    border-radius: 10px;
+    background-color: #fff;
+    justify-items: center;
+    /*box-shadow: inset 2px 2px 5px ##033ab1, inset -2px -2px  5px #8493cb;*/
+}
+
+.fillCluesColumnHeading{
+    margin-top: 10px;
+    width: 90%;
+    height: 30px;
+    text-align: center;
+    padding: 5%;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #031286;
+    color: #fff;
+    box-shadow: inset 2px 2px 5px #033ab1, inset -5px -5px 10px #081786;
+}
+
+.fillCluesColumnClue{
+    width: 80%;
+    height: 10%;
+    margin-right: 5%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #031286;
+    box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    justify-items: center;
+}
+
+
+#LeftNextBtnSetClues{
+    margin-top: 20px;
+    width: 420px;
+    height: 40px;
+    background-color: #031286;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+}
+
+.LeftInputSuperMainDiv{
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: rebeccapurple;*/
 }
