@@ -1,11 +1,13 @@
-let margin = 250
+const collapseButton = document.querySelector('#collapse-btn');
+const sidebarItems = document.querySelectorAll('.list-group-item');
+const menuButtons = document.querySelector('.menu-buttons');
 
-$(document).ready(function () {
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-        $('#content').css('margin-left', `${margin}px`);
-        $('.white-section').css('margin-left', `${margin}px`);
-        margin = 250 - margin;
+collapseButton.addEventListener('click', function () {
+    document.querySelector('#sidebar').classList.toggle('collapsed');
+
+    sidebarItems.forEach(function (item) {
+        item.querySelector('.sidebar-text').classList.toggle('collapsed');
     });
-});
 
+    menuButtons.classList.toggle('collapsed');
+});
