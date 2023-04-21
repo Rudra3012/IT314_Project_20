@@ -42,119 +42,47 @@
 
     <section>
 
-        <div class="wrapper">
+        <div id="sidebar">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="#"><img src="Crossword_Logo.png" alt="logo" class="img-fluid"><span
+                            class="sidebar-heading"> CrossWord</span></a>
 
-            <!-- Sidebar  -->
-            <nav id="sidebar" class="active">
-                <div class="sidebar-header">
-{#                    <img src="Crossword_Logo.png" alt="logo" class="img-fluid">#}
-                    <img src="{% static "HomePage/Crossword_Logo.png" %}" alt="logo" />
-                    <h3>CrossWord</h3>
+                </li>
+                <li class="list-group-item">
+                    <a href="#"><i class="fas fa-book"></i><span class="sidebar-text"> Profile</span></a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="index.html"><i class="fas fa-gamepad"></i><span class="sidebar-text"> Daily
+                            Puzzles</span></a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="#"><i class="fas fa-envelope"></i><span class="sidebar-text"> Tutorial</span></a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="#"><i class="fas fa-chart-line"></i><span class="sidebar-text"> Stats</span></a>
+                </li>
+
+                <li class="list-group-item">
+                    <a href="#"><i class="fas fa-wrench"></i><span class="sidebar-text"> Settings</span></a>
+                </li>
+
+                <div class="menu-buttons">
+                    <a href="#" id="login-button" class="btn btn-primary btn-sml w-100 mb-3">Login</a>
+                    <a href="#" id="signup-button" class="btn btn-secondary w-100">Sign up</a>
+                    <a href="#" id="logout-button" class="btn btn-secondary w-100">Sign up</a>
                 </div>
 
-                <ul class="list-unstyled components">
+                <li class="list-group-item list-group-item-collapse">
+                    <a href="#" id="collapse-btn"><i class="fas fa-angle-double-left collapse-icon"></i><span
+                            class="sidebar-text">
+                            Collapse</span></a>
+                </li>
 
-                    <li>
-                        <span class="material-icons abc">home</span>
-                        <a class="text" href="#">Home Page</a>
-                    </li>
-
-                    <li>
-                        <span class="material-icons abc">local_fire_department</span>
-                        <a class="text" href="#">Daily Puzzle</a>
-                    </li>
-
-                    <li>
-                        <span class="material-icons abc">video_library</span>
-                        <a class="text" href="#">Tutorial</a>
-
-                    </li>
-                </ul>
-
-                <a href="/login/" ><button type="button" class="btn btn-info btn-dark signup">
-                    <span class="material-icons login">login</span>
-                    <span class="signin">Sign in / Sign up</span>
-                </button></a>
-            </nav>
-
-            <!-- Page Content  -->
-
-            <div id="content">
-
-                <div class="nav-valu">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light active top-nav">
-
-                        <div class="container-fluid">
-
-                            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                <i class="fas fa-align-left"></i>
-                                <span>Menu</span>
-                            </button>
-
-                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button"
-                                data-toggle="collapse" data-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <i class="fas fa-align-justify"></i>
-                            </button>
-
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                {% if userpresent %}
-                                    <div style="margin-left: 40px">
-                                        Hi! {{ username }}
-                                    </div>
-                                {% endif %}
-                                <ul class="nav navbar-nav ml-auto">
-
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="#">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Settings</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        {% if userpresent %}
-                                            <a class="nav-link" href="/logout/">Log out</a>
-                                        {% else %}
-                                            <a class="nav-link" href="/login/">Log in</a>
-                                        {% endif %}
-{#                                        <a class="nav-link" href="#">Log out</a>#}
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                    </nav>
-                </div>
-
-                <div class="image-valu">
-{#                    <img src="c-img-removebg-preview.png" alt="preview" class="cross">#}
-                      <img src="{% static "HomePage/c-img-removebg-preview.png" %}" alt="preview" class="cross">
-                </div>
-
-                <div class="text-valu">
-                    <p>World's #1 CrossWord Website on the internet.</p>
-                </div>
-
-                <div class="button-valu">
-                    <button type="button" class="btn btn-info btn-dark solve btn-lg">
-                        <span class="material-icons logo">task_alt</span>
-                        <span class="login-solve-create">Solve CrossWord</span>
-                    </button>
-                    <a href="/create_crossword_manual/">
-                    <button type="button" class="btn btn-info btn-dark create btn-lg" onclick="/creation">
-                        <span class="material-icons logo">draw</span>
-                        <span class="login-solve-create">Create CrossWord</span>
-                    </button></a>
-                </div>
-
-                <!-- <div class="line"></div> -->
-
-            </div>
+            </ul>
         </div>
 
     </section>

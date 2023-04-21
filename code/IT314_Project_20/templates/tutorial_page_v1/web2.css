@@ -58,3 +58,34 @@ img{
     box-shadow: rgba(38, 56, 72, 0.35) 0 -25px 18px -14px inset,rgba(74, 63, 126, 0.25) 0 1px 2px,rgba(96, 73, 134, 0.25) 0 2px 4px,rgba(80, 76, 134, 0.25) 0 4px 8px,rgba(81, 78, 138, 0.25) 0 8px 16px,rgba(81, 72, 128, 0.25) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
   }
+  .btn5 {
+    background-color: rgb(213, 214, 215); 
+   border-radius: 15px;
+   
+   box-shadow: rgba(192, 192, 202, 0.2) 0 -25px 18px -14px inset,rgba(143, 154, 147, 0.15) 0 1px 2px,rgba(169, 180, 174, 0.15) 0 2px 4px,rgba(137, 148, 141, 0.15) 0 4px 8px,rgba(162, 173, 166, 0.15) 0 8px 16px,rgba(144, 154, 148, 0.15) 0 16px 32px;
+   color: rgb(152, 160, 168);
+   cursor: pointer;
+   display: inline-block;
+   font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+   /* padding: 15px 20px; */
+   text-align: center;
+   text-decoration: rgb(184, 174, 176);
+   transition: all 250ms;
+   border: 2px solid #abb3b3;
+   border-radius: px;
+   margin-top: 550px;
+   margin-left: 2px;
+   width: 700px;
+   height: 50px;
+   font-size: 23px;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+ }
+ 
+ .btn5:hover {
+   /* box-shadow: rgba(156, 164, 168, 0.35) 0 -25px 18px -14px inset,rgba(151, 158, 154, 0.25) 0 1px 2px,rgba(148, 156, 151, 0.25) 0 2px 4px,rgba(144, 155, 148, 0.25) 0 4px 8px,rgba(140, 145, 142, 0.25) 0 8px 16px,rgba(122, 130, 125, 0.25) 0 16px 32px; */
+   transform: scale(1.05) rotate(-1deg);
+   box-shadow: rgba(74, 55, 119, 0.35) 0 -25px 18px -14px inset,rgba(75, 60, 121, 0.25) 0 1px 2px,rgba(76, 75, 135, 0.25) 0 2px 4px,rgba(70, 74, 128, 0.25) 0 4px 8px,rgba(78, 82, 141, 0.25) 0 8px 16px,rgba(71, 66, 113, 0.25) 0 16px 32px;
+ }
+ 
