@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55e88c57-bc78-4727-b82b-c4b3d819e944" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/IT314_Project_20.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IT314_Project_20.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IT314_Project_20/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IT314_Project_20/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/components/createCrosswordManual.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/components/createCrosswordManual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/migrations/0002_crossword.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/migrations/0003_crossword_clues_hor_crossword_clues_ver_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/migrations/0004_remove_crossword_clues_hor_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/static/crosswordCreationManual/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/static/crosswordCreationManual/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/templates/unicorn/createCrosswordManual.html" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/templates/unicorn/createCrosswordManual.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessions/sessionidaz01ojmil3voovuzhw4kb9s51wax8gsx" beforeDir="false" afterPath="$PROJECT_DIR$/sessions/sessionidaz01ojmil3voovuzhw4kb9s51wax8gsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Admin/modify_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/modify_user.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OfN5ajqj6nSMAsWXczuLrVuKIB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rudra/Documents/DAIICT/sem 6/Software Engineering/github/IT314_Project_20/code/IT314_Project_20&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Django Server.IT314_Project_20">
+    <configuration name="Test: crosswordApp.tests.TestAuth.test_login1" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="IT314_Project_20" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="crosswordApp.tests.TestAuth.test_login1" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: crosswordApp.tests.TestAuth.test_login11" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="IT314_Project_20" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="crosswordApp.tests.TestAuth.test_login11" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: crosswordApp.tests.TestAuth.test_login2" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="IT314_Project_20" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="crosswordApp.tests.TestAuth.test_login2" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: crosswordApp.tests.TestAuth.test_login5" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="IT314_Project_20" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="crosswordApp.tests.TestAuth.test_login5" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: crosswordApp.tests.TestAuth.test_login6" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="IT314_Project_20" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="crosswordApp.tests.TestAuth.test_login6" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IT314_Project_20" type="Python.DjangoServer" factoryName="Django server">
+      <module name="IT314_Project_20" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="IT314_Project_20.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: crosswordApp.tests.TestAuth.test_login1" />
+        <item itemvalue="Django tests.Test: crosswordApp.tests.TestAuth.test_login6" />
+        <item itemvalue="Django tests.Test: crosswordApp.tests.TestAuth.test_login11" />
+        <item itemvalue="Django tests.Test: crosswordApp.tests.TestAuth.test_login5" />
+        <item itemvalue="Django tests.Test: crosswordApp.tests.TestAuth.test_login2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55e88c57-bc78-4727-b82b-c4b3d819e944" name="Changes" comment="" />
+      <created>1681947493569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681947493569</updated>
+      <workItem from="1681947494773" duration="274000" />
+      <workItem from="1681962903921" duration="116000" />
+      <workItem from="1681963346495" duration="1560000" />
+      <workItem from="1681966129668" duration="565000" />
+      <workItem from="1681985357879" duration="774000" />
+      <workItem from="1681986154355" duration="10729000" />
+      <workItem from="1682000566455" duration="451000" />
+      <workItem from="1682002852540" duration="814000" />
+      <workItem from="1682005142566" duration="209000" />
+      <workItem from="1682017247959" duration="3183000" />
+      <workItem from="1682052587816" duration="2823000" />
+      <workItem from="1682065808934" duration="3201000" />
+      <workItem from="1682092062755" duration="6507000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/IT314_Project_20$Test__crosswordApp_tests_TestAuth_test_login6.coverage" NAME="Test: crosswordApp.tests.TestAuth.test_login6 Coverage Results" MODIFIED="1681999295153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/IT314_Project_20$Test__crosswordApp_tests_TestAuth_test_login1.coverage" NAME="Test: crosswordApp.tests.TestAuth.test_login1 Coverage Results" MODIFIED="1682003439618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/IT314_Project_20$Test__crosswordApp_tests_TestAuth_test_login5.coverage" NAME="Test: crosswordApp.tests.TestAuth.test_login5 Coverage Results" MODIFIED="1681997789384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/IT314_Project_20$Test__crosswordApp_tests_TestAuth_test_login2.coverage" NAME="Test: crosswordApp.tests.TestAuth.test_login2 Coverage Results" MODIFIED="1681997583574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/IT314_Project_20$Test__crosswordApp_tests_TestAuth_test_login11.coverage" NAME="Test: crosswordApp.tests.TestAuth.test_login11 Coverage Results" MODIFIED="1681999174984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/IT314_Project_20$Test__crosswordApp_tests_TestAuth_test_login4.coverage" NAME="Test: crosswordApp.tests.TestAuth.test_login4 Coverage Results" MODIFIED="1681997446976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>

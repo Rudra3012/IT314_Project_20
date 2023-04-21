@@ -5,7 +5,7 @@ from crosswordApp.Classes.User import User
 from pymongo import MongoClient
 import json
 
-client = MongoClient('mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test')
+client = MongoClient('mongodb+srv://Group20:Group20@cluster0.agetwho.mongodb.net/?retryWrites=true&w=majority')
 db = client['CrossWordManagement']
 collections = db['crosswordApp_crossword']
 

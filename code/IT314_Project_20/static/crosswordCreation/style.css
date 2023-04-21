@@ -1,0 +1,19 @@
+#demo:hover{
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.gridCell{
+    border: 1px solid black;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.gridCellBlock{
+    background-color: black;
+}
+
+.gridTable{
+    border: 1px solid black;
+}

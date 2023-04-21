@@ -2,14 +2,18 @@ import uuid
 
 from django.contrib import messages
 from django.shortcuts import render
-from pymongo import MongoClient
-from django.http import HttpResponse
+# from pymongo import MongoClient
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.template import loader
 from .Classes import User
 from .helper import send_mail
 
-client = MongoClient('mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test')
+from pymongo.mongo_client import MongoClient
+
+
+# Create a new client and connect to the server
+client = MongoClient("mongodb+srv://Group20:Group20@cluster0.agetwho.mongodb.net/?retryWrites=true&w=majority")
 db = client['CrossWordManagement']
 
 
@@ -33,7 +37,63 @@ def SignupPage(request):
     return render(request, 'signup.html')
 
 
+# username does not include space, greater than 4 less than 15, should be unique
+# password does not include space, greater than 8, less than 24, at least one special
+# character, at least one number, at least one uppercase letter, at least one lowercase letter,
+# if not match "username or password is incorrect"
+
 def LoginPage(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        pass1 = request.POST.get('pass')
+
+        # if 4 < len(username) < 15:
+        #     for i in username:
+        #         if i == ' ':
+        #             response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
+        #             return response
+        # else:
+        #     response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
+        #     return response
+        #
+        # if 8 < len(pass1) < 24:
+        #     upperCase = False
+        #     lowerCase = False
+        #     number = False
+        #     special = False
+        #
+        #     for i in pass1:
+        #         if i == ' ':
+        #             response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
+        #             return response
+        #         if i.isupper():
+        #             upperCase = True
+        #         if i.islower():
+        #             lowerCase = True
+        #         if i.isdigit():
+        #             number = True
+        #         if i in ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|',
+        #                  ':', ';', '"', "'", '<', '>', ',', '.', '?', '/']:
+        #             special = True
+        #     if upperCase and lowerCase and number and special:
+        #         pass
+        #     else:
+        #         response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
+        #         return response
+        # else:
+        #     response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
+        #     return response
+    #     collections = db['crosswordApp_user']
+    #     reply = collections.find_one({"username": username})
+    #
+    #     # if username is not in database
+    #     if reply is None:
+    #         response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
+    #         return response
+    #
+    #     response = JsonResponse({'message': 'Login Successful'}, status=401)
+    #     return response
+    # #
     collections = db['crosswordApp_user']
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -56,6 +116,7 @@ def LoginPage(request):
                 "fail": True,
             }
             return HttpResponse(template.render(context, request))
+
     return render(request, 'login.html')
 
 
@@ -169,7 +230,8 @@ def forget_password(request):
 
     return render(request, 'forget_password.html')
 
-def ChangePassword(request, token,email):
+
+def ChangePassword(request, token, email):
     collections = db['crosswordApp_user']
 
     if request.method == 'POST':
@@ -179,10 +241,9 @@ def ChangePassword(request, token,email):
             messages.success(request, 'both should  be equal.')
             return redirect(f'/change-password/{token}/{email}/')
         # rely = collections.find_one({"email":email})
-        prev={"email":email}
-        nexxt={"$set":{"password":pass1}}
-        collections.update_one(prev,nexxt)
+        prev = {"email": email}
+        nexxt = {"$set": {"password": pass1}}
+        collections.update_one(prev, nexxt)
         return redirect('login')
 
     return render(request, 'change-password.html')
-

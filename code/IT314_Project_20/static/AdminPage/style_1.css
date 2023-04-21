@@ -1,0 +1,65 @@
+/* Reset default margin and padding */
+body, table {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for h1 and h2 headings */
+h1, h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+/* Style for the user list and crossword list tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style for table headers */
+th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+/* Style for table cells */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    color: #777;
+}
+
+/* Style for modify and delete buttons */
+.modify-btn, .delete-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Style for modify button */
+.modify-btn {
+    background-color: #2349a9;
+}
+
+/* Hover effect for buttons */
+.modify-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+}
+
+/* Style for container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
