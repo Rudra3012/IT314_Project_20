@@ -1,3 +1,10 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
 /* ---------------------------------------------------
     New SideBar
 ----------------------------------------------------- */
@@ -181,3 +188,53 @@
     transform: rotate(180deg);
 }
 
+/* ---------------------------------------------------
+    Content Manipulation
+----------------------------------------------------- */
+
+
+.text-div {
+    text-align: center;
+}
+
+#word {
+    font-size: 30px; 
+}
+
+.solve {
+    margin-bottom: 20px !important;
+    width: 425px !important;
+}
+
+.a-create {
+    margin-bottom: 20px !important;
+    width: 425px !important;
+}
+
+.m-create {
+    margin-bottom: 20px !important;
+    width: 425px !important;
+}
+
+.login-solve-create {
+    font-size: 37px;
+}
+
+.automatic-creation {
+    font-size: 35px;
+}
+
+/* ---------------------------------------------------
+    Footer
+----------------------------------------------------- */
+
+.white-section {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
