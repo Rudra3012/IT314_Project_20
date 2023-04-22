@@ -1,11 +1,14 @@
+from django.contrib import messages
 from django.shortcuts import render
 from pymongo import MongoClient
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
 from .Classes import User
-
-client = MongoClient('mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test')
+from .helper import send_mail
+import uuid
+# client = MongoClient('mongodb+srv://Group20:g7uxB5fMdWcstCt4@cluster0.zjgczqo.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://Group20:Group20@cluster0.agetwho.mongodb.net/?retryWrites=true&w=majority')
 db = client['CrossWordManagement']
 
 
@@ -134,20 +137,32 @@ def AdminModifyCrosswordPage(request):
     return render(request, "Admin/modify_crossword.html")
 
 
-def ProcessModifyUserRequest(request, username):
+def ProcessModifyUserRequest(request, username,email):
     print('Processing Modify User Request for user: ', username)
 
     collections = db['crosswordApp_user']
-
     reply = collections.find_one({"username": username})
+    if request.method == 'POST':
+        name=request.POST.get('username')
+        em=request.POST.get('email')
+        prev1={"email":email}
+        nexxt1={"$set":{"email":em}}
+        collections.update_one(prev1, nexxt1)
+        prev2={"username":username}
+        nexxt2={"$set":{"username":name}}
+        collections.update_one(prev2, nexxt2)
+        return redirect('login')
+
+
+
     print(reply)
     if reply is not None:
         context = {
             "user": reply,
         }
-        return render(request, "Admin/modify_user.html", context)
+        return render(request, f"Admin/modify_user.html", context)
 
-    return render(request, "Admin/modify_user.html")
+    return render(request, f"Admin/modify_user.html")
 
 
 def forget_password(request):
@@ -158,9 +173,46 @@ def forget_password(request):
         if reply is not None:
             token = str(uuid.uuid4())
             subject = 'Your forget password link'
-            mssg = f'Hi , click on the link to reset your password http://127.0.0.1:8000/change-password/{token}/'
+            mssg = f'Hi , click on the link to reset your password http://127.0.0.1:8000/change-password/{token}/{email}/'
             send_mail(email, subject, mssg)
             messages.success(request, 'An email is sent.')
             return redirect("/forget_password/")
 
     return render(request, 'forget_password.html')
+def ChangePassword(request, token,email):
+    collections = db['crosswordApp_user']
+
+    if request.method == 'POST':
+        pass1 = request.POST.get('new_password')
+        pass2 = request.POST.get('reconfirm_password')
+        if pass1 != pass2:
+            messages.success(request, 'both should  be equal.')
+            return redirect(f'/change-password/{token}/{email}/')
+        # rely = collections.find_one({"email":email})
+        prev={"email":email}
+        nexxt={"$set":{"password":pass1}}
+        collections.update_one(prev,nexxt)
+        return redirect('login')
+
+    return render(request, 'change-password.html')
+
+def changeDetails(request, username, email):
+    collections = db['crosswordApp_user']
+    if request.method == 'POST':
+        changename = request.POST.get('new_username')
+        changeemail = request.POST.get('new_email')
+        prev={"email":email}
+        nexxt={"$set":{"email":changeemail}}
+        collections.update_one(prev,nexxt)
+        prev1={"username":username}
+        nexxt1={"$set":{"username":changename}}
+        collections.update_one(prev1,nexxt1)
+        return redirect('login')
+
+    return render(request, f"Admin/modify_user.html")
+
+def puzzle_of_day(request):
+    collection = db['crosswordApp_crossword']
+    puzzles = collection.find()
+    context = {'puzzles': puzzles}
+    return render(request,'puzzle_of_day.html', context)
