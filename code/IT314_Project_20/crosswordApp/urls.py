@@ -39,4 +39,5 @@ urlpatterns = [
     path("admin/modifyUserRequest/<str:username>/", views.ProcessModifyUserRequest, name="ProcessModifyUserRequest"),
     path('forget_password/', views.forget_password, name='forget_password'),
     path('change-password/<token>/<email>/', views.ChangePassword, name="change_password"),
+    path('solve_crossword/<str:crossword_id>/', views.solve_crossword, name='solve_crossword'),
 ]

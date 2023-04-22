@@ -1,0 +1,52 @@
+<div>
+    <div class="mainDiv">
+        <div class="upperDiv">
+            <div class="upperDivLeft">
+                <div class="upperDivLeftText">
+                    Cross Word Title
+                </div>
+            </div>
+            <div class="upperDivRight">
+                <div class="upperDivRightText">Timer</div>
+                <div class="upperDivRightText">Attempt</div>
+                <div class="upperDivRightText">User</div>
+            </div>
+        </div>
+        <div id="mainVerticalLine"></div>
+        <div class="lowerDiv">
+            <div class="lowerDivLeft">
+                <div class="lowerDivLeftHorClues">
+                    <div class="lowerDivLeftHorCluesTitle">Horizontal Clues</div>
+                    <div class="lowerDivLeftHorCluesTitleTextDiv">
+                        {% for key, clue in cluesHor %}
+                            <div class="cluesInputDiv">
+                                <div class="lowerDivLeftHorCluesText">{{ forloop.counter }}.) {{ clue }}</div>
+                                <input unicorn:model="HorAnswer{{ forloop.counter }}" class="cluesInput">
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+                <div class="lowerDivLeftVerClues">
+                    <div class="lowerDivLeftHorCluesTitle">Vertical Clues</div>
+                    <div class="lowerDivLeftHorCluesTitleTextDiv">
+                        {% for key, clue in cluesVer %}
+                            <div class="cluesInputDiv">
+                                <div class="lowerDivLeftHorCluesText">{{ forloop.counter }}.) {{ clue }}</div>
+                                <input unicorn:model="VerAnswer{{ forloop.counter }}" class="cluesInput">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="lowerDivRight">
+                {{ HorAnswer1 }}
+                {{ HorAnswer2 }}
+
+                {{ VerAnswer1 }}
+                {{ VerAnswer2 }}
+            </div>
+        </div>
+    </div>
+
+</div>
