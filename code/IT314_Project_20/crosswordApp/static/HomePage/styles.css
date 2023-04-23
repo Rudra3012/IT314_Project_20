@@ -192,6 +192,32 @@ body {
     Content Manipulation
 ----------------------------------------------------- */
 
+#content.style {
+    margin-top: -20px;
+    margin-left: 280px;
+    margin-bottom: 50px;
+}
+
+#img_btn {
+    margin-left: -50px;
+}
+
+#word.style_word {
+    margin-left: 600px;
+    margin-top: -510px;
+    margin-bottom: 50px;
+    /* font-size: 22; */
+}
+
+#button.style_button {
+    margin-left: 703px;
+    margin-top: 15px;
+}
+
+#imgg {
+    height: 600px;
+    width: 600px;
+}
 
 .text-div {
     text-align: center;
@@ -237,4 +263,22 @@ body {
 
 .social-icon {
     margin: 20px 10px;
+}
+
+/* ---------------------------------------------------
+    media query
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
 }
