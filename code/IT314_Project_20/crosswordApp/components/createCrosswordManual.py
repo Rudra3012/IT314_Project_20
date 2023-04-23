@@ -3,6 +3,7 @@ from django_unicorn.components import UnicornView
 from crosswordApp.Classes.Crossword import Crossword
 from crosswordApp.Classes.User import User
 from pymongo import MongoClient
+from django.contrib import messages
 import json
 
 client = MongoClient('mongodb+srv://Group20:Group20@cluster0.agetwho.mongodb.net/?retryWrites=true&w=majority')
@@ -80,6 +81,8 @@ class CreatecrosswordmanualView(UnicornView):
             self.roadMapStatusLabel4 = ""
         if self.activeStep == 5:
             self.roadMapStatusLabel5 = ""
+
+        # messages.success(self.request, "Step " + str(self.activeStep) + " completed")
 
     def roadMapBack(self):
         if self.activeStep == 2:

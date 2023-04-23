@@ -11,7 +11,6 @@ from .helper import send_mail
 
 from pymongo.mongo_client import MongoClient
 
-
 # Create a new client and connect to the server
 client = MongoClient("mongodb+srv://Group20:Group20@cluster0.agetwho.mongodb.net/?retryWrites=true&w=majority")
 db = client['CrossWordManagement']
@@ -247,3 +246,14 @@ def ChangePassword(request, token, email):
         return redirect('login')
 
     return render(request, 'change-password.html')
+
+
+def solve_crossword(request, crossword_id):
+    username = request.session.get('username')
+
+    context = {
+        'user': username,
+        'crossword_id': crossword_id,
+    }
+    #6442e9c5401d19b1b87a0c2c
+    return render(request, "solveCrossword/solveCrossword.html", context)
