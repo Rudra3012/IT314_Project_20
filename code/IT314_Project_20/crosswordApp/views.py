@@ -199,23 +199,19 @@ def AdminModifyCrosswordPage(request):
     return render(request, "Admin/modify_crossword.html")
 
 
-def ProcessModifyUserRequest(request, username,email):
+def ProcessModifyUserRequest(request, username, email):
     print('Processing Modify User Request for user: ', username)
 
     collections = db['crosswordApp_user']
     reply = collections.find_one({"username": username})
     if request.method == 'POST':
-        name=request.POST.get('username')
-        em=request.POST.get('email')
-        prev1={"email":email}
-        nexxt1={"$set":{"email":em}}
-        collections.update_one(prev1, nexxt1)
-        prev2={"username":username}
-        nexxt2={"$set":{"username":name}}
+        nusername = request.POST.get('new_username')
+        nemail = request.POST.get('new_email')
+
+        prev2 = {"username": username}
+        nexxt2 = {"$set": {"username": nusername, "email": nemail}}
         collections.update_one(prev2, nexxt2)
         return redirect('login')
-
-
 
     print(reply)
     if reply is not None:
@@ -243,9 +239,7 @@ def forget_password(request):
     return render(request, 'forget_password.html')
 
 
-
 def ChangePassword(request, token, email):
-
     collections = db['crosswordApp_user']
 
     if request.method == 'POST':
@@ -268,21 +262,22 @@ def changeDetails(request, username, email):
     if request.method == 'POST':
         changename = request.POST.get('new_username')
         changeemail = request.POST.get('new_email')
-        prev={"email":email}
-        nexxt={"$set":{"email":changeemail}}
-        collections.update_one(prev,nexxt)
-        prev1={"username":username}
-        nexxt1={"$set":{"username":changename}}
-        collections.update_one(prev1,nexxt1)
+        prev = {"email": email}
+        nexxt = {"$set": {"email": changeemail}}
+        collections.update_one(prev, nexxt)
+        prev1 = {"username": username}
+        nexxt1 = {"$set": {"username": changename}}
+        collections.update_one(prev1, nexxt1)
         return redirect('login')
 
     return render(request, f"Admin/modify_user.html")
+
 
 def puzzle_of_day(request):
     collection = db['crosswordApp_crossword']
     puzzles = collection.find()
     context = {'puzzles': puzzles}
-    return render(request,'puzzle_of_day.html', context)
+    return render(request, 'puzzle_of_day.html', context)
 
 
 def solve_crossword(request, crossword_id):
@@ -292,10 +287,16 @@ def solve_crossword(request, crossword_id):
         'user': username,
         'crossword_id': crossword_id,
     }
-    #6442e9c5401d19b1b87a0c2c
+    # 6442e9c5401d19b1b87a0c2c
     return render(request, "solveCrossword/solveCrossword.html", context)
 
 
 def test_timer(request):
     return render(request, "test_timer.html")
+
+
+# def delete_user(request, username):
+#     collections = db['crosswordApp_user']
+#     rec = {"username": username}
+#     up = collections.delete_many(rec)
 

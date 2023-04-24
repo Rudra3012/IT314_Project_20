@@ -14,7 +14,7 @@ class gridCell:
 
 
 class Crossword:
-    id: uuid
+
     creator: str
     title: str
     description: str
@@ -32,8 +32,7 @@ class Crossword:
     rating: int
 
     def __init__(self, creator, title, description, width, height, cluesVer, cluesHor, WordsUp, WordsDown, gridList, AnswersHorStart, AnswersVerStart):
-        unique_id = uuid.uuid4()
-        self.id = unique_id
+
         self.creator = creator
         self.title = title
         self.description = description
