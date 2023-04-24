@@ -23,12 +23,12 @@
                 <td>{{ User.username }}</td>
                 <td>{{ User.email }}</td>
                 <td>
-                    <button class="modify-btn" onclick="window.location.href='modifyUserRequest/{{ User.username }}/'">Modify</button>
-{#                    <script>#}
-{#                        function redirectToModifyPageUser() {#}
-{#                            window.location.href = "modify_user.html";#}
-{#                        }#}
-{#                    </script>#}
+                    <button class="modify-btn" onclick="redirectToModifyPageUser()">Modify</button>
+                    <script>
+                        function redirectToModifyPageUser() {
+                            window.location.href = "/admin/modifyUserRequest/{{ User.username }}/{{ User.email }}/";
+                        }
+                    </script>
                     <button class="delete-btn">Delete</button>
                 </td>
             </tr>

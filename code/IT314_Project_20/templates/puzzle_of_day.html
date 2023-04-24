@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+            body {
+      padding:20px;
+      {#background-image: url("https://wallpaperaccess.com/full/1567762.jpg");#}
+     background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);    flex-direction: column;
+      background-size: cover;
+      background-position: center;
+                color:white;
+    }
+         .question-box {
+            margin-bottom: 20px;
+              {#background-color: rgb(0 0 0 / 80%);#}
+             background-color:  #01285e;
+            padding: 15px;
+            border: 1px solid rgb(0 0 0 / 65%);
+            border-radius: 5px;
+            position: relative;
+        }
+.btn-primary {
+
+    background-color: green;
+    border-color: white;
+
+}
+        .question-box h5 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .question-box p {
+            margin-bottom: 5px;
+        }
+    .filter-dropdown {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+
+    .form-control-sm {
+      height: auto;
+      padding: 5px;
+        margin: 40px;
+      font-size: 14px;
+        width: 150px;
+         background-color:  #01285e;
+           color: #fff;
+
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 20px;
+        color: white;
+    }
+.form-control{
+    display: block;
+    width: 150px;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s
+
+}
+  .header {
+           background-color: #01285e;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+        .solve-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+        }
+          .filter-dropdown {
+            background-color: rgba(0,0,0,0.3);
+            border: none;
+            color: #fff;
+              float: right;
+
+        }
+
+        .filter-dropdown option {
+            background-color: black;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Crossword Puzzles</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <select class="form-control-sm" id="difficultyDropdown" onchange="filterByDifficulty(this.value)">
+                    <option value="all">All</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="questionBoxContainer">
+
+                    {% for puzzle in puzzles %}
+                    <div class="row question-box" data-difficulty="{{ puzzle.rating }}">
+                        <div class="col-md-12">
+                            <h5>{{ puzzle.title }}</h5>
+                            <p>{{ puzzle.description }}</p>
+                            <p><strong>Difficulty:</strong> {{ puzzle.rating }}</p>
+                            <button class="btn btn-primary solve-btn" onclick="solvePuzzle()">Solve</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <script>
+        function filterByDifficulty(difficulty) {
+            var questionBoxes = document.querySelectorAll('.question-box');
+            questionBoxes.forEach(function(questionBox) {
+                var questionDifficulty = questionBox.getAttribute('data-difficulty');
+
+                if (difficulty === 'all' || (difficulty === 'easy' && questionDifficulty === '1') ||
+                    (difficulty === 'medium' && questionDifficulty === '2') ||
+                    (difficulty === 'hard' && questionDifficulty === '3')) {
+                    questionBox.style.display = 'block';
+                } else {
+                    questionBox.style.display = 'none';
+                }
+            });
+        }
+
+        function solvePuzzle() {
+
+        }
+    </script>
+</body>
+</html>
