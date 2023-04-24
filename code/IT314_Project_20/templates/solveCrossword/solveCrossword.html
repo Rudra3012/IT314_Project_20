@@ -1,0 +1,19 @@
+{%  load unicorn %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solve Crossword</title>
+    <link rel="stylesheet" href="{% static 'solveCrossword/style.css' %}">
+    {% unicorn_scripts %}
+
+</head>
+<body class="solving_body">
+    {%  csrf_token %}
+    <main>
+        {% unicorn 'solveCrossword' username=user crosswordId=crossword_id %}
+    </main>
+</body>
+</html>
