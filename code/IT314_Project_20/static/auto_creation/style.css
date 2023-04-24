@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 
+    linear-gradient(to top right,#17a1e0 0%, #eaf0f3 100%);
+}
+
+.container{
+    max-width: 600px;
+    background: #fff;
+    border-radius: 5px;
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0 2px 2px 43px rgba(0,0,0,0.1);
+}
+
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e4e1e1;
+}
+
+.essentials{
+    display: inline-block;
+}
+
+
+.tab { 
+    display:inline-block; 
+    margin-left: 218px; 
+}
+
+.smtab { 
+    display:inline-block; 
+    margin-left: 150px; 
+}
+
+.side-space {
+    margin-bottom: 15px; 
+    display: flex;
+    gap: 1.5em;
+    flex-direction: row;
+}
+
+.desc {
+    display: flex;
+    width: 1120px; 
+    height: 100px; 
+    padding: 5px;
+}
+
+.add{
+    text-decoration: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #7ac6e9;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color :#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dynamic Class Creation */
+
+.flex{
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 15px;
+}
+
+.delete{
+    text-decoration: none;
+    display: inline-block;
+    background: #7ac6e9;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1.5 rem;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+input{
+    padding: 8px 10px;
+    background: #ddd;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+}
+
+input:focus{
+    outline: 1px solid #efefef;
+}
