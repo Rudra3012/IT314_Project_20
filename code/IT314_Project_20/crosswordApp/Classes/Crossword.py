@@ -29,8 +29,10 @@ class Crossword:
     timeOfCreation: str
     clueAnswers = {}
     grid = []
+    timesRating: int
     rating: int
-
+    timesSolved: int
+    avgTime = 0
     def __init__(self, creator, title, description, width, height, cluesVer, cluesHor, WordsUp, WordsDown, gridList, AnswersHorStart, AnswersVerStart):
         unique_id = uuid.uuid4()
         self.id = unique_id
@@ -47,7 +49,10 @@ class Crossword:
         self.AnswersHorStart = AnswersHorStart
         self.AnswersVerStart = AnswersVerStart
         self.timeOfCreation = datetime.datetime.now()
+        self.timesSolved = 0
+        self.timesRating = 0
         self.rating = 0
+        self.avgTime = 0
 
     def __str__(self):
         return f"Crossword: {self.title}"

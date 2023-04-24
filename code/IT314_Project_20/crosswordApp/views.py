@@ -297,3 +297,4 @@ def solve_crossword(request, crossword_id):
 
 def test_timer(request):
     return render(request, "test_timer.html")
+
