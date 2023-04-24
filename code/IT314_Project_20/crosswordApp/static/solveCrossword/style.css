@@ -132,3 +132,155 @@
     margin-bottom: 10px;
     display: inline-flex;
 }
+
+.lowerDivRight{
+    width: 50%;
+    /*background-color: #3d7570;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.crosswordGrid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.manualCrosswordGrid{
+    position: relative;
+    top: -5%;
+    width: 100%;
+    height: 100%;
+    /*background-color: #003e8c;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.crosswordGridCellNorm {
+    border: 1px solid black;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+}
+
+.crosswordGridCellBlock {
+    border: 1px solid black;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    background-color: #333333;
+}
+
+.submitButtonDiv{
+    position: absolute;
+    /*background-color: #4e3d75;*/
+    top: 85%;
+}
+.submitButton{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.submitButton:hover{
+    background-color: #003e8c;
+}
+
+.startDiv{
+    position: relative;
+    /*background-color: #01285e;*/
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.startDivText{
+    color: #01285e;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.startDivButton{
+    position: relative;
+    top: 10%;
+    margin-top: 2%   ;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.startDivButton:hover{
+    background-color: #003e8c;
+}
+
+.test{
+    background-color: #6a1a21;
+    color: white;
+}
+
+.alert{
+    position: fixed;
+    top: 10%;
+    left: 40%;
+}
+
+.message{
+    position: fixed;
+    width: 20%;
+    height: 5%;
+    top: 10%;
+    left: 40%;
+    /*background-color: #9fd7bc;*/
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid #055d31;*/
+}
+
+.messageText{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    /*color: #055d31;*/
+    font-weight: bold;
+    align-items: center;
+}
+
+.messageBtn{
+    position: absolute;
+    right: 0;
+}
+
+.messageBtn:hover{
+
+}
+
+.errorMessage{
+    border: 1px solid #620101;
+    background-color: #f2d2d2;
+    color: #620101;
+}

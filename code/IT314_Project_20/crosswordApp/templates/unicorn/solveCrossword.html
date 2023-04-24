@@ -1,4 +1,5 @@
 <div>
+
     <div class="mainDiv">
         <div class="upperDiv">
             <div class="upperDivLeft">
@@ -7,46 +8,85 @@
                 </div>
             </div>
             <div class="upperDivRight">
-                <div class="upperDivRightText">Timer</div>
-                <div class="upperDivRightText">Attempt</div>
+                <div id="timerId" class="upperDivRightText" >Timer: <label id="minutes">00</label>:<label id="seconds">00</label></div>
+                <div class="upperDivRightText">Attempt </div>
                 <div class="upperDivRightText">User</div>
             </div>
         </div>
         <div id="mainVerticalLine"></div>
         <div class="lowerDiv">
-            <div class="lowerDivLeft">
-                <div class="lowerDivLeftHorClues">
-                    <div class="lowerDivLeftHorCluesTitle">Horizontal Clues</div>
-                    <div class="lowerDivLeftHorCluesTitleTextDiv">
-                        {% for key, clue in cluesHor %}
-                            <div class="cluesInputDiv">
-                                <div class="lowerDivLeftHorCluesText">{{ forloop.counter }}.) {{ clue }}</div>
-                                <input unicorn:model="HorAnswer{{ forloop.counter }}" class="cluesInput">
-                            </div>
-                        {% endfor %}
-                    </div>
 
-                </div>
-                <div class="lowerDivLeftVerClues">
-                    <div class="lowerDivLeftHorCluesTitle">Vertical Clues</div>
-                    <div class="lowerDivLeftHorCluesTitleTextDiv">
-                        {% for key, clue in cluesVer %}
-                            <div class="cluesInputDiv">
-                                <div class="lowerDivLeftHorCluesText">{{ forloop.counter }}.) {{ clue }}</div>
-                                <input unicorn:model="VerAnswer{{ forloop.counter }}" class="cluesInput">
-                            </div>
-                        {% endfor %}
+            <div class="lowerDivLeft">
+                {% if status == "presolve" %}
+                    <div class="startDiv">
+                        <div class="startDivText">Ready! Click to Start</div>
+                        <button class="startDivButton" unicorn:click="beginSolving">Start</button>
                     </div>
-                </div>
+                {% elif status == "unsolved" %}
+                    <div class="lowerDivLeftHorClues">
+                        <div class="lowerDivLeftHorCluesTitle">Horizontal Clues</div>
+                        <div class="lowerDivLeftHorCluesTitleTextDiv">
+                            {% for len, key, clue in cluesHor %}
+                                <div class="cluesInputDiv">
+                                    <div class="lowerDivLeftHorCluesText">{{ forloop.counter }}.) {{ clue }} </div>
+                                    <input unicorn:models.debounce-100="HorAnswer{{ forloop.counter }}" class="cluesInput" maxlength="{{ len }}" id="AnswerInputHor{{ forloop.counter }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                    <div class="lowerDivLeftVerClues">
+                        <div class="lowerDivLeftHorCluesTitle">Vertical Clues</div>
+                        <div class="lowerDivLeftHorCluesTitleTextDiv">
+                            {% for len, key, clue in cluesVer %}
+                                <div class="cluesInputDiv">
+                                    <div class="lowerDivLeftHorCluesText">{{ forloop.counter }}.) {{ clue }}</div>
+                                    <input unicorn:model="VerAnswer{{ forloop.counter }}" class="cluesInput" maxlength="{{ len }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <div>
+                        Solved Correctly
+                    </div>
+                {% endif %}
             </div>
             <div class="lowerDivRight">
-                {{ HorAnswer1 }}
-                {{ HorAnswer2 }}
+                <div class="crosswordGrid">
+                    <table class="manualCrosswordGrid">
+                        {%  for row in current_grid %}
+                            <tr>
+                                {% for col in row %}
+                                    {%  if col == '_' %}
+                                    <td class="crosswordGridCellBlock">
+                                        <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))" class="gridCellDiv">
+                                            {{ col }}
+                                        </div>
+                                    </td>
+                                    {%  else %}
+                                        <td class="crosswordGridCellNorm">
+                                            <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))" class="gridCellDiv">
+                                                {{ col }}
+                                            </div>
+                                        </td>
+                                    {% endif %}
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="submitButtonDiv">
+                    <button unicorn:click="submitClicked" class="submitButton">Submit</button>
+                </div>
 
-                {{ VerAnswer1 }}
-                {{ VerAnswer2 }}
             </div>
         </div>
     </div>
-
+    {% if displayMessage == "yes" %}
+        <div class="message {{ message_type }}">
+            <p class="messageText">{{ message_content }}</p>
+            <button class="messageBtn" unicorn:click="hideMessage"> X </button>
+        </div>
+    {% endif %}
 </div>

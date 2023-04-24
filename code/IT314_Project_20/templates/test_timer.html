@@ -1,0 +1,20 @@
+{%  load unicorn %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test timer</title>
+    <link rel="stylesheet" href="{% static 'testTimer/style.css' %}">
+    <script src="{% static "testTimer/script.js" %}"></script>
+    {% unicorn_scripts %}
+
+</head>
+<body>
+    {%  csrf_token %}
+    <main>
+        {% unicorn 'tryingCounter'%}
+    </main>
+</body>
+</html>
