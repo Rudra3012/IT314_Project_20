@@ -63,6 +63,13 @@ body{
     flex-direction: row;
 }
 
+.desc {
+    display: flex;
+    width: 1120px; 
+    height: 100px; 
+    padding: 5px;
+}
+
 .add{
     text-decoration: none;
     display: inline-block;
