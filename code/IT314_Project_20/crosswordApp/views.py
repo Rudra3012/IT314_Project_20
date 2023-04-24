@@ -207,7 +207,6 @@ def ProcessModifyUserRequest(request, username, email):
     if request.method == 'POST':
         nusername = request.POST.get('new_username')
         nemail = request.POST.get('new_email')
-
         prev2 = {"username": username}
         nexxt2 = {"$set": {"username": nusername, "email": nemail}}
         collections.update_one(prev2, nexxt2)
@@ -290,13 +289,6 @@ def solve_crossword(request, crossword_id):
     # 6442e9c5401d19b1b87a0c2c
     return render(request, "solveCrossword/solveCrossword.html", context)
 
-
 def test_timer(request):
     return render(request, "test_timer.html")
-
-
-# def delete_user(request, username):
-#     collections = db['crosswordApp_user']
-#     rec = {"username": username}
-#     up = collections.delete_many(rec)
 
