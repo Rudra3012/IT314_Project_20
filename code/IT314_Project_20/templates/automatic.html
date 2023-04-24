@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{%  static 'auto_creation/style.css' %}">
+    <link rel="script" href="{%  static 'auto_creation/creation.js' %}">
+    {% comment %} <link rel="stylesheet" href="style.css"> {% endcomment %}
+    <title>Automatic Crossword Creation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrap">
+            <h2>Automatic Crossword Creation Page</h2>
+            <a href="#" class="add">&plus;</a>
+        </div>
+        <div class="essentials">
+            <h3 align="center">Required Details</h3><br>
+            <label for="Crossword Name"><b>Crossword Name*</b></label> 
+            <span class="smtab"><label for="Creator Name"><b>Creator Name*</b></label></span><br>
+            <div class="side-space">
+                <input type="text" name="text" class="text" size="50" placeholder="Crossword Name" required>
+                <input type="text" name="text" class="text" size="50" placeholder="Creator Name" required>
+            </div>
+        </div>
+        <br>
+        <div class="inp-group">
+            <br>
+            <h3 align="center">Enter the words and their clues!</h3>
+            <br>
+            <label for="Word"><b>Word</b></label>
+            <span class="tab"><label for="Clue"><b>Clue</b></label></span>
+        </div>
+    </div>
+
+    {% comment %} <script src="script.js"></script> {% endcomment %}
+</body>
+</html>
