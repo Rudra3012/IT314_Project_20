@@ -14,7 +14,6 @@ from pymongo.mongo_client import MongoClient
 
 # Create a new client and connect to the server
 client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
-
 db = client['CrossWordManagement']
 
 
