@@ -296,8 +296,5 @@ def solve_crossword(request, crossword_id):
     #6442e9c5401d19b1b87a0c2c
     return render(request, "solveCrossword/solveCrossword.html", context)
 
-<<<<<<< HEAD
 def test_timer(request):
     return render(request, "test_timer.html")
-=======
->>>>>>> f34f4c5717b26a7588deab8c55ff6897f104b3d6
