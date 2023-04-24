@@ -12,7 +12,7 @@ from .helper import send_mail
 from pymongo.mongo_client import MongoClient
 
 # Create a new client and connect to the server
-client = MongoClient("mongodb+srv://Group20:Group20@cluster0.agetwho.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
 db = client['CrossWordManagement']
 
 
@@ -257,3 +257,6 @@ def solve_crossword(request, crossword_id):
     }
     #6442e9c5401d19b1b87a0c2c
     return render(request, "solveCrossword/solveCrossword.html", context)
+
+def test_timer(request):
+    return render(request, "test_timer.html")

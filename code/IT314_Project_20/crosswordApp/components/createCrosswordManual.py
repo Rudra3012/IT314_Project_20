@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from django.contrib import messages
 import json
 
-client = MongoClient('mongodb+srv://Group20:Group20@cluster0.agetwho.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
 db = client['CrossWordManagement']
 collections = db['crosswordApp_crossword']
 
