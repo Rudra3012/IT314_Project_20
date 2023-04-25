@@ -4,13 +4,15 @@
         <div class="upperDiv">
             <div class="upperDivLeft">
                 <div class="upperDivLeftText">
-                    Cross Word Title
+                    {{ title}}
                 </div>
             </div>
             <div class="upperDivRight">
+                {% if status != 'solved' %}
                 <div id="timerId" class="upperDivRightText" >Timer: <label id="minutes">00</label>:<label id="seconds">00</label></div>
-                <div class="upperDivRightText">Attempt </div>
-                <div class="upperDivRightText">User</div>
+                {% endif %}
+                <div class="upperDivRightText">Attempt: {{ attemptNumber }}</div>
+                <div class="upperDivRightText"> {{ username }}</div>
             </div>
         </div>
         <div id="mainVerticalLine"></div>
@@ -29,7 +31,7 @@
                             {% for len, key, clue in cluesHor %}
                                 <div class="cluesInputDiv">
                                     <div class="lowerDivLeftHorCluesText">{{ forloop.counter }}.) {{ clue }} </div>
-                                    <input unicorn:models.debounce-100="HorAnswer{{ forloop.counter }}" class="cluesInput" maxlength="{{ len }}" id="AnswerInputHor{{ forloop.counter }}">
+                                    <input unicorn:model="HorAnswer{{ forloop.counter }}" class="cluesInput" maxlength="{{ len }}" id="AnswerInputHor{{ forloop.counter }}" unicorn:partial.id="loweDivRight"s>
                                 </div>
                             {% endfor %}
                         </div>
@@ -41,23 +43,38 @@
                             {% for len, key, clue in cluesVer %}
                                 <div class="cluesInputDiv">
                                     <div class="lowerDivLeftHorCluesText">{{ forloop.counter }}.) {{ clue }}</div>
-                                    <input unicorn:model="VerAnswer{{ forloop.counter }}" class="cluesInput" maxlength="{{ len }}">
+                                    <input unicorn:model="VerAnswer{{ forloop.counter }}" class="cluesInput" maxlength="{{ len }}" unicorn:partial.id="loweDivRight">
                                 </div>
                             {% endfor %}
                         </div>
                     </div>
                 {% else %}
-                    <div>
-                        Solved Correctly
+                    <div class="successDiv">
+                        <p class="successDivTitle">Solved Correctly</p>
+                        <p>Attempts taken: {{ attemptNumber }} </p>
+                        <p>Time Taken: {{ timeElapsed }}</p>
+                        <p>Rate the puzzle: </p>
+                        <div class="rating">
+                            <span u:click="clickedStar1" class="star{{ star1status }}">★</span>
+                            <span u:click="clickedStar2" class="star{{ star2status }}">★</span>
+                            <span u:click="clickedStar3" class="star{{ star3status }}">★</span>
+                            <span u:click="clickedStar4" class="star{{ star4status }}">★</span>
+                            <span u:click="clickedStar5" class="star{{ star5status }}">★</span>
+{#                            <div >Rating selected: {{ starsGiven }}</div>#}
+                            <br>
+                            <br>
+                            <button class="ratingSubmitButton" unicorn:click="updateRating">Submit Rating</button>
+                            <button class="HomeSubmitButton" unicorn:click="goHome">Home</button>
+                        </div>
                     </div>
                 {% endif %}
             </div>
-            <div class="lowerDivRight">
+            <div class="lowerDivRight" id="loweDivRight">
                 <div class="crosswordGrid">
                     <table class="manualCrosswordGrid">
                         {%  for row in current_grid %}
                             <tr>
-                                {% for col in row %}
+                                {% for col,type, ind in row %}
                                     {%  if col == '_' %}
                                     <td class="crosswordGridCellBlock">
                                         <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))" class="gridCellDiv">
@@ -65,9 +82,27 @@
                                         </div>
                                     </td>
                                     {%  else %}
-                                        <td class="crosswordGridCellNorm">
+                                        <td class="crosswordGridCellNorm Cell{{ status }}">
                                             <div unicorn:click="cellClicked(({{forloop.parentloop.counter0}}, {{forloop.counter0 }}))" class="gridCellDiv">
-                                                {{ col }}
+                                                {% if type != 'b' and type != 'v' and type != 'h' and type != 'o' %}
+                                                    <div class="tableCellUpperLeft">
+                                                        {{ type }}
+                                                    </div>
+                                                    <div class="tableCellUpperRight">
+                                                        {{ ind }}
+                                                    </div>
+                                                {% elif type == 'v' %}
+                                                    <div class="tableCellUpperRight">
+                                                        {{ ind }}
+                                                    </div>
+                                                {% elif type == 'h' %}
+                                                    <div class="tableCellUpperLeft">
+                                                        {{ ind }}
+                                                    </div>
+                                                {% endif %}
+                                                <div class="tableCellText">
+                                                    {{ col }}
+                                                </div>
                                             </div>
                                         </td>
                                     {% endif %}
@@ -76,9 +111,11 @@
                         {% endfor %}
                     </table>
                 </div>
-                <div class="submitButtonDiv">
-                    <button unicorn:click="submitClicked" class="submitButton">Submit</button>
-                </div>
+                {% if status != 'solved' %}
+                    <div class="submitButtonDiv">
+                        <button unicorn:click="submitClicked" class="submitButton">Submit</button>
+                    </div>
+                {% endif %}
 
             </div>
         </div>

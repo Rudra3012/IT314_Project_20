@@ -284,3 +284,105 @@
     background-color: #f2d2d2;
     color: #620101;
 }
+
+.successMessage{
+    border: 1px solid #055d31;
+    background-color: #9fd7bc;
+    color: #055d31;
+}
+
+.successDiv{
+    position: relative;
+    color: #003e8c;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.successDivTitle{
+    position: relative;
+    color: #003e8c;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.starempty{
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.starfill{
+    cursor: pointer;
+    color: #003e8c;
+}
+
+.ratingSubmitButton{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.HomeSubmitButton{
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.Cellsolved{
+    background-color: #9fd7bc;
+}
+
+.gridCellDiv{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background-color: #0f5132;*/
+}
+
+.tableCellUpperRight{
+    position: relative;
+    float: right;
+    vertical-align: top;
+    font-size: 12px;
+    /*background-color: #f1e8e8;*/
+}
+
+.tableCellUpperLeft{
+    position: relative;
+    float: left;
+    vertical-align: top;
+    font-size: 12px;
+    /*background-color: #f0e8f1;*/
+}
+
+.tableCellText{
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    top: 10%;
+    font-size: 23px;
+    height: 100%;
+    width: 100%;
+    /*background-color: #f1e8e8;*/
+}
