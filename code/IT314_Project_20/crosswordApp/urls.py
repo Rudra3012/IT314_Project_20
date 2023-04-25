@@ -28,6 +28,7 @@ urlpatterns = [
     path("create_crossword_manual/", views.create_crossword_manual, name="create_crossword_manual"),
     path("creation", views.creation, name="creation"),
     path("", views.home, name="home"),
+    path("home", views.home, name="home"),
     path("logout/", views.logout, name="logout"),
     path("creatorProfile/", views.creatorProfile, name="creatorProfile"),
     path("admin", views.adminPage, name="adminPage"),
