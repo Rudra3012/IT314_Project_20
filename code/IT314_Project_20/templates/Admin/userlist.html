@@ -28,7 +28,9 @@
 {#                        function redirectToModifyPageUser() {#}
 {#                        }#}
 {#                    </script>#}
-                    <button class="delete-btn" >Delete</button>
+
+                    <button class="delete-btn" href = "{% url 'delete_user' delt=User.username %}">Delete</button>
+                        {% csrf_token %}
                 </td>
             </tr>
         {% endfor %}

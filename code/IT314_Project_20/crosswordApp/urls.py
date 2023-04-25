@@ -43,6 +43,6 @@ urlpatterns = [
     path('puzzle_of_day',views.puzzle_of_day, name='puzzle_of_day'),
 
     path('solve_crossword/<str:crossword_id>/', views.solve_crossword, name='solve_crossword'),
-
+    # path('/delete_user',views.delete_user, name='delete_user')
 
 ]
