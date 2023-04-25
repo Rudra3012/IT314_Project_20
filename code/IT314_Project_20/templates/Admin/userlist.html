@@ -100,6 +100,7 @@
             <th>Action</th>
         </tr>
         {% for User in Users %}
+<<<<<<< HEAD
         <tr>
             <td>{{ User.username }}</td>
             <td>{{ User.email }}</td>
@@ -115,6 +116,22 @@
                 <button class="delete-btn">Delete</button>
             </td>
         </tr>
+=======
+            <tr>
+                <td>{{ User.username }}</td>
+                <td>{{ User.email }}</td>
+                <td>
+                    <button class="modify-btn" onclick="window.location.href='/admin/modifyUserRequest/{{ User.username }}/{{ User.email }}/'">Modify</button>
+{#                    <script>#}
+{#                        function redirectToModifyPageUser() {#}
+{#                        }#}
+{#                    </script>#}
+
+                    <button class="delete-btn" href = "{% url 'delete_user' delt=User.username %}">Delete</button>
+                        {% csrf_token %}
+                </td>
+            </tr>
+>>>>>>> b89da17b7f5651c9b8bc75b8c62b9eea06015576
         {% endfor %}
         {# <tr>#}
             {# <td>1</td>#}

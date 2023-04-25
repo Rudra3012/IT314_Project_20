@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 /* ---------------------------------------------------
@@ -11,7 +11,7 @@ body {
 
 
 #sidebar {
-    background-color: #1f2a37;
+    background-color: #01285e;
     color: #fff;
     width: 265px;
     height: 100%;
@@ -51,7 +51,7 @@ body {
     display: flex;
     align-items: center;
     border: none;
-    background-color: #1f2a37;
+    background-color: #01285e;
 }
 
 #sidebar .list-group-item a {
@@ -81,7 +81,7 @@ body {
 
 
 #sidebar .list-group-item:hover {
-    background-color: #2c3b4d;
+    background-color: #4e637d;
 }
 
 #sidebar .list-group-item.logout {
@@ -95,7 +95,7 @@ body {
 
 #sidebar .list-group-item.logout button:hover {
     background-color: #fff;
-    color: #1f2a37;
+    color: #01285e;
 }
 
 #sidebar .list-group-item.logout a {
@@ -124,7 +124,7 @@ body {
 }
 
 #sidebar .list-group-item:not(:hover) {
-    background-color: #1f2a37;
+    background-color: #01285e;
 }
 
 #sidebar .sidebar-text {
@@ -200,6 +200,7 @@ body {
 
 #img_btn {
     margin-left: -50px;
+    color: #01285e;
 }
 
 #word.style_word {
@@ -256,7 +257,7 @@ body {
 
 .white-section {
     text-align: center;
-    background-color: #fff;
+    background-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
     padding: 20px;
 
 }

@@ -28,6 +28,7 @@ urlpatterns = [
     path("create_crossword_manual/", views.create_crossword_manual, name="create_crossword_manual"),
     path("creation", views.creation, name="creation"),
     path("", views.home, name="home"),
+    path("home", views.home, name="home"),
     path("logout/", views.logout, name="logout"),
     path("creatorProfile/", views.creatorProfile, name="creatorProfile"),
     path("admin", views.adminPage, name="adminPage"),
@@ -43,6 +44,6 @@ urlpatterns = [
     path('puzzle_of_day',views.puzzle_of_day, name='puzzle_of_day'),
 
     path('solve_crossword/<str:crossword_id>/', views.solve_crossword, name='solve_crossword'),
-
+    # path('/delete_user',views.delete_user, name='delete_user')
 
 ]
