@@ -1,3 +1,4 @@
+from bson import ObjectId
 from django.contrib import messages
 from django.shortcuts import render
 # from pymongo import MongoClient
@@ -6,6 +7,7 @@ from django.shortcuts import render, redirect
 from django.template import loader
 from .Classes import User
 from .helper import send_mail
+
 
 import uuid
 # client = MongoClient('mongodb+srv://Group20:g7uxB5fMdWcstCt4@cluster0.zjgczqo.mongodb.net/?retryWrites=true&w=majority')
@@ -273,10 +275,45 @@ def changeDetails(request, username, email):
 
 
 def puzzle_of_day(request):
-    collection = db['crosswordApp_crossword']
-    puzzles = collection.find()
-    context = {'puzzles': puzzles}
-    return render(request, 'puzzle_of_day.html', context)
+    if request.method == 'POST':
+        filter_type = request.POST.get('filterType', None)
+        client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
+        db = client['CrossWordManagement']
+        collection = db['crosswordApp_crossword']
+
+        print("filter type: ", filter_type)
+        sortedPuzzles = []
+
+        if filter_type == 'rating':
+             sortedPuzzles = collection.find().sort('rating', -1)
+        elif filter_type == 'numTimesSolved':
+            sortedPuzzles = collection.find().sort('timesSolved', -1)
+        elif filter_type == 'avgTimeTaken':
+            sortedPuzzles = collection.find().sort('avgTime', -1)
+        else:
+            pass
+
+        puzzles = list(sortedPuzzles)
+        for p in puzzles:
+            print(p)
+        for i in puzzles:
+            i['id'] = str(ObjectId(i['_id']))
+
+        context = {'puzzles': puzzles}
+        return render(request, 'puzzle_of_day.html', context)
+        # return render(request, 'puzzle_of_day.html', {'puzzles': puzzles})
+    else:
+        client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
+        db = client['CrossWordManagement']
+        collection = db['crosswordApp_crossword']
+        puzzles = collection.find()
+        puzzles = list(puzzles)
+
+        for i in puzzles:
+            i['id'] = str(ObjectId(i['_id']))
+
+        context = {'puzzles': puzzles}
+        return render(request, 'puzzle_of_day.html', context)
 
 
 def solve_crossword(request, crossword_id):
@@ -291,4 +328,11 @@ def solve_crossword(request, crossword_id):
 
 def test_timer(request):
     return render(request, "test_timer.html")
+
+def delete_user(request, delt):
+    collections = db['crosswordApp_user']
+    collections.delete_one({"username":delt})
+    # return redirect('login')
+    return render(request, 'delete_user.html')
+
 

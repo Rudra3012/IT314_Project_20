@@ -106,6 +106,20 @@
             background-color: black;
 
         }
+        .btn btn-primary ml-3{
+            margin: 50px;
+        }
+         .radio-btns {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             color:black
+        }
+
+        .radio-btns label {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -114,12 +128,28 @@
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <select class="form-control-sm" id="difficultyDropdown" onchange="filterByDifficulty(this.value)">
-                    <option value="all">All</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
+{#                <select class="form-control-sm" id="difficultyDropdown" onchange="filterByDifficulty(this.value)">#}
+{#                    <option value="all">All</option>#}
+{#                    <option value="easy">Easy</option>#}
+{#                    <option value="medium">Medium</option>#}
+{#                    <option value="hard">Hard</option>#}
+{#                </select>#}
+                <form method="post" action="{% url 'puzzle_of_day' %}">
+                {% csrf_token %}
+                <div class="radio-btns">
+                    <label class="radio-inline">
+                        <input type="radio" name="filterType" value="rating"> <b>Rating</b>
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="filterType" value="numTimesSolved"> <b>Number of Times Solved</b>
+
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="filterType" value="avgTimeTaken"><b>  Avg Time Taken</b>
+                    </label>
+                    <button class="btn btn-primary ml-3" type="submit">Submit</button>
+                </div>
+            </form>
             </div>
         </div>
         <br>
@@ -131,9 +161,12 @@
                     <div class="row question-box" data-difficulty="{{ puzzle.rating }}">
                         <div class="col-md-12">
                             <h5>{{ puzzle.title }}</h5>
-                            <p>{{ puzzle.description }}</p>
-                            <p><strong>Difficulty:</strong> {{ puzzle.rating }}</p>
-                            <button class="btn btn-primary solve-btn" onclick="solvePuzzle()">Solve</button>
+                            <p><strong>Author: </strong>{{ puzzle.creator }}</p>
+                            <p><strong>Description: </strong>{{ puzzle.description }}</p>
+                            <p><strong>Number of times Solve: </strong>{{ puzzle.timesSolved }} </p>
+                            <p><strong>Rating: </strong>{{ puzzle.rating }} </p>
+                             <p><strong>Average Time: </strong>{{ puzzle.avgTime }} </p>
+                            <button class="btn btn-primary solve-btn"  onclick="window.location.href='/solve_crossword/{{ puzzle.id }}/'">Solve</button>
                         </div>
                     </div>
                     {% endfor %}
