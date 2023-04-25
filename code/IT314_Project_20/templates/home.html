@@ -83,8 +83,8 @@
                 </li>
 
                 <div class="menu-buttons">
-                    <a href="#" id="login-button" class="btn btn-primary btn-sml w-100 mb-3">Login</a>
-                    <a href="#" id="signup-button" class="btn btn-secondary w-100">Sign up</a>
+                    <a href="#" id="login-button" class="btn btn-primary btn-sml w-100 mb-3" onclick="window.location.href='/login/'">Login</a>
+                    <a href="#" id="signup-button" class="btn btn-secondary w-100" onclick="window.location.href='/signup/'">Sign up</a>
                     <a href="#" id="logout-button" class="btn btn-secondary w-100">Log Out</a>
                 </div>
 
@@ -111,17 +111,17 @@
                 <div id="button" class="style_button">
                     <button type="button" class="btn btn-info btn-dark solve btn-lg">
                         <!-- <span class="material-icons logo">task_alt</span> -->
-                        <span class="login-solve-create">Solve CrossWord</span>
+                        <span class="login-solve-create" onclick="window.location.href='puzzle_of_day'">Solve CrossWord</span>
                     </button>
 
                     <button type="button" class="btn btn-info btn-dark a-create btn-lg">
                         <!-- <span class="material-icons logo">draw</span> -->
-                        <span class="login-solve-create">Automatic Creation</span>
+                        <span class="login-solve-create" onclick="window.location.href='/create_crossword_automatic/'">Automatic Creation</span>
                     </button>
 
                     <button type="button" class="btn btn-info btn-dark m-create btn-lg">
                         <!-- <span class="material-icons logo">draw</span> -->
-                        <span class="login-solve-create">Manual Creation</span>
+                        <span class="login-solve-create" onclick="window.location.href='/create_crossword_manual/'">Manual Creation</span>
                     </button>
                 </div>
 

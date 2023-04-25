@@ -131,12 +131,16 @@ def crossword_list_view(request):
 
 
 def create_crossword_automatic(request):
+    user = request.session.get('username')
+    if user is None:
+        return redirect('login')
     return render(request, "create_crossword_automatic.html")
 
 
 def create_crossword_manual(request):
     user = request.session.get('username')
-
+    if user is None:
+        return redirect('login')
     print("Current User: ", user)
 
     context = {
@@ -275,6 +279,10 @@ def changeDetails(request, username, email):
 
 
 def puzzle_of_day(request):
+    username = request.session.get('username')
+    if username is None:
+        return redirect('login')
+
     if request.method == 'POST':
         filter_type = request.POST.get('filterType', None)
         client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
@@ -335,4 +343,5 @@ def delete_user(request, delt):
     # return redirect('login')
     return render(request, 'delete_user.html')
 
-
+def CreatorProfile(request):
+    return render(request,f"Profile/index.html")
