@@ -114,11 +114,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-             color:black
+             color:black;
+             {#background-color: #0c63e4;#}
+             width: 100%;
         }
 
         .radio-btns label {
-            margin-right: 10px;
+            width: 30%;
+            font-size: 20px;
+            color: #01285e;
+        }
+
+        .radio-inline.order{
+            font-size: 20px;
+            color: #01285e;
+            font-weight: bold;
+        }
+
+        .optionFrom{
+            font-size: 15px;
         }
     </style>
 </head>
@@ -126,8 +140,8 @@
     <div class="container">
         <h1 class="header">Crossword Puzzles</h1>
         <hr>
-        <div class="row">
-            <div class="col-md-6">
+{#        <div class="row">#}
+{#            <div class="col-md-6">#}
 {#                <select class="form-control-sm" id="difficultyDropdown" onchange="filterByDifficulty(this.value)">#}
 {#                    <option value="all">All</option>#}
 {#                    <option value="easy">Easy</option>#}
@@ -135,23 +149,29 @@
 {#                    <option value="hard">Hard</option>#}
 {#                </select>#}
                 <form method="post" action="{% url 'puzzle_of_day' %}">
-                {% csrf_token %}
-                <div class="radio-btns">
-                    <label class="radio-inline">
-                        <input type="radio" name="filterType" value="rating"> <b>Rating</b>
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="filterType" value="numTimesSolved"> <b>Number of Times Solved</b>
-
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="filterType" value="avgTimeTaken"><b>  Avg Time Taken</b>
-                    </label>
-                    <button class="btn btn-primary ml-3" type="submit">Submit</button>
-                </div>
-            </form>
-            </div>
-        </div>
+                    {% csrf_token %}
+                    <div class="radio-btns">
+                        <label class="radio-inline">
+                            <input type="radio" name="filterType" value="rating"> <b>Rating</b>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="filterType" value="numTimesSolved"> <b>Times Solved</b>
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="filterType" value="avgTimeTaken"><b>  Avg Time Taken</b>
+                        </label>
+                        <label class="radio-inline order">
+                            Order:
+                            <select name="order" class="optionFrom">
+                                <option value="asc">Ascending</option>
+                                <option value="desc">Descending</option>
+                            </select>
+                        </label>
+                        <button class="btn btn-primary ml-3" type="submit">Submit</button>
+                    </div>
+                </form>
+{#            </div>#}
+{#        </div>#}
         <br>
         <div class="row">
             <div class="col-md-12">

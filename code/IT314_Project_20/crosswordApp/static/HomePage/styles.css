@@ -2,8 +2,23 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    background: #a1c4fd;
 }
+/* ---------------------------------------------------
+    footer
+----------------------------------------------------- */
+
+.white-section {
+    text-align: center;
+    background-color: #a1c4fd;
+    padding: 20px;
+
+}
+
+.social-icon {
+    margin: 20px 10px;
+}
+
 
 /* ---------------------------------------------------
     New SideBar
@@ -11,7 +26,7 @@ body {
 
 
 #sidebar {
-    background-color: #01285e;
+    background-color: #1f2a37;
     color: #fff;
     width: 265px;
     height: 100%;
@@ -21,10 +36,12 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
     transition: width 0.5s;
+    background-color: #01285e;
 }
 
 #sidebar.collapsed {
     width: 50px;
+    background-color: #01285e;
 }
 
 #sidebar .list-group .list-group-item .sidebar-heading {
@@ -81,7 +98,7 @@ body {
 
 
 #sidebar .list-group-item:hover {
-    background-color: #4e637d;
+    background-color: #205195;
 }
 
 #sidebar .list-group-item.logout {
@@ -95,7 +112,7 @@ body {
 
 #sidebar .list-group-item.logout button:hover {
     background-color: #fff;
-    color: #01285e;
+    color: #1f2a37;
 }
 
 #sidebar .list-group-item.logout a {
@@ -105,6 +122,12 @@ body {
 
 #sidebar .list-group-item.logout a:hover {
     color: #fff;
+}
+
+#login-button:hover {
+    background-color: darkgrey !important;
+    color: black !important;
+    border: darkgrey !important;
 }
 
 #sidebar .collapse-item {
@@ -125,6 +148,12 @@ body {
 
 #sidebar .list-group-item:not(:hover) {
     background-color: #01285e;
+}
+
+#login-button:not(:hover) {
+    background-color: #fff !important;
+    color: black !important;
+    border: #fff !important;
 }
 
 #sidebar .sidebar-text {
@@ -188,23 +217,21 @@ body {
     transform: rotate(180deg);
 }
 
-/* ---------------------------------------------------
-    Content Manipulation
------------------------------------------------------ */
-
+/* content manuipulation */
 #content.style {
     margin-top: -20px;
     margin-left: 280px;
     margin-bottom: 50px;
+    /* display: flex; */
 }
 
 #img_btn {
     margin-left: -50px;
-    color: #01285e;
+    align-items: center;
 }
 
 #word.style_word {
-    margin-left: 600px;
+    margin-left: 555px;
     margin-top: -510px;
     margin-bottom: 50px;
     /* font-size: 22; */
@@ -220,12 +247,14 @@ body {
     width: 600px;
 }
 
+
 .text-div {
     text-align: center;
+    color: #01285e
 }
 
 #word {
-    font-size: 30px; 
+    font-size: 30px;
 }
 
 .solve {
@@ -243,6 +272,42 @@ body {
     width: 425px !important;
 }
 
+.solve:not(:hover) {
+    background-color: #fff !important;
+    color: black !important;
+    border: #fff !important;
+}
+
+.solve:hover {
+    background-color:darkgrey !important;
+    color: black !important;
+    border: darkgrey !important;
+}
+
+.a-create:not(:hover) {
+    background-color: #fff !important;
+    color: black !important;
+    border: #fff !important;
+}
+
+.a-create:hover {
+    background-color:darkgrey !important;
+    color: black !important;
+    border: darkgrey !important;
+}
+
+.m-create:not(:hover) {
+    background-color: #fff !important;
+    color: black !important;
+    border: #fff !important;
+}
+
+.m-create:hover {
+    background-color:darkgrey !important;
+    color: black !important;
+    border: darkgrey !important;
+}
+
 .login-solve-create {
     font-size: 37px;
 }
@@ -251,35 +316,98 @@ body {
     font-size: 35px;
 }
 
-/* ---------------------------------------------------
-    Footer
------------------------------------------------------ */
-
-.white-section {
-    text-align: center;
-    background-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-    padding: 20px;
-
+ .burger {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    left: 5%;
+    top: 15px;
+    margin-bottom: 20px;
 }
 
-.social-icon {
-    margin: 20px 10px;
+.line {
+    width: 30px;
+    margin: 4px 16px;
+    height: 4px;
+    background-color: white;
 }
 
-/* ---------------------------------------------------
-    media query
------------------------------------------------------ */
+/* Meida Query */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
+    .burger {
+        display: block;
+        margin-left: -10px;
+    }
+
+    /* .burger:hover{
+        color: #01285e;
+    } */
+
     #sidebar {
-        margin-left: -250px;
+        width: 50px;
     }
 
-    #sidebar.active {
-        margin-left: 0;
+    .vclass {
+        opacity: 0;
     }
 
-    #sidebarCollapse span {
-        display: none;
+    #imgg {
+        margin-top: 0px;
+        margin-left: -223px;
+        height: auto;
+        width: auto;
+    }
+
+    .margindir{
+        margin-top: 500px;
+    }
+    #word.style_word {
+        margin-left: -163px;
+        width: 490px;
+    }
+    #button.style_button {
+        margin-left: -135px;
+        grid-column: auto;
+    }
+    .marginb{
+        margin-top: 20px;
+    }
+
+} 
+
+
+@media (min-width:700px) and (max-width: 1080px) {
+    .burger {
+        display: block;
+        margin-left: -10px;
+    }
+    #sidebar {
+        width: 50px;
+    }
+
+    .vclass {
+        opacity: 0;
+    }
+    .marginb{
+        margin-top: 20px;
+    }
+    #imgg {
+        margin-top: 0px;
+        margin-left: 0px;
+        height: auto;
+        width: auto;
+    }
+
+    .margindir{
+        margin-top: 500px;
+    }
+    #word.style_word {
+        margin-left: 10px;
+        width: 590px;
+    }
+    #button.style_button {
+        margin-left: 85px;
+        grid-column: auto;
     }
 }

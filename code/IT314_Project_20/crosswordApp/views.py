@@ -101,21 +101,38 @@ def LoginPage(request):
         username = request.POST.get('username')
         pass1 = request.POST.get('pass')
         # user = authenticate(request, username=username, password=pass1)
+        redirect_url = request.session.get('redirectTo')
+
+        if redirect_url is None:
+            redirect_url = "/home"
+
         reply = collections.find_one({"username": username})
+
+        print("redirect_url is ", redirect_url)
         if reply is not None:
+            # print("reply is not nones")
             if reply["password"] == pass1:
+                print("Login Successful")
                 request.session['username'] = username
-                return redirect('home')
+                if redirect_url is not None:
+                    print("username saved is ", request.session.get('username') )
+                    request.session['redirectTo'] = None
+                    return redirect(redirect_url)
+                return redirect('/home')
             else:
+                print("Password is incorrect")
+                print("redirect_url is ", request.session.get('redirectTo'))
                 template = loader.get_template("login.html")
                 context = {
                     "fail": True,
+                    "redirect_url": redirect_url,
                 }
-                return HttpResponse(template.render(context, request))
+                return render(request, 'login.html', context)
         else:
             template = loader.get_template("login.html")
             context = {
                 "fail": True,
+                "redirect_url": redirect_url,
             }
             return HttpResponse(template.render(context, request))
 
@@ -123,6 +140,18 @@ def LoginPage(request):
 
 
 def create_crossword(request):
+    username = request.session.get('username')
+    print("Current User in browsing page: ", username)
+    if username is None:
+        context = {
+            "displayMessage": "yes",
+            "message_content": "Please login to solve crosswords ",
+            "message_type": "errorMessage",
+        }
+        request.session['redirectTo'] = '/create_crossword_automatic'
+        return render(request, "login.html", context)
+        # return redirect('login')
+
     return render(request, "create_crossword_automatic.html")
 
 
@@ -132,6 +161,16 @@ def crossword_list_view(request):
 
 def create_crossword_automatic(request):
     user = request.session.get('username')
+    # username = request.session.get('username')
+    print("Current User in browsing page: ", user)
+    if user is None:
+        context = {
+            "displayMessage": "yes",
+            "message_content": "Please login to create crosswords ",
+            "message_type": "errorMessage",
+        }
+        request.session['redirectTo'] = '/create_crossword_automatic/'
+        return render(request, "login.html", context)
 
     print("Current User: ", user)
 
@@ -143,10 +182,15 @@ def create_crossword_automatic(request):
 
 def create_crossword_manual(request):
     user = request.session.get('username')
+    print("Current User in browsing page: ", user)
     if user is None:
-        return redirect('login')
-    print("Current User: ", user)
-
+        context = {
+            "displayMessage": "yes",
+            "message_content": "Please login to create crosswords ",
+            "message_type": "errorMessage",
+        }
+        request.session['redirectTo'] = '/create_crossword_manual/'
+        return render(request, "login.html", context)
     context = {
         "Username": user,
     }
@@ -284,24 +328,43 @@ def changeDetails(request, username, email):
 
 def puzzle_of_day(request):
     username = request.session.get('username')
+    print("Current User in browsing page: ", username)
     if username is None:
-        return redirect('login')
+        context = {
+            "displayMessage": "yes",
+            "message_content": "Please login to solve crosswords ",
+            "message_type": "errorMessage",
+        }
+        request.session['redirectTo'] = '/puzzle_of_day'
+        return render(request, "login.html", context)
+        # return redirect('login')
 
     if request.method == 'POST':
         filter_type = request.POST.get('filterType', None)
+        filter_order= request.POST.get('order', None)
         client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
         db = client['CrossWordManagement']
         collection = db['crosswordApp_crossword']
 
         print("filter type: ", filter_type)
+        print("filter order: ", filter_order)
         sortedPuzzles = []
 
         if filter_type == 'rating':
-             sortedPuzzles = collection.find().sort('rating', -1)
+             if filter_order == 'asc':
+                 sortedPuzzles = collection.find().sort('rating', 1)
+             else:
+                    sortedPuzzles = collection.find().sort('rating', -1)
         elif filter_type == 'numTimesSolved':
-            sortedPuzzles = collection.find().sort('timesSolved', -1)
+            if filter_order == 'asc':
+                sortedPuzzles = collection.find().sort('timesSolved', 1)
+            else:
+                sortedPuzzles = collection.find().sort('timesSolved', -1)
         elif filter_type == 'avgTimeTaken':
-            sortedPuzzles = collection.find().sort('avgTime', -1)
+            if filter_order == 'asc':
+                sortedPuzzles = collection.find().sort('avgTime', 1)
+            else:
+                sortedPuzzles = collection.find().sort('avgTime', -1)
         else:
             pass
 
@@ -310,6 +373,15 @@ def puzzle_of_day(request):
             print(p)
         for i in puzzles:
             i['id'] = str(ObjectId(i['_id']))
+
+            i['rating'] = round(i['rating'], 2)
+            i['avgTime'] = round(i['avgTime'], 2)
+            # print(type(i['avgTime']))
+            if i['avgTime'] == 0:
+                i['avgTime'] = 'Not solved yet'
+            if i['rating'] == 0:
+                i['rating'] = 'Not rated yet'
+
 
         context = {'puzzles': puzzles}
         return render(request, 'puzzle_of_day.html', context)
@@ -323,13 +395,21 @@ def puzzle_of_day(request):
 
         for i in puzzles:
             i['id'] = str(ObjectId(i['_id']))
-
+            i['rating'] = round(i['rating'], 2)
+            i['avgTime'] = round(i['avgTime'], 2)
+            # print(type(i['avgTime']))
+            if i['avgTime'] == 0:
+                i['avgTime'] = 'Not solved yet'
+            if i['rating'] == 0:
+                i['rating'] = 'Not rated yet'
         context = {'puzzles': puzzles}
         return render(request, 'puzzle_of_day.html', context)
 
 
 def solve_crossword(request, crossword_id):
     username = request.session.get('username')
+
+
 
     context = {
         'user': username,
