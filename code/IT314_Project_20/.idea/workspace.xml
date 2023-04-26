@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e88c57-bc78-4727-b82b-c4b3d819e944" name="Changes" comment="Completed solving page">
-      <change afterPath="$PROJECT_DIR$/test_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.github/workflows/django.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IT314_Project_20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crosswordApp/Testing/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crosswordApp/Testing/test_urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sessions/sessionidg0rdci5chq4enbxgb3182fjr2p8yzt6s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sessions/sessionidp5gt61eyh0i39fctxcv41tuodcxkbckh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/Classes/Crossword.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/Classes/Crossword.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/components/createCrosswordManual.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/components/createCrosswordManual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/static/HomePage/indexForAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/static/HomePage/indexForAll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/static/Profile/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/static/Profile/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/static/Profile/wall.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/static/Profile_page/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/static/Profile_page/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/templates/unicorn/createCrosswordAuto.html" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/templates/unicorn/createCrosswordAuto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessioniddw1gcoyygws42nsofm71a6a6bddr4hum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidna1ddrt8h5rw7lqew008z19z7nsuka0l" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/modify_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/modify_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/userlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/userlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profile/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/puzzle_of_day.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/puzzle_of_day.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IT314_Project_20/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IT314_Project_20/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessions/sessionidtgd0gk04ti5bhfjndh1xwhezg3xgm7f7" beforeDir="false" afterPath="$PROJECT_DIR$/sessions/sessionidtgd0gk04ti5bhfjndh1xwhezg3xgm7f7" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +269,7 @@
       <workItem from="1682525751629" duration="1032000" />
       <workItem from="1682527978323" duration="423000" />
       <workItem from="1682533787567" duration="318000" />
-      <workItem from="1682535938558" duration="834000" />
+      <workItem from="1682535938558" duration="1430000" />
     </task>
     <servers />
   </component>
