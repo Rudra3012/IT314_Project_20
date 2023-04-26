@@ -349,3 +349,6 @@ def delete_user(request, delt):
 
 def CreatorProfile(request):
     return render(request,f"Profile/index.html")
+
+def create_auto(request):
+    return render(request,"automatic.html")
