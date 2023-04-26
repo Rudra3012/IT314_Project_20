@@ -75,6 +75,6 @@ burger.addEventListener('click', () => {
         sidebar.style.width = "265px";
     }
     else {
-        sidebar.style.width = "65px";
+        sidebar.style.width = "50px";
     }
 })
