@@ -54,6 +54,23 @@
        
       
 }
+.btn4{
+  cursor: pointer;
+  /* background-color: transparent; */
+  font-size: 30px;
+  letter-spacing:  1px;
+  padding: 10px 35px;
+  
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  /* margin: 40px 8px ; */
+  margin-right: 400px;
+      position: absolute;
+       bottom: 286px;
+      right: 200px; 
+     
+}
 .btn3{
     cursor: pointer;
     /* background-color: transparent; */
@@ -176,4 +193,30 @@
     box-shadow: rgba(38, 56, 72, 0.35) 0 -25px 18px -14px inset,rgba(74, 63, 126, 0.25) 0 1px 2px,rgba(96, 73, 134, 0.25) 0 2px 4px,rgba(80, 76, 134, 0.25) 0 4px 8px,rgba(81, 78, 138, 0.25) 0 8px 16px,rgba(81, 72, 128, 0.25) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
   }
+  .btn4{
+    /* background-color: #b6b4b5; */
+    border: 2px solid #9dadad;
+    
+    border-radius: 10px;
+    box-shadow: rgba(59, 47, 58, 0.2) 0 -25px 18px -14px inset,rgba(72, 62, 72, 0.15) 0 1px 2px,rgba(63, 52, 59, 0.15) 0 2px 4px,rgba(68, 57, 66, 0.15) 0 4px 8px,rgba(78, 67, 77, 0.15) 0 8px 16px,rgba(52, 43, 52, 0.15) 0 16px 32px;
+   color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+   
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    margin-top: 450px;
+    font-size: 25px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
   
+  .btn4:hover {
+    box-shadow: rgba(38, 56, 72, 0.35) 0 -25px 18px -14px inset,rgba(74, 63, 126, 0.25) 0 1px 2px,rgba(96, 73, 134, 0.25) 0 2px 4px,rgba(80, 76, 134, 0.25) 0 4px 8px,rgba(81, 78, 138, 0.25) 0 8px 16px,rgba(81, 72, 128, 0.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }
+ 
