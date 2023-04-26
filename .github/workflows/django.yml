@@ -27,4 +27,5 @@ jobs:
         pip install -r code/IT314_Project_20/requirements.txt
     - name: Run Tests
       run: |
-        pytest
+        pytest code/IT314_Project_20/test_.py
+        pytest code/IT314_Project_20/crosswordApp/tests.py
