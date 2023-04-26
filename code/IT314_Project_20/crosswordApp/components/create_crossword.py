@@ -4,23 +4,27 @@ from crosswordApp.Classes.Crossword import Crossword, gridCell
 from pymongo import MongoClient
 import json
 
-client = MongoClient('mongodb+srv://Group20:Group20@cluster0.fi05hgc.mongodb.net/test')
+client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
 db = client['CrossWordManagement']
 
 
 class CreateCrosswordView(UnicornView):
     title: str = ""
     description: str = ""
-    word: str = ""
-    clue: str = ""
+    word = ""
+    clue  = ""
+    wordInput: str = ""
+    clueInput: str = ""
     clues_and_words = []
     crossword_grid = []
+    step: str= "TitleDescription"
 
     def add_clue_and_word(self):
         print(f'add clue and word: {self.clue} {self.word}')
         self.clues_and_words.append((self.clue, self.word))
         self.word = ""
         self.clue = ""
+
 
     def reset_page(self):
         self.title = ""
@@ -79,3 +83,14 @@ class CreateCrosswordView(UnicornView):
                                  WordsDown=wordsHor, gridList=gridList)
         print(newCrossword.__dict__)
         collections.insert_one(newCrossword.__dict__)
+
+    def nextStep(self):
+        print("Next step")
+        print(self.title)
+        print(self.description)
+        if self.step == "TitleDescription":
+            self.step = "WordsAndClues"
+
+    def previousStep(self):
+        if self.step == "WordsAndClues":
+            self.step = "TitleDescription"

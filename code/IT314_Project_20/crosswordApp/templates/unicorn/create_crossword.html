@@ -1,54 +1,143 @@
 <div>
-    <h1> This is create crossword App </h1>
-    <label> Enter Title:</label>
-    <input unicorn:model="title" type="text" placeholder="title">
-    <br>
-    <label> Enter Description:</label>
-    <input unicorn:model="description" type="text" placeholder="description">
-    <br>
-    <div>
-        <label> Enter new clue: </label>
-        <input unicorn:model="clue" type="text" placeholder="new clue">
-        <label> Enter new word: </label>
-        <input unicorn:model="word" type="text" placeholder="new word">
-        <button unicorn:click="add_clue_and_word" >Create</button>
+
+    <div class="mainDiv">
+        <div class="upperDiv">
+            <div class="upperDivLeft">
+                <div class="upperDivLeftText">
+                    Create  Crossword
+                </div>
+            </div>
+            <div class="upperDivRight">
+                <div class="upperDivRightText"> Current Grid </div>
+            </div>
+        </div>
+        <div id="mainVerticalLine"></div>
+        <div class="lowerDiv">
+            <div class="lowerDivLeft">
+                {% if step == 'WordsAndClues' %}
+                    <div class="lowerDivLeftMainStep2">
+                        <div class="lowerDivLeftMainInputRowLabelStep2" u:click="previousStep">New Word {{ word }}</div>
+                        <input  id="inputWord" class="lowerDivLeftMainInputRowInputTextStep2" uicorn:model="word" type="text">
+                        <div class="lowerDivLeftMainInputRowLabelStep2" >New Clue</div>
+                        <textarea  class="lowerDivLeftMainInputRowInputTextarea" unicorn:model="clue" rows="4" ></textarea>
+                    </div>
+                    <div class="addButtonDiv">
+                        <button unicorn:click="add_clue_and_word" class="addButton">Add</button>
+                    </div>
+                    <table class="tableDisplayInput">
+                        <tr>
+                            <td class="tableWordCol Heading">Word</td><td class="tableClueCol Heading">Clue</td>
+                        </tr>
+
+                        {%  for clue, word in clues_and_words %}
+                            <tr>
+                                <td>{{ word }} </td> <td>{{ clue }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    <button unicorn:click="generate" class="generateBtn">
+                        Generate
+                    </button>
+                {% elif step == 'TitleDescription' %}
+                    <div class="lowerDivLeftMain">
+                        <div class="lowerDivLeftMainInputRowLabel" u:click="nextStep">Enter Title </div>
+                        <input class="lowerDivLeftMainInputRowInputText" unicorn:model="title" type="text" placeholder="title">
+                        <div class="lowerDivLeftMainInputRowLabel" >Enter Description</div>
+                        <textarea class="lowerDivLeftMainInputRowInputTextarea" unicorn:model="description" placeholder="description" rows="4" ></textarea>
+                    </div>
+                    <div class="nextButtonDiv">
+                        <button unicorn:click="nextStep" class="nextButton">Next</button>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="lowerDivRight" id="loweDivRight">
+                <div class="crosswordGrid">
+                    <table class="manualCrosswordGrid">
+                        {% for row in crossword_grid %}
+                            <tr>
+                                {% for cell in row %}
+                                    {% if cell == '-' %}
+                                        <td class="crosswordGridCellBlock">
+                                            {{ cell }}
+                                        </td>
+                                    {% else %}
+                                        <td class="crosswordGridCellNorm">
+                                            {{ cell }}
+                                        </td>
+                                    {% endif %}
+
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                {% if status != 'solved' %}
+                    <div class="submitButtonDiv">
+                        <button unicorn:click="submitClicked" class="submitButton">Submit</button>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
     </div>
-    <br>
-    {% if clues_and_words %}
-    <table style="border: 1px solid black">
-        <tr ><td >Clues</td> <td>Words</td></tr>
-     {%  for clue, word in clues_and_words %}
-         <tr>
-         <td>{{ clue }} </td> <td>{{ word }}</td>
-        </tr>
-     {% endfor %}
-    </table>
+    {% if displayMessage == "yes" %}
+        <div class="message {{ message_type }}">
+            <p class="messageText">{{ message_content }}</p>
+            <button class="messageBtn" unicorn:click="hideMessage"> X </button>
+        </div>
     {% endif %}
-<br>
-    <button unicorn:click="reset_page" >Reset</button>
-    <button unicorn:click="generate" >Generate</button>
-
-    <div>
-        <table class="gridTable" >
-
-        {% for row in crossword_grid %}
-            <tr>
-                {% for cell in row %}
-                    {% if cell == '-' %}
-                        <td class="gridCellBlock">
-                            {{ cell }}
-
-                        </td>
-                    {% else %}
-                        <td class="gridCell">
-                            {{ cell }}
-                        </td>
-                    {% endif %}
-
-                {% endfor %}
-            </tr>
-        {% endfor %}
-        </table>
-    </div>
-    <button unicorn:click="save_crossword" >Save</button>
+</div>
+{#    </div>#}
+{#    <h1> This is create crossword App </h1>#}
+{#    <label> Enter Title:</label>#}
+{#    <input unicorn:model="title" type="text" placeholder="title">#}
+{#    <br>#}
+{#    <label> Enter Description:</label>#}
+{#    <input unicorn:model="description" type="text" placeholder="description">#}
+{#    <br>#}
+{#    <div>#}
+{#        <label> Enter new clue: </label>#}
+{#        <input unicorn:model="clue" type="text" placeholder="new clue">#}
+{#        <label> Enter new word: </label>#}
+{#        <input unicorn:model="word" type="text" placeholder="new word">#}
+{#        <button unicorn:click="add_clue_and_word" >Create</button>#}
+{#    </div>#}
+{#    <br>#}
+{#    {% if clues_and_words %}#}
+{#    <table style="border: 1px solid black">#}
+{#        <tr ><td >Clues</td> <td>Words</td></tr>#}
+{#     {%  for clue, word in clues_and_words %}#}
+{#         <tr>#}
+{#         <td>{{ clue }} </td> <td>{{ word }}</td>#}
+{#        </tr>#}
+{#     {% endfor %}#}
+{#    </table>#}
+{#    {% endif %}#}
+{#<br>#}
+{#    <button unicorn:click="reset_page" >Reset</button>#}
+{#    <button unicorn:click="generate" >Generate</button>#}
+{##}
+{#    <div>#}
+{#        <table class="gridTable" >#}
+{##}
+{#        {% for row in crossword_grid %}#}
+{#            <tr>#}
+{#                {% for cell in row %}#}
+{#                    {% if cell == '-' %}#}
+{#                        <td class="gridCellBlock">#}
+{#                            {{ cell }}#}
+{##}
+{#                        </td>#}
+{#                    {% else %}#}
+{#                        <td class="gridCell">#}
+{#                            {{ cell }}#}
+{#                        </td>#}
+{#                    {% endif %}#}
+{##}
+{#                {% endfor %}#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </table>#}
+{#    </div>#}
+{#    <button unicorn:click="save_crossword" >Save</button>#}
 </div>

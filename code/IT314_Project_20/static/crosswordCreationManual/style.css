@@ -1,5 +1,5 @@
 .creation_body{
-    /*background-color: #f3f7fa;*/
+    background-color: #fa0a0a;
 }
 
 .verticalLine{
@@ -84,7 +84,7 @@
 .StepsRoadMapStatus{
     position: relative;
     width: 100%;
-    color: #012f64;
+    /*color: #ffffff;*/
     font-size: 16px;
     /*border: 1px solid #003e8c*/
 }

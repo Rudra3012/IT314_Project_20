@@ -129,7 +129,14 @@ def crossword_list_view(request):
 
 
 def create_crossword_automatic(request):
-    return render(request, "create_crossword_automatic.html")
+    user = request.session.get('username')
+
+    print("Current User: ", user)
+
+    context = {
+        "Username": user,
+    }
+    return render(request, "create_crossword_automatic.html", context)
 
 
 def create_crossword_manual(request):
@@ -292,3 +299,5 @@ def solve_crossword(request, crossword_id):
 def test_timer(request):
     return render(request, "test_timer.html")
 
+def create_auto(request):
+    return render(request, "automatic.html")

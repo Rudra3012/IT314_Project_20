@@ -1,9 +1,12 @@
 .creation_body{
-    /*background-color: #f3f7fa;*/
+    /*background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);*/
+    /*background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");*/
+    background-color: #c2e9fb;
+    /*border: #003e8c;*/
 }
 
 .verticalLine{
-    border-left: 5px solid #003e8c;
+    border-left: 5px solid #01285e;
     height: 88%;
     position: absolute;
     left: 50%;
@@ -11,7 +14,7 @@
 }
 
 .crosswordCreateInputLeft{
-
+    background-color: transparent;
     height: 10%;
     width: 49.8%;
     left: 0;
@@ -37,7 +40,7 @@
     position: absolute;
     width: 100%;
     height: 5px;
-    background-color: #003e8c;
+    background-color: #01285e;
     top: 50%;
     border-radius: 20px;
 }
@@ -48,7 +51,7 @@
     left: 0;
     width: 70px;
     height: 40px;
-    background-color: #031286;
+    background-color: #01285e;
     border: 1px solid #ccc;
     border-radius: 10px;
     color: #fff;
@@ -64,7 +67,7 @@
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #003e8c;
+    background-color: #01285e;
     top: 13%;
     left: 0;
 }
@@ -104,8 +107,8 @@
     height: 20px;
     top: 40%;
     border-radius: 50%;
-    background-color: #003e8c;
-    border: 1px solid #003e8c;
+    background-color: #01285e;
+    border: 1px solid #01285e;
     margin-left: 40%;
 }
 
@@ -115,8 +118,8 @@
     height: 20px;
     top: 40%;
     border-radius: 50%;
-    background-color: #dde7f1;
-    border: 3px solid #003e8c;
+    background-color: #c2e9fb;
+    border: 3px solid #01285e;
     margin-left: 40%;
 }
 
@@ -157,12 +160,13 @@
 }
 
 .characterInputTable td{
-    border: 2px solid #003e8c;
+    border: 2px solid #01285e;
     width: 40px;
     text-align: center;
     height: 40px;
     border-radius: 25%;
-    background-color: #e9f2ff;
+    background-color: #01285e;
+    color: white;
     cursor: pointer;
 }
 
@@ -180,9 +184,9 @@
 }
 
 .manualCrosswordGrid {
-    background-color: #e5ecf8;
+    /*background-color: #e5ecf8;*/
     position: relative;
-    border: 1px solid #003e8c;
+    border: 1px solid #01285e;
 }
 
 .crosswordGridCellNorm {
@@ -221,10 +225,10 @@
     width: 180px;
     height: 15px;
     float: left;
-    box-shadow:  inset 1px 1px 4px #BABECC, inset -1px -1px 4px #FFF;
+    /*box-shadow:  inset 1px 1px 4px #BABECC, inset -1px -1px 4px #FFF;*/
     padding: 16px;
     /* text-shadow: 1px 1px 0 #FFF; */
-    color: #031286;
+    color: #01285e;
     border: 2px solid #ccc;
     border-color: #031286;
     /* font-weight: bold; */
@@ -258,7 +262,7 @@
     left: 20%;
     width: 450px;
     height: 400px;
-    background-color: #fff;
+    /*background-color: #fff;*/
     /*border: 1px solid #ccc;*/
     border-radius: 5px;
     padding: 10px;
@@ -280,13 +284,12 @@
 .LeftInputMainSubDiv label{
     width: 90px;
     float: left;
-    background-color: #d9edff;
-    box-shadow:  inset 2px 2px 5px #BABECC, inset -2px -2px 5px #FFF;
+    background-color: #01285e;
+    /*box-shadow:  inset 2px 2px 5px #BABECC, inset -2px -2px 5px #01285e;*/
     padding: 16px;
     /* text-shadow: 1px 1px 0 #FFF; */
-    color: #031286;
+    color: white;
     border: 2px solid #ccc;
-    border-color: #031286;
     /* font-weight: bold; */
     border-radius: 10px;
 
@@ -314,7 +317,7 @@
     position : fixed;
     width: 420px;
     height: 40px;
-    background-color: #031286;
+    background-color: #01285e;
     border: 1px solid #ccc;
     border-radius: 10px;
     color: #fff;
@@ -338,7 +341,7 @@
 #fillClues{
     width: 80%;
     display: flex;
-    /*background-color: #e8c45f;*/
+    background-color: transparent;
 }
 
 
@@ -350,7 +353,7 @@
     letter-spacing: -0.2px;
     /*border: 2px solid #003e8c;*/
     border-radius: 10px;
-    background-color: #fff;
+    /*background-color: #fff;*/
     justify-items: center;
     /*box-shadow: inset 2px 2px 5px ##033ab1, inset -2px -2px  5px #8493cb;*/
 }
@@ -366,9 +369,9 @@
     letter-spacing: -0.2px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #031286;
+    background-color: #01285e;
     color: #fff;
-    box-shadow: inset 2px 2px 5px #033ab1, inset -5px -5px 10px #081786;
+    box-shadow: inset 2px 2px 5px #033ab1, inset -5px -5px 10px #01285e;
 }
 
 .fillCluesColumnClue{
@@ -382,8 +385,8 @@
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #fff;
-    color: #031286;
+    /*background-color: #fff;*/
+    color: #01285e;
     box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
     justify-items: center;
 }
@@ -393,7 +396,7 @@
     margin-top: 20px;
     width: 420px;
     height: 40px;
-    background-color: #031286;
+    background-color: #01285e;
     border: 1px solid #ccc;
     border-radius: 10px;
     color: #fff;

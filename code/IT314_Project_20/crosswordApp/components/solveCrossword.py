@@ -140,9 +140,11 @@ class SolvecrosswordView(UnicornView):
         print(repliedAnswersHor)
         print(repliedAnswersVer)
         row = []
-
+        print("height: ", self.height)
+        print("width: ", self.width)
         for i in range(self.height):
             for j in range(self.width):
+                print("i: ", i, "j: ", j)
                 if self.correctGrid[i][j] == "_":
                     row.append("_")
                 else:

@@ -4,15 +4,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Create Crossword</title>
+    <title> Create Crossword Automatic</title>
     <link rel="stylesheet" href="{% static 'crosswordCreation/style.css' %}">
 
     {% unicorn_scripts %}
 </head>
-<body>
+<body class="creation_body">
     {%  csrf_token %}
     <main>
-        {% unicorn 'create_crossword' %}
+        {% unicorn 'createCrosswordAuto' username=Username %}
     </main>
 </body>
 </html>

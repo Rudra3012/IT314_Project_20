@@ -1,19 +1,714 @@
-#demo:hover{
-    background-color: #f1f1f1;
-    color: black;
+.mainDiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);    flex-direction: column;
+}
+#mainVerticalLine   {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 3px;
+    background-color: #01285e;
 }
 
-.gridCell{
+.upperDiv{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.upperDivLeft{
+    height: 100%;
+    width: 50%;
+    background-color: #01285e;
+    text-align: center;
+}
+
+.upperDivLeftText{
+    position: relative;
+    top: 20%;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.upperDivRight{
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    background-color: #01285e;
+    display: flex;
+}
+
+.upperDivRightText{
+    position: relative;
+    width: 100%;
+    top: 30%;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.lowerDiv{
+    position: fixed;
+    height: 90%;
+    /*background-color: #4e3d75;*/
+    width: 100%;
+    display: flex;
+
+}
+
+
+.lowerDivLeftMainInputRow{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background-color: #3d7570;*/
+    display: flex;
+    flex-direction: row;
+}
+
+.lowerDivLeftMainInputRowLabel{
+    position: relative;
+    width: 100%;
+    height: 45%;
+    background-color: #01285e;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 19px;
+    margin-bottom: 4%;
+    padding-top: 2%;
+    color: #c6d8f1;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.lowerDivLeftMainInputRowLabelStep2{
+    position: relative;
+    width: 100%;
+    height: 45%;
+    background-color: #01285e;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2%;
+    padding-top: 2%;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.nextButton{
+    position: relative;
+    top: 500%;
+    width: 60%;
+    left: 20%;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.generateBtn{
+    position: relative;
+    width: 130px;
+    left: 82%;
+    top: 15.25%;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.addButton{
+    position: relative;
+    top: 100%;
+    width: 60%;
+    left: 20%;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+.EnterWordsClueDiv{
+    position: relative;
+    width: 60%;
+    left: 20%;
+    top: 20%;
+    height: 6%;
+    /*background-color: #3d7570;*/
+    display: flex;
+    flex-direction: row;
+}
+
+.EnterWordText{
+    position: relative;
+    top: -25%;
+}
+
+.EnterWord{
+    position: relative;
+    width: 30%;
+    color: white;
+    background-color: #01285e;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 19px;
+    border-radius: 5px;
+}
+
+.EnterClues{
+    position: relative;
+    width: 65%;
+    left: 5%    ;
+    color: white;
+    background-color: #01285e;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 19px;
+    border-radius: 5px;
+}
+
+.NewWordInput{
+    position: relative;
+    height: 100%;
+    width: 80%;
+    font-size: 15px;
+}
+
+.lowerDivLeftMainStepMiddle{
+    position: relative;
+    width: 60%;
+    left: 20%;
+    top: 5%;
+    height: 40%;
+    /*background-color: #ff0000;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.addInputBtn{
+    position: absolute;
+    top: 19%;
+    left: 42%;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 2px #999;
+}
+
+.TableWordCol.Regular{
+    height: 35px;
+    text-align: center;
+    background-color: transparent;
+    color: #003e8c;
+    /*border: 1px solid #01285e;*/
+}
+
+.RegularRow{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.TableHeading{
+    position: relative;
+    border: 1px solid #01285e;
+    background-color: #01285e;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.NewClueInput{
+    position: relative;
+    width: 175%;
+    font-size: 15px;
+    /*margin-left: -1%;*/
+    height: 100%;
+    /*border-radius: 2px;*/
+}
+
+.EnterWordsClueDivInput{
+    position: relative;
+    width: 60%;
+    left: 20%;
+    top: 22%;
+    height: 6%;
+    /*background-color: #3d7570;*/
+    display: flex;
+    flex-direction: row;
+}
+
+.tableDisplayInput{
+    display:block;
+    position: fixed;
+    top: 65%;
+    height: 200px;
+    width: 30%;
+    left: 10%;
+    /*background-color: #003e8c;*/
+    overflow-y: scroll;
+    border-spacing: 5px;
+}
+
+.tableWordCol{
+    height: 35px;
+    width: 135px;
+    text-align: center;
+    background-color: #0dcaf0;
+    /*border: 1px solid #01285e;*/
+}
+
+.tableClueCol{
+    height: 35px;
+    width: 305px;
+    text-align: center;
+    /*background-color: #0dcaf0;*/
+    /*border: 1px solid #01285e;*/
+}
+
+.tableWordCol.Heading{
+    background-color: #01285e;
+    color: white;
+}
+
+.tableClueCol.Heading{
+    background-color: #01285e;
+    color: white;
+}
+
+.tableDisplayInput td{
+    border: 1px solid #01285e;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.lowerDivLeftMainInputRowInputText{
+    position: relative;
+    height: 30%;
+    /*text-align: center;*/
+    margin-bottom: 4%;
+    font-size: 16px;
+    border: 2px solid #01285e;
+    background-color: white;
+    padding: 1%;
+}
+
+.lowerDivLeftMainInputRowInputTextStep2{
+    position: relative;
+    height: 30%;
+    /*text-align: center;*/
+    margin-bottom: 2%;
+    font-size: 16px;
+    border: 2px solid #01285e;
+    background-color: white;
+    padding: 1%;
+}
+
+
+
+.lowerDivLeftMainInputRowInputTextarea{
+    position: relative;
+    /*height: 20%;*/
+    /*text-align: center;*/
+    margin-bottom: 2%;
+    font-size: 16px;
+    padding: 1%;
+    border: 2px solid #01285e;
+}
+
+.lowerDivLeftMain{
+    position: relative;
+    width: 60%;
+    left: 20%;
+    top: 20%;
+    height: 40%;
+    /*background-color: #ff0000;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.lowerDivLeft{
+    width: 50%;
+    /*background-color: #3d7570;*/
+    display: flex;
+    flex-direction: column;
+}
+
+
+.lowerDivLeftHorClues{
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    /*background-color: #00e8dd;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.lowerDivLeftHorCluesTitle{
+    position: relative;
+    top: 2%;
+    height: 5%;
+    width: 100%;
+    /*background-color: #3d7570;*/
+    text-align: center;
+    color: #01285e;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.lowerDivLeftHorCluesTitleTextDiv{
+    position: relative;
+    top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    /*background-color: #003e8c;*/
+}
+
+.lowerDivLeftHorCluesText{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.lowerDivLeftVerClues {
+    position: absolute;
+    left: 25%;
+    height: 100%;
+    width: 25%;
+    /*background-color: #e80000;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.cluesInput{
+    position: relative;
+    width: 80px;
+    height: 80%;
+    /*background-color: #003e8c;*/
+    margin-left: 20px
+}
+
+.cluesInputDiv{
+    position: relative;
+    width: 100%;
+    /*background-color: #003e8c;*/
+    margin-bottom: 10px;
+    display: inline-flex;
+}
+
+.lowerDivRight{
+    width: 50%;
+    /*background-color: #3d7570;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.crosswordGrid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background-color: #0f5132;*/
+}
+
+.manualCrosswordGrid{
+    position: relative;
+    top: -5%;
+    width: 100%;
+    height: 100%;
+    /*background-color: #003e8c;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.crosswordGridCellNorm {
+    border: 1px solid black;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+}
+
+.crosswordGridCellBlock {
     border: 1px solid black;
     width: 35px;
     height: 35px;
     text-align: center;
+    background-color: #333333;
 }
 
-.gridCellBlock{
-    background-color: black;
+.saveButton{
+    position: fixed;
+    top: 80%;
+    left: 72%;
+    width: 130px;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
 }
 
-.gridTable{
-    border: 1px solid black;
+.submitButton:hover{
+    background-color: #003e8c;
+}
+
+.startDiv{
+    position: relative;
+    /*background-color: #01285e;*/
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.startDivText{
+    color: #01285e;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.startDivButton{
+    position: relative;
+    top: 10%;
+    margin-top: 2%   ;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.startDivButton:hover{
+    background-color: #003e8c;
+}
+
+.test{
+    background-color: #6a1a21;
+    color: white;
+}
+
+.alert{
+    position: fixed;
+    top: 10%;
+    left: 40%;
+}
+
+.message{
+    position: fixed;
+    width: 20%;
+    height: 5%;
+    top: 10%;
+    left: 40%;
+    /*background-color: #9fd7bc;*/
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid #055d31;*/
+}
+
+.messageText{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    /*color: #055d31;*/
+    font-weight: bold;
+    align-items: center;
+}
+
+.messageBtn{
+    position: absolute;
+    right: 0;
+}
+
+.messageBtn:hover{
+
+}
+
+.errorMessage{
+    border: 1px solid #620101;
+    background-color: #f2d2d2;
+    color: #620101;
+}
+
+.successMessage{
+    border: 1px solid #055d31;
+    background-color: #9fd7bc;
+    color: #055d31;
+}
+
+.successDiv{
+    position: relative;
+    color: #003e8c;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.successDivTitle{
+    position: relative;
+    color: #003e8c;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.starempty{
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.starfill{
+    cursor: pointer;
+    color: #003e8c;
+}
+
+.ratingSubmitButton{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.HomeSubmitButton{
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+}
+
+.Cellsolved{
+    background-color: #9fd7bc;
+}
+
+.gridCellDiv{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*background-color: #0f5132;*/
+}
+
+.tableCellUpperRight{
+    position: relative;
+    float: right;
+    vertical-align: top;
+    font-size: 12px;
+    /*background-color: #f1e8e8;*/
+}
+
+.tableCellUpperLeft{
+    position: relative;
+    float: left;
+    vertical-align: top;
+    font-size: 12px;
+    /*background-color: #f0e8f1;*/
+}
+
+.tableCellText{
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    top: 10%;
+    font-size: 23px;
+    height: 100%;
+    width: 100%;
+    /*background-color: #f1e8e8;*/
+}
+.afterMessage{
+    position: relative;
+    top: 10%;
+    left: 20%;
+    width: 50%;
+    color: #003e8c;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.afterMessageDiv{
+    margin-bottom: 15%;
+}
+
+.afterMessageDiv button{
+    float: right;
+    width: 100px;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+
 }
