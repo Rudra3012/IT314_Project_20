@@ -1,16 +1,9 @@
-{% extends 'navbarBase.html' %}
+<!DOCTYPE html>
+<html>
+<head>
 
-{% block content %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-
-    .container {
-        {#position: absolute;#}
-        {#background-color: #0a1212;#}
-        margin-left: 280px;
-
-    }
-
             body {
       padding:20px;
       {#background-image: url("https://wallpaperaccess.com/full/1567762.jpg");#}
@@ -86,11 +79,11 @@
             padding: 10px;
             color: #fff;
             text-align: center;
-            {#position: fixed;#}
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            {#z-index: 1;#}
+            z-index: 100;
         }
 
         .header h1 {
@@ -117,7 +110,7 @@
             margin: 50px;
         }
          .radio-btns {
-            margin-top: 20px;
+            margin-top: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -142,8 +135,9 @@
             font-size: 15px;
         }
     </style>
-
-    <div class="container" id="content">
+</head>
+<body>
+    <div class="container">
         <h1 class="header">Crossword Puzzles</h1>
         <hr>
 {#        <div class="row">#}
@@ -201,4 +195,25 @@
         </div>
     </div>
     <hr>
-{% endblock %}
+    <script>
+        function filterByDifficulty(difficulty) {
+            var questionBoxes = document.querySelectorAll('.question-box');
+            questionBoxes.forEach(function(questionBox) {
+                var questionDifficulty = questionBox.getAttribute('data-difficulty');
+
+                if (difficulty === 'all' || (difficulty === 'easy' && questionDifficulty === '1') ||
+                    (difficulty === 'medium' && questionDifficulty === '2') ||
+                    (difficulty === 'hard' && questionDifficulty === '3')) {
+                    questionBox.style.display = 'block';
+                } else {
+                    questionBox.style.display = 'none';
+                }
+            });
+        }
+
+        function solvePuzzle() {
+
+        }
+    </script>
+</body>
+</html>

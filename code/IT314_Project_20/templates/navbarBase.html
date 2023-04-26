@@ -1,18 +1,9 @@
 {% load static %}
-{% comment %} {% load bootstrap4 %} {% endcomment %}
-{% comment %} {% bootstrap_css %} {% endcomment %}
-{% comment %} {% bootstrap_javascript %} {% endcomment %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-
+    <title>Navbar</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -26,12 +17,11 @@
 
     <link rel="stylesheet" href="{% static "HomePage/styles.css" %}"/>
 </head>
-
 <body>
+            {% block content %}
 
-    <section>
-
-        <div id="sidebar">
+            {% endblock %}
+            <div id="sidebar">
             <ul class="list-group vclass">
                 <li class="list-group-item">
                     <a href="#" class="marginb"><img src="{% static "HomePage/CrossWord_Logo.png" %}" alt="logo" class="img-fluid"><span
@@ -83,53 +73,9 @@
         </div>
 
 
-        <div id="content" class="style">
+         <script src="{% static "bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js" %}" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <script src="{% static 'HomePage/indexForAll.js' %}" charset="utf-8"></script>
 
-            <img id="imgg" class="style_img" src="{% static "HomePage/c-img-removebg-preview.png" %}" alt="preview" class="cross">
-
-            <div id="img_btn" class="margindir">
-
-                <div class="text-div">
-                    <p id="word" class="style_word"><b>World's #1 <br> CrossWord Website <br> on the internet</b></p>
-                </div>
-
-                <div id="button" class="style_button">
-                    <button type="button" class="btn btn-info btn-dark solve btn-lg">
-                        <!-- <span class="material-icons logo">task_alt</span> -->
-				        <span class="login-solve-create" onclick="window.location.href='puzzle_of_day'">Solve CrossWord</span>
-                    </button>
-
-                    <button type="button" class="btn btn-info btn-dark a-create btn-lg">
-                        <!-- <span class="material-icons logo">draw</span> -->
-				        <span class="login-solve-create" onclick="window.location.href='/create_crossword_automatic/'">Automatic Creation</span>
-                    </button>
-
-                    <button type="button" class="btn btn-info btn-dark m-create btn-lg">
-                        <!-- <span class="material-icons logo">draw</span> -->
-				        <span class="login-solve-create" onclick="window.location.href='/create_crossword_manual/'">Manual Creation</span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-
-    <footer class="white-section vclass" id="footer">
-
-        <div class="container-fluid">
-            <i class="social-icon fab fa-facebook-f"></i>
-            <i class="social-icon fab fa-twitter"></i>
-            <i class="social-icon fa-brands fab fa-github"></i>
-            <i class="social-icon fas fa-envelope"></i>
-            <p>© Copyright 2023 CrossWords</p>
-
-        </div>
-
-    </footer>
-    <script src="{% static "bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js" %}" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="{% static "HomePage/index.js" %}" charset="utf-8"></script>
 
 </body>
-
 </html>
