@@ -1,5 +1,5 @@
 *{
-    margin: 0px; ;
+    margin-top: 3px; ;
     padding: 0;
     /* background-image: url(bg4.jpg); */
 }
@@ -49,7 +49,7 @@ color: rgb(188, 189, 186);
 img{
     
     margin: 10px;
-    width: 400px;
+    width: 600px;
     height: 300px;
     image-resolution:1000px;
     border-radius: 30px;
