@@ -67,6 +67,10 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
 
             ],
+            'libraries': {
+                'my_templatetag': 'IT314_Project_20.templatetags.my_templatetag',
+
+            }
         },
     },
 ]

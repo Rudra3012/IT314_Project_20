@@ -45,6 +45,6 @@ urlpatterns = [
 
     path('solve_crossword/<str:crossword_id>/', views.solve_crossword, name='solve_crossword'),
     path('create_auto/', views.create_auto, name='temp'),
-
-
+    # path('/delete_user',views.delete_user, name='delete_user')
+    path('Profile/index/', views.CreatorProfile, name='CreatorProfile'),
 ]
