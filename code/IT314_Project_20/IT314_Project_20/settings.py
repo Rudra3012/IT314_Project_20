@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
-from django.contrib import messages
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,7 +30,6 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io', '.ngrok-free.app']
 
 INSTALLED_APPS = [
     "crosswordApp",
-
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -148,16 +145,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.ngrok-free.app'
 ]
 
-from django.contrib.messages import constants as message_constants
-MESSAGE_LEVEL = message_constants.DEBUG
-
-MESSAGE_TAGS = {
-    messages.DEBUG: 'alert-info',
-    messages.INFO: 'alert-info',
-    messages.SUCCESS: 'alert-success',
-    messages.WARNING: 'alert-warning',
-    messages.ERROR: 'alert-danger',
-}
 
 if DEBUG:
     import mimetypes
