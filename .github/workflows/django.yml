@@ -28,3 +28,4 @@ jobs:
     - name: Run Tests
       run: |
         pytest code/IT314_Project_20/test_.py
+        pytest code/IT314_Project_20/crosswordApp/tests.py
