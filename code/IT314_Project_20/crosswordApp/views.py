@@ -211,8 +211,9 @@ def home(request):
 
     context = {
         "username": request.session.get('username'),
-        "userpresent": userpresent,
+        "userPresent": userpresent,
     }
+    print("context is ", context)
     return HttpResponse(render(request, "home.html", context))
 
 
@@ -222,8 +223,8 @@ def logout(request):
         "username": None,
         "userpresent": False,
     }
-    # redirect('')
-    return HttpResponse(render(request, "home.html", context))
+    return redirect('/home')
+    # return HttpResponse(render(request, "home.html", context))
 
 
 def creatorProfile(request):
