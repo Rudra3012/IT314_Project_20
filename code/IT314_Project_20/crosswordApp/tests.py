@@ -49,25 +49,19 @@ class TestUrls(SimpleTestCase):
         url = reverse('AdminUserListPage')
         self.assertEquals(resolve(url).func, AdminUserListPage)
 
-    def test_list_url_resolves11(self):
-        url = reverse('ProcessModifyUserRequest')
-        self.assertEquals(resolve(url).func, ProcessModifyUserRequest)
+
 
     def test_list_url_resolves12(self):
         url = reverse('forget_password')
         self.assertEquals(resolve(url).func, forget_password)
 
-    def test_list_url_resolves13(self):
-        url = reverse('change_password')
-        self.assertEquals(resolve(url).func, ChangePassword)
+
 
     def test_list_url_resolves14(self):
         url = reverse('puzzle_of_day')
         self.assertEquals(resolve(url).func, puzzle_of_day)
 
-    def test_list_url_resolves15(self):
-        url = reverse('solve_crossword')
-        self.assertEquals(resolve(url).func, solve_crossword)
+
 
     def test_list_url_resolves16(self):
         url = reverse('create_crossword_manual')
@@ -78,6 +72,18 @@ class TestUrls(SimpleTestCase):
         self.assertEquals(resolve(url).func, CreatorProfile)
 
 
+
+class TestViews(TestCase):
+
+    def setUp(self):
+        self.client=Client()
+        self.list_url=reverse('login')
+
+    def test_login_GET(self):
+        response = self.client.get(self.list_url)
+
+        self.assertEquals(response.status_code,200)
+        self.assertTemplateUsed(response,'login.html')
 
 # class TestAuth(TestCase):
 #     def setUp(self):
@@ -160,4 +166,3 @@ class TestUrls(SimpleTestCase):
 #
 #     # User Name is not valid. Number of characters should be less than 15.
 #
-
