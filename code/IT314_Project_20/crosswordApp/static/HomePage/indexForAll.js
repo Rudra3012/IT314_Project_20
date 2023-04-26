@@ -6,7 +6,7 @@ function collapseSidebar() {
 
     if (sidebar.classList.contains("active")) {
         sidebar.classList.remove("active");
-        content.style.marginLeft = "280px";
+        content.style.marginLeft = "310px";
         content.style.transition = "0.5s";
         para.style.marginLeft = "555px";
         image.style.marginLeft = "-50px";
@@ -15,7 +15,7 @@ function collapseSidebar() {
 
     } else {
         sidebar.classList.add("active");
-        content.style.marginLeft = "180px";
+        content.style.marginLeft = "210px";
         image.style.marginLeft = "70px";
         para.style.marginLeft = "470px";
         content.style.transition = "0.5s";

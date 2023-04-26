@@ -14,46 +14,62 @@
 
         body,
         table {
+            position: relative;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            width: 80%;
+            left: 5%;
 
         }
 
         /* Style for h1 and h2 headings */
-        h1,
         h2 {
+            position: relative;
             font-size: 30px;
             font-weight: bold;
             margin-bottom: 10px;
-            color: #031f77;
+            color: #ffffff;
             text-align: center;
+            background-color: #01285e;
+            width: 40%;
+            left: 35%;
+            height: 40px;
+            vertical-align: middle;
+            justify-content: center;
+            padding-top: 10px;
         }
 
         /* Style for the user list and crossword list tables */
         table {
             width: 100%;
-            background-color: #031f77;
+            background-color: #01285e;
             border-collapse: collapse;
         }
 
         /* Style for table headers */
         th {
-            background-color: #031f77;
+            background-color: #01285e;
             padding: 10px;
-            text-align: left;
             font-weight: bold;
             border: 1px solid #ddd;
             color: #ffff;
+            text-align: center;
+            vertical-align: middle;
+            justify-content: center;
         }
 
         /* Style for table cells */
         td {
-            background-color: #5078fb;
+            background-color: #6c9ee3;
             padding: 10px ;
             border: 1px solid #ddd;
             color: rgba(0, 0, 0, 0.945);
             font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            justify-content: center;
+            color: #01285e;
         }
 
         /* Style for modify and delete buttons */
@@ -86,12 +102,16 @@
             padding: 20px;
             background-color: #031f77;
         }
+
+        .inputTd{
+            width: 30%;
+        }
     </style>
 
 </head>
 
 <body>
-    <h1>Admin Dashboard</h1>
+{#    <h1>Admin Dashboard</h1>#}
     <h2>User List</h2>
     <table id="user-list">
         <tr>
@@ -100,62 +120,22 @@
             <th>Action</th>
         </tr>
         {% for User in Users %}
-<<<<<<< HEAD
-        <tr>
-            <td>{{ User.username }}</td>
-            <td>{{ User.email }}</td>
-            <td>
-                <button class="modify-btn"
-                    onclick="window.location.href='/admin/modifyUserRequest/{{ User.username }}/{{ User.email }}/'">Modify</button>
-                {#
-                <script>#}
-                    {#                        function redirectToModifyPageUser() {# }
-                        {# }#
-                    }
-                    {#                    </script>#}
-                <button class="delete-btn">Delete</button>
-            </td>
-        </tr>
-=======
             <tr>
-                <td>{{ User.username }}</td>
-                <td>{{ User.email }}</td>
-                <td>
+                <td class="inputTd">{{ User.username }}</td>
+                <td class="inputTd">{{ User.email }}</td>
+                <td class="inputTd">
                     <button class="modify-btn" onclick="window.location.href='/admin/modifyUserRequest/{{ User.username }}/{{ User.email }}/'">Modify</button>
 {#                    <script>#}
 {#                        function redirectToModifyPageUser() {#}
 {#                        }#}
 {#                    </script>#}
 
-                    <button class="delete-btn" href = "{% url 'delete_user' delt=User.username %}">Delete</button>
+                    <button class="delete-btn" href = "#">Delete</button>
                         {% csrf_token %}
                 </td>
             </tr>
->>>>>>> b89da17b7f5651c9b8bc75b8c62b9eea06015576
         {% endfor %}
-        {# <tr>#}
-            {# <td>1</td>#}
-            {# <td>John Doe</td>#}
-            {# <td>john.doe@example.com</td>#}
-            {# <td>#}
-                {# <button class="modify-btn" onclick="redirectToModifyPageUser()">Modify</button>#}
-                {#
-                <script>#
-                    }
-                    {#                    function redirectToModifyPageUser() {# }
-                        {#                        window.location.href = "modify_user.html";# }
-                        {# }#
-                    }
-                    {#                </script>#}
-                {# <button class="delete-btn">Delete</button>#}
-                {#
-            </td>#}
-            {# </tr>#}
-
-
     </table>
-
-
 </body>
 
 </html>

@@ -76,7 +76,7 @@
         input[type="text"],
         input[type="email"],
         select {
-            width: 100%;
+            width: 96%;
             padding: 8px;
             margin-bottom: 10px;
             border: 1px solid #ddd;
@@ -190,17 +190,12 @@
     <h1>Modify User: {{ user.username }}</h1>
     <form id="modify-user-form" method="post">
         {% csrf_token %}
-{#        <label for="user-id">Username:</label>#}
-{#        <input type="text" id="user-id" name="user-id" value="{{ user.username }}" readonly>#}
+        <label for="user-id">Username:</label>
+        <input type="text" id="user-id" name="user-id" value="{{ user.username }}" readonly>
 
- {#       <label for="user-email">Email ID:</label>#}
- {#       <input type="email" id="user-email" name="new_email" value="{{ user.email }}">#}
- {#       <button type="submit" class="submitBtn">Save</button>#}
-<<<<<<< HEAD
-=======
-{#        <input type="date" value="{{ User.dateOfJoining }}">#}
->>>>>>> c94003666fdf983d8b4e54eb040a5f9890dd71e6
-
+        <label for="user-email">Email ID:</label>
+        <input type="email" id="user-email" name="new_email" value="{{ user.email }}">
+        <button type="submit" class="submitBtn">Save</button>
     </form>
 
 </body>
