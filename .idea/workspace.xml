@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e27f19a2-5440-450f-9e9c-173650fa5aca" name="Changes" comment="Modified forgot password frontend page and created change password frontend page and backend">
+      <change beforePath="$PROJECT_DIR$/code/IT314_Project_20/crosswordApp/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/IT314_Project_20/crosswordApp/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/IT314_Project_20/crosswordApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/IT314_Project_20/crosswordApp/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OQZPaIAs0IJBiNlehlcCEkHdRL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/jillc/PycharmProjects/reg"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jillc\Desktop\Project\IT314_Project_20\IT314_Project_20\code\IT314_Project_20\templates" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e27f19a2-5440-450f-9e9c-173650fa5aca" name="Changes" comment="" />
+      <created>1681494743078</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681494743078</updated>
+      <workItem from="1681494744667" duration="839000" />
+      <workItem from="1681538396825" duration="2360000" />
+      <workItem from="1681542920865" duration="438000" />
+      <workItem from="1681549164831" duration="889000" />
+    </task>
+    <task id="LOCAL-00001" summary="updated urls.py">
+      <created>1681538508804</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681538508805</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updated urls.py">
+      <created>1681538710419</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681538710419</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Modified forgot password frontend page and created change password frontend page and backend">
+      <created>1681543054496</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681543054496</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated urls.py" />
+    <MESSAGE value="Modified forgot password frontend page and created change password frontend page and backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified forgot password frontend page and created change password frontend page and backend" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/IT314_Project_20$manage.coverage" NAME="manage Coverage Results" MODIFIED="1681549592000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/IT314_Project_20/code/IT314_Project_20" />
+    <SUITE FILE_PATH="coverage/IT314_Project_20$views.coverage" NAME="views Coverage Results" MODIFIED="1681549694532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code/IT314_Project_20/crosswordApp" />
+  </component>
+</project>

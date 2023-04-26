@@ -250,4 +250,5 @@ class CreatecrosswordmanualView(UnicornView):
         newCrossword = Crossword(self.username, self.title, self.description, self.rows, self.columns, self.verClues,self.horClues, self.wordsHorizontal, self.wordsVertical, self.grid, self.wordsHorizontalStart, self.wordsVerticalStart)
         print("New crossword: ", newCrossword)
 
-        collections.insert_one(newCrossword.__dict__)
+        if newCrossword.check():
+            collections.insert_one(newCrossword.__dict__)

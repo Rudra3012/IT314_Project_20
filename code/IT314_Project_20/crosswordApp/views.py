@@ -384,7 +384,11 @@ def puzzle_of_day(request):
                 i['rating'] = 'Not rated yet'
 
 
-        context = {'puzzles': puzzles}
+        context = {'puzzles': puzzles,
+                   'userPresent': True,
+                   'username': username,
+        }
+        print("context: ", context)
         return render(request, 'puzzle_of_day.html', context)
         # return render(request, 'puzzle_of_day.html', {'puzzles': puzzles})
     else:
@@ -403,7 +407,12 @@ def puzzle_of_day(request):
                 i['avgTime'] = 'Not solved yet'
             if i['rating'] == 0:
                 i['rating'] = 'Not rated yet'
-        context = {'puzzles': puzzles}
+
+        context = {'puzzles': puzzles,
+                   'userPresent': True,
+                   'username': username,
+        }
+        print("context: ", context)
         return render(request, 'puzzle_of_day.html', context)
 
 
@@ -419,8 +428,8 @@ def solve_crossword(request, crossword_id):
     # 6442e9c5401d19b1b87a0c2c
     return render(request, "solveCrossword/solveCrossword.html", context)
 
-def test_timer(request):
-    return render(request, "test_timer.html")
+# def test_timer(request):
+#     return render(request, "test_timer.html")
 
 def delete_user(request, delt):
     collections = db['crosswordApp_user']

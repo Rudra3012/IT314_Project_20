@@ -1,7 +1,8 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
   font-family: "Poppins", sans-serif;
-  background: #fafafa;
+  background: #333333;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 p {
@@ -243,6 +244,8 @@ a.article:hover {
   align-items: center;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
   border-radius: 14px 14px 14px 14px;
+  background-color: #01285e;
+  color: #fafafa;
 }
 .fl {
   float: left;
@@ -253,7 +256,7 @@ a.article:hover {
   border-radius: 50%;
   object-fit: cover;
   padding: 2px;
-  border: 3px solid #6d7fcc;
+  border: 3px solid #01285e;
 }
 .prof_text {
   display: flex;
@@ -262,21 +265,24 @@ a.article:hover {
   margin: 0px;
   padding: 0%;
 }
+/*[19:19, 4/24/2023] Rudra DA: background-color: #333333;
+[19:19, 4/24/2023] Rudra DA: background-color: #01285e;
+[19:19, 4/24/2023] Rudra DA: background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);*/
 .full {
-  height: 100dvh;
-  width: 100dvw;
+  height: 100vh;
+  /* width: 100vw; */
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 }
-.top_name{
+.top_name {
   display: flex;
   flex-direction: row;
 }
 .tab {
   display: flex;
-  width: 60%;
+  width: 100%;
   height: auto;
   overflow-y: scroll;
   -ms-overflow-style: none; /* IE and Edge */
@@ -374,34 +380,78 @@ span {
   font-weight: 600;
 }
 
-.follow-button{
-  background-color: #FAFAFA;
+.follow-button {
+  background-color: #fafafa;
   border: 2px solid #6d7fcc;
   color: #7386d5;
   border-radius: 14px;
 }
-.foll{
+.foll {
   display: flex;
   justify-content: center;
   width: 35%;
   height: auto;
   align-items: center;
 }
-.foll button{
+.foll button {
   float: right;
   padding: 6px;
 }
-foll h6{
+foll h6 {
   font-size: 30px;
   font-weight: 800;
 }
-.top_name{
+.top_name {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.followed{
+.followed {
   background-color: #7386d5;
   color: #fafafa;
+}
+
+.tabs {
+  overflow: hidden;
+  /* border: 1px solid #ccc; */
+  border: none;
+  background-color: #f1f1f1;
+  width: 60%;
+  margin-top: 20px;
+  border-radius: 10px 10px;
+}
+
+/* Style the buttons inside the tab */
+.tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 50%;
+}
+
+/* Change background color of buttons on hover */
+.tabs button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tabs button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  /* padding: 6px 12px; */
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 60%;
+  justify-content: center;
+  display: flex;
 }
