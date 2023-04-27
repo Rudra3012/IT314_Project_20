@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e50ffc07-a15d-4fba-a21a-70b336a67b67" name="Changes" comment="Created all crossword puzzles page both frontend and backend">
       <change beforePath="$PROJECT_DIR$/../IT314_Project_20" beforeDir="false" afterPath="$PROJECT_DIR$/../IT314_Project_20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,24 @@
       <recent name="C:\Users\jillc\Desktop\Project\IT314_Project_20\code\IT314_Project_20\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_views.TestViews.test_login_GET">
+  <component name="RunManager">
+    <configuration name="pytest for IT314_Project_20.crosswordApp.testviews.TestViews.test_login_GET" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/IT314_Project_20/crosswordApp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;IT314_Project_20.crosswordApp.testviews.TestViews.test_login_GET&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest for test_urls.TestUrls" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -58,23 +76,6 @@
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_urls.TestUrls&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for test_views.TestViews.test_login_GET" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/IT314_Project_20/crosswordApp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_views.TestViews.test_login_GET&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -97,7 +98,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_views.TestViews.test_login_GET" />
+        <item itemvalue="Python tests.pytest for IT314_Project_20.crosswordApp.testviews.TestViews.test_login_GET" />
         <item itemvalue="Python tests.pytest for tests.TestUrls.test_list_url_resolves1" />
         <item itemvalue="Python tests.pytest for test_urls.TestUrls" />
       </list>
@@ -143,6 +144,8 @@
       <workItem from="1682519016027" duration="293000" />
       <workItem from="1682529535976" duration="9294000" />
       <workItem from="1682547059667" duration="1529000" />
+      <workItem from="1682588656386" duration="1036000" />
+      <workItem from="1682624843999" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="Created all crossword puzzle page both frontend and backend">
       <created>1682190576891</created>
