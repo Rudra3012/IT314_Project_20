@@ -9,8 +9,8 @@ from crosswordApp.views import *
 
 from crosswordApp.Classes.Crossword import Crossword
 
-#test case 1 - user has given correct answers in the correct boxes
-def test1():
+#test case 43 - user has given correct answers in the correct boxes
+def test43():
     title = "Test"
     description = "Test"
     creator = "Test"
@@ -35,8 +35,8 @@ def test1():
 
     assert c1.check() == True
 
-#test case 2 - user has given correct answers in the correct boxes
-def test2():
+#test case 44 - user has given correct answers in the correct boxes
+def test44():
     title = "Test"
     description = "Test"
     creator = "Test"
@@ -59,8 +59,8 @@ def test2():
 
     assert c1.check() == True
 
-#test case 3 - user has given correct answers in the correct boxes
-def test3():
+#test case 45 - user has given correct answers in the correct boxes
+def test45():
     title = "Test"
     description = "Test"
     creator = "Test"
@@ -83,8 +83,8 @@ def test3():
 
     assert c1.check() == True
 
-#test case 4 - user has given incorrect answers
-def test4():
+#test case 46 - user has given incorrect answers
+def test46():
     title = "Test"
     description = "Test"
     creator = "Test"
@@ -107,8 +107,8 @@ def test4():
 
     assert c1.check() == False
 
-#test case 5 - user has put input in the wrong box with wrong answers
-def test5():
+#test case 47 - user has put input in the wrong box with wrong answers
+def test47():
     title = "Test"
     description = "Test"
     creator = "Test"
@@ -133,8 +133,8 @@ def test5():
     assert c1.check() == False
 
 
-#test case 6 - user has given an incorrect input/ incorrect answer
-def test6():
+#test case 48 - user has given an incorrect input/ incorrect answer
+def test48():
     title = "Test"
     description = "Test"
     creator = "Test"
@@ -158,8 +158,8 @@ def test6():
 
     assert c1.check() == False
 
-#test case 7 - user has not completed the puzzle
-def test7():
+#test case 49 - user has not completed the puzzle
+def test49():
     title = "Test"
     description = "Test"
     creator = "Test"
@@ -183,8 +183,8 @@ def test7():
 
     assert c1.check() == False
 
-#test case 8 - user has not completed the puzzle
-def test8():
+#test case 50 - user has not completed the puzzle
+def test50():
     title = "Test"
     description = "Test"
     creator = "Test"
