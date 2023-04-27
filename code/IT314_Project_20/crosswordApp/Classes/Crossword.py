@@ -142,6 +142,9 @@ class Crossword:
             x = list1[0]
             y = list1[1]
             for j in range(len(self.AnswersVer[i])):
+                print("x:", x)
+                print("j:", j)
+                print("y:", y)
                 if self.grid[x+j][y] != self.AnswersVer[i][j]:
                     self.message = "Start of Vertical word in grid is not correct"
                     return False

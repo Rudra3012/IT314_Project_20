@@ -34,6 +34,8 @@ def SignupPage(request):
             new_user = User.User(uname, email, pass1)
             collections.insert_one(new_user.__dict__)
 
+            db['crosswordApp_Subscribers'].insert_one({"username": uname, "followers": [], "following": []})
+
             return redirect('login')
 
     return render(request, 'signup.html')
@@ -437,8 +439,68 @@ def delete_user(request, delt):
     # return redirect('login')
     return render(request, 'delete_user.html')
 
-def CreatorProfile(request):
-    return render(request,f"Profile/index.html")
+def CreatorProfile(request, username):
+    print("username: ", username)
+    activeUser = request.session.get('username')
+
+    collections = db['crosswordApp_Subscribers']
+
+    context = {
+        'username': username,
+        'isFollowing': False,
+        'followers': 0,
+        'following': 0,
+    }
+
+    reply_cCreated = list(db["crosswordApp_crossword"].find({"creator":username}))
+    reply_cSolved = list(db["solvedCrosswords"].find({"user":username}))
+    print("reply_ccreated: ", len(reply_cCreated))
+    print("reply_csolved: ", len(reply_cSolved))
+
+    context['crosswordsCreated'] = len(reply_cCreated)
+    context['crosswordsSolved'] = len(reply_cSolved)
+    context['crosswordsCreatedList'] = reply_cCreated
+    context['crosswordsSolvedList'] = reply_cSolved
+
+    reply = list(collections.find({"username":username}))
+
+    context['followers'] = len(reply[0]['followers'])
+    context['following'] = len(reply[0]['following'])
+
+    print(context)
+    if len(reply)>0:
+        if activeUser in reply[0]['followers']:
+            print(f'{activeUser} is following {username}')
+            context['isFollowing'] = True
+    else:
+        context['isFollowing'] = False
+
+    if request.method == 'POST':
+        action = request.POST.get('ActionFollow')
+
+        if action=='Follow':
+            print(f'{activeUser} wants to follow {username}')
+            reply = collections.find({"username":username})
+            # reply = list(reply)
+            print("reply: ", reply)
+            if reply:
+                collections.update_one({"username":username}, {"$push":{"followers":activeUser}})
+                collections.update_one({"username":activeUser}, {"$push":{"following":username}})
+
+            context['isFollowing'] = True
+        else:
+            reply = collections.find({"username":username})
+
+            collections.update_one({"username":username}, {"$pull":{"followers":activeUser}})
+            collections.update_one({"username":activeUser}, {"$pull":{"following":username}})
+            print(f'{activeUser} wants to unfollow {username}')
+            context['isFollowing'] = False
+
+        collection_crossword = db['crosswordApp_crossword']
+
+        reply = collection_crossword.find({"creator":username})
+
+    return render(request,f"Profile/index.html", context)
 
 def create_auto(request):
     return render(request,"automatic.html")
