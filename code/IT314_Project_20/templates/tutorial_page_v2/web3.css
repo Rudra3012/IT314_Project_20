@@ -13,7 +13,8 @@ body{
     /* background-repeat: no-repeat; */
     background-image: url(bg4.jpg);
      /* The image used */
-  
+     font-size: 20px;
+
 
   /* Full height */
   height: 100%; 
