@@ -1,0 +1,148 @@
+{% extends 'navbarBase.html' %}
+{%  load static %}
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'Profile/styles.css' %}">
+
+
+            <div id="content">
+                <main class="full">
+                    <div class="prof">
+                        <div><img src="{% static 'Profile/images.png' %}" alt="user img" class="fl"></div>
+                        <div class="prof_text">
+                            <div class="top_name">
+                                <div class="data">
+                                    <h2>User Name</h2>
+
+                                    <!-- <span>Developer & Designer</span> -->
+                                </div>
+                                <div class="foll">
+                                    <h6><button class="follow-button followed">Follow</button></h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="info">
+                                    <h3>Following</h3>
+                                    <span>120</span>
+                                </div>
+                                <div class="info">
+                                    <h3>Followers</h3>
+                                    <span>5000</span>
+                                </div>
+                                <div class="info">
+                                    <h3>Solved</h3>
+                                    <span>209</span>
+                                </div>
+                                <div class="info">
+                                    <h3>Created</h3>
+                                    <span>20</span>
+                                </div>
+                            </div>
+                            <!-- <div class="data"> -->
+                            <!-- <h2>User Name</h2> -->
+                            <!-- <span>Developer & Designer</span>
+                              </div> -->
+                        </div>
+                    </div>
+                    <div class="tabs">
+                        <button class="tablinks" onclick="openCity(event, 'Solve')" id="defaultOpen">Solved Problems</button>
+                        <button class="tablinks" onclick="openCity(event, 'Create')">Created Problems</button>
+                    </div>
+
+                    <div id="Solve" class="tabcontent">
+                        <div class="tab">
+                            <table class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Date</th>
+                                        <th>Score</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{crossword name}</td>
+                                        <td>{Date}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{crossword name}</td>
+                                        <td>{Date}</td>
+                                        <td>{Score}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{crossword name}</td>
+                                        <td>{Date}</td>
+                                        <td>{Score}</td>
+                                    </tr>
+                                    <!-- and so on... -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="Create" class="tabcontent">
+                        <div class="tab">
+                            <table class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Points</th>
+                                        <th>Discription</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{crossword name}</td>
+                                        <td>{Date}</td>
+                                        <td>{Discription}</td>
+                                    </tr>
+                                    <!-- <tr class="active-row"> -->
+                                    <tr>
+                                            <td>{crossword name}</td>
+                                            <td>{Date}</td>
+                                            <td>{Discription}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{crossword name}</td>
+                                        <td>{Date}</td>
+                                        <td>{Discription}</td>
+                                </tr>
+                                    <!-- and so on... -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </main>
+                <!-- <div class="text-valu">
+                    <p>World's #1 CrossWord Website on the internet.</p>
+                </div>
+
+                <div class="button-valu">
+                    <button type="button" class="btn btn-info btn-dark solve">
+                        <span class="material-icons">task_alt</span>
+                        <span>Solve CrossWord</span>
+                    </button>
+
+                    <button type="button" class="btn btn-info btn-dark create">
+                        <span class="material-icons">login</span>
+                        <span class="signin">Create CrossWord</span>
+                    </button>
+                </div> -->
+
+            </div>
+    <footer class="white-section" id="footer">
+
+        <div class="container-fluid">
+            <i class="social-icon fab fa-facebook-f"></i>
+            <i class="social-icon fab fa-twitter"></i>
+            <i class="social-icon fab fa-instagram"></i>
+            <i class="social-icon fas fa-envelope"></i>
+            <p>© Copyright 2023 CrossWords</p>
+
+        </div>
+
+    </footer>
+
+    <script src="{%static 'Profile/index.js' %}" charset="utf-8"></script>
+{% endblock %}

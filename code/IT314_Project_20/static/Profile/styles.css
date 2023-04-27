@@ -311,7 +311,7 @@ a.article:hover {
 }
 
 .styled-table thead tr {
-  background-color: #7386d5;
+  background-color: #01285e;
 
   color: #fff;
   text-align: left;
@@ -322,6 +322,7 @@ a.article:hover {
 .styled-table td {
   padding: 12px 15px;
   background-color: transparent;
+  width: 30%;
 }
 
 .styled-table tbody td:first-child,
@@ -335,6 +336,7 @@ a.article:hover {
   border: 0px solid black;
   border-radius: 0 10px 10px 0;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+  width: 30%;
 }
 
 .styled-table tbody tr {
@@ -349,12 +351,12 @@ a.article:hover {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #7386d5;
+  border-bottom: 2px solid #01285e;
 }
 
 .styled-table tbody tr.active-row {
   font-weight: bold;
-  color: #7386d5;
+  color: #01285e;
 }
 
 .row {
@@ -377,6 +379,7 @@ span {
   margin-top: 15px;
   width: 65%;
   height: auto;
+
 }
 .data h2 {
   font-size: 33px;

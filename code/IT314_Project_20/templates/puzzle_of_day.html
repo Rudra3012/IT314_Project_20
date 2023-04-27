@@ -188,7 +188,7 @@
                     <div class="row question-box" data-difficulty="{{ puzzle.rating }}">
                         <div class="col-md-12">
                             <h5>{{ puzzle.title }}</h5>
-                            <p><strong>Author: </strong>{{ puzzle.creator }}</p>
+                            <p><strong>Author: </strong><a href="/profile/{{ puzzle.creator }}/"> {{ puzzle.creator }} </a></p>
                             <p><strong>Description: </strong>{{ puzzle.description }}</p>
                             <p><strong>Number of times Solve: </strong>{{ puzzle.timesSolved }} </p>
                             <p><strong>Rating: </strong>{{ puzzle.rating }} </p>
