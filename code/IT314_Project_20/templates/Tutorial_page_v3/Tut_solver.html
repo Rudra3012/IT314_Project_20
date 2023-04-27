@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solving Tutorial</title>
+    <!-- <link rel="stylesheet" href="web.css"> -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+    .mySlides {
+        display: none;
+        margin-top: 50px;
+    }
+
+    body {
+        background-color: rgb(130, 167, 238);
+    }
+
+    p {
+        padding-bottom: 5px;
+    }
+
+    .btn-home {
+        display: inline-block;
+        padding: 9px 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #11448a;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .btn-home:hover {
+        background-color: #a1c4fd;
+    }
+
+    .btn-home:focus {
+        outline: none;
+    }
+
+    .btn-home:active {
+        background-color: #a1c4fd;
+    }
+
+    .btn-back {
+        display: inline-block;
+        padding: 9px 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #11448a;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        top: 10px;
+        left: 110px;
+        cursor: pointer;
+    }
+
+    .btn-back:hover {
+        background-color: #a1c4fd;
+    }
+
+    .btn-back:focus {
+        outline: none;
+    }
+
+    .btn-back:active {
+        background-color: #a1c4fd;
+    }
+</style>
+
+<body>
+
+    <div>
+        <button class="btn-home">Home</button>
+        <button class="btn-back">Back</button>
+    </div>
+
+    <div class="w3-content w3-display-container">
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 1</b></h3>
+            <p>Click on "Solve Crossword" Button to solve crossword puzzle.</p>
+            <img src="STEP1_1.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 1
+            </div>
+
+        </div>
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 2</b></h3>
+            <p>You can see the Crossword Puzzle on Screen with Details Author, Description, User rating etc. Click on
+                "Solve" button to solve that crossword puzzle.</p>
+            <img src="STEP1_3.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 2
+            </div>
+
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 3</b></h3>
+            <p>Now to start solve crossword puzzle click on Start Button. After clicking on start Timer will start. You
+                can see the Attempt for this crossword puzzle.</p>
+            <img src="STEP2_3.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 3
+            </div>
+        </div>
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 4</b></h3>
+            <p>You have to fill words as per Horizontal clues and Vertical Clues.</p>
+            <img src="STEP4_3.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 4
+            </div>
+        </div>
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 5</b></h3>
+            <p>If you entered wrong it will show the message that your answer is worng. Now you can enter word again.
+                After entered all correct words press on the Submit Button.</p>
+            <img src="STEP5_3.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 5
+            </div>
+        </div>
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 6</b></h3>
+            <p>After Solving Crossword you can rate the puzzle on basis 1 to 5(star). After click on Submit Rating and
+                Press on "Home" button to redirect to Homepage.</p>
+            <img src="STEP6_3.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 6
+            </div>
+        </div>
+
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+    </div>
+</body>
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</html>

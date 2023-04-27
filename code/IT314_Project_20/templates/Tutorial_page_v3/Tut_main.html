@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+    body {
+        background-color: rgb(130, 167, 238);
+    }
+
+    .btn-home {
+        display: inline-block;
+        padding: 9px 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #11448a;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .btn-home:hover {
+        background-color: #a1c4fd;
+    }
+
+    .btn-home:focus {
+        outline: none;
+    }
+
+    .btn-home:active {
+        background-color: #a1c4fd;
+    }
+    .style_button {
+        align-content: center;
+        margin-top: 15%;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+    .solve {
+        margin-bottom: 20px !important;
+        width: 425px !important;
+    }
+
+    .a-create {
+        margin-bottom: 20px !important;
+        width: 425px !important;
+    }
+
+    .m-create {
+        margin-bottom: 20px !important;
+        width: 425px !important;
+    }
+
+    .solve:not(:hover) {
+        background-color: #fff !important;
+        color: black !important;
+        border: #fff !important;
+    }
+
+    .solve:hover {
+        background-color: darkgrey !important;
+        color: black !important;
+        border: darkgrey !important;
+    }
+
+    .a-create:not(:hover) {
+        background-color: #fff !important;
+        color: black !important;
+        border: #fff !important;
+    }
+
+    .a-create:hover {
+        background-color: darkgrey !important;
+        color: black !important;
+        border: darkgrey !important;
+    }
+
+    .m-create:not(:hover) {
+        background-color: #fff !important;
+        color: black !important;
+        border: #fff !important;
+    }
+
+    .m-create:hover {
+        background-color: darkgrey !important;
+        color: black !important;
+        border: darkgrey !important;
+    }
+
+    .login-solve-create {
+        font-size: 37px;
+    }
+
+    .automatic-creation {
+        font-size: 35px;
+    }
+</style>
+
+<body>
+    <div>
+        <button class="btn-home">Home</button>
+    </div>
+    <div id="button" class="style_button">
+        <button type="button" class="btn btn-info btn-dark solve btn-lg">
+            <span class="login-solve-create" onclick="window.location.href=''">CrossWord Solver</span>
+        </button>
+
+        <button type="button" class="btn btn-info btn-dark a-create btn-lg">
+            <!-- <span class="material-icons logo">draw</span> -->
+            <span class="login-solve-create" onclick="window.location.href=''">Automatic
+                Creation</span>
+        </button>
+
+        <button type="button" class="btn btn-info btn-dark m-create btn-lg">
+            <!-- <span class="material-icons logo">draw</span> -->
+            <span class="login-solve-create" onclick="window.location.href=''">Manual
+                Creation</span>
+        </button>
+    </div>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

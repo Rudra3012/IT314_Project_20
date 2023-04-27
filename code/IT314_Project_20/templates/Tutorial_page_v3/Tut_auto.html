@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Creation Tutorial</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+    .mySlides {
+        display: none;
+        margin-top: 50px;
+    }
+
+    body {
+        background-color: rgb(130, 167, 238);
+    }
+
+    p {
+        padding-bottom: 5px;
+    }
+
+    .btn-home {
+        display: inline-block;
+        padding: 9px 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #11448a;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .btn-home:hover {
+        background-color: #a1c4fd;
+    }
+
+    .btn-home:focus {
+        outline: none;
+    }
+
+    .btn-home:active {
+        background-color: #a1c4fd;
+    }
+
+    .btn-back {
+        display: inline-block;
+        padding: 9px 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #11448a;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        top: 10px;
+        left: 110px;
+        cursor: pointer;
+    }
+
+    .btn-back:hover {
+        background-color: #a1c4fd;
+    }
+
+    .btn-back:focus {
+        outline: none;
+    }
+
+    .btn-back:active {
+        background-color: #a1c4fd;
+    }
+</style>
+
+<body>
+    <!-- <div class="w3-container">
+        
+        <p>Add a caption text for each image slide with the w3-display-* classes (topleft, topmiddle, topright,
+            bottomleft, bottommiddle, bottomright or middle).</p>
+    </div> -->
+    <div>
+        <button class="btn-home">Home</button>
+        <button class="btn-back">Back</button>
+    </div>
+
+    <div class="w3-content w3-display-container">
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 1</b></h3>
+            <p>Select the option "Automatic Creation" button to create crossword puzzle automatically.</p>
+            <img src="STEP1_1.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 1
+            </div>
+
+        </div>
+
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 2</b></h3>
+            <p>You can enter the title of the Crossword puzzle in enter title section and the Description of the
+                crossword puzzle in the description after pressing the "Next" Button for further procedure.</p>
+            <img src="STEP2_1.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 2
+            </div>
+        </div>
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 3</b></h3>
+            <p>Now you can add the word and add the clue corresponding to the word. After adding all the word and clue
+                Click on the Generate.</p>
+            <img src="STEP3_1.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 3
+            </div>
+        </div>
+        <div class="w3-display-container mySlides">
+            <h3><b> Step 4</b></h3>
+            <p>After Clicking on "Generate" Button you can see the Automatic generated grid. Now click on "save" button
+                to save this grid.</p>
+            <img src="STEP4_1.jpg" style="width:100%">
+            <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                STEP 4
+            </div>
+        </div>
+
+        <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+    </div>
+</body>
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+    }
+</script>
+
+</html>
