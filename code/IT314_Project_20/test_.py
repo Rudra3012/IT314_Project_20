@@ -511,7 +511,7 @@ def test18():
     AnswersVer = ["IRON"]
     AnswersHorStart = [(0, 0)]
     AnswersVerStart = [(0, 2)]
-    cluesHor = [""]
+    cluesHor = []
     cluesVer = ["an element"]
 
     c1 = Crossword(creator, title, description, width, height, cluesVer,
@@ -540,7 +540,7 @@ def test19():
     AnswersHorStart = [(0, 0)]
     AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
-    cluesVer = [""]
+    cluesVer = []
 
     c1 = Crossword(creator, title, description, width, height, cluesVer,
                    cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
@@ -861,7 +861,7 @@ def test31():
               ["_","_","_","_","_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
-    AnswersHor = [""]
+    AnswersHor = []
     AnswersVer = ["IRON"]
     AnswersHorStart = [(0,0)]
     AnswersVerStart = [(0,2)]
@@ -890,7 +890,7 @@ def test32():
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
-    AnswersVer = [""]
+    AnswersVer = []
     AnswersHorStart = [(0,0)]
     AnswersVerStart = [(0,2)]
     cluesHor = ["a body part"]
