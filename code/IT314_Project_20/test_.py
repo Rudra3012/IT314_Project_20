@@ -1,3 +1,8 @@
+import os
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IT314_Project_20.settings')
+
+
 from crosswordApp.views import *
 
 from crosswordApp.Classes.Crossword import Crossword

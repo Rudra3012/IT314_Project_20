@@ -308,7 +308,7 @@ a.article:hover {
 }
 
 .styled-table thead tr {
-  background-color: #7386d5;
+  background-color: #01285e;
 
   color: #fff;
   text-align: left;
@@ -346,26 +346,36 @@ a.article:hover {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #7386d5;
+  border-bottom: 2px solid #01285e;
 }
 
 .styled-table tbody tr.active-row {
   font-weight: bold;
-  color: #7386d5;
+  color: #01285e;
 }
 
 .row {
   display: flex;
   align-items: center;
   margin-top: 30px;
+  width: 130%;
+  /*background-color: #0dcaf0;*/
+  text-align: center;
+  vertical-align: middle;
+    border-radius: 14px;
+  justify-content: center;
+  padding: 10px;
 }
 
 span {
   font-size: 18px;
+    font-weight: 600;
+
 }
 .row .info {
   text-align: center;
-  padding: 0 20px;
+  /*padding: 0 20px;*/
+  width: 25%;
 }
 .data {
   display: flex;
@@ -382,8 +392,8 @@ span {
 
 .follow-button {
   background-color: #fafafa;
-  border: 2px solid #6d7fcc;
-  color: #7386d5;
+  border: 2px solid #01285e;
+  color: #76a7ec;
   border-radius: 14px;
 }
 .foll {
@@ -408,8 +418,12 @@ foll h6 {
 }
 
 .followed {
-  background-color: #7386d5;
-  color: #fafafa;
+  position: relative;
+  margin-top: 15px;
+  background-color: #73a6ec;
+  color: #01285e;
+  width: 100px;
+  height: 35px;
 }
 
 .tabs {

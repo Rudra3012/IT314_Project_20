@@ -9,17 +9,17 @@ $(document).ready(function () {
   });
 });
 
-const FollowButton = document.querySelector(".follow-button");
-
-FollowButton.addEventListener("click", (e) => followunfollow(e.target));
-
-function followunfollow(button) {
-  button.classList.toggle("followed");
-
-  
-  if (button.innerText === "Follow") {
-    button.innerText = "Unfollow";
-  } else {
-    button.innerText = "Follow";
-  }
-}
+// const FollowButton = document.querySelector(".follow-button");
+//
+// FollowButton.addEventListener("click", (e) => followunfollow(e.target));
+//
+// function followunfollow(button) {
+//   button.classList.toggle("followed");
+//
+//
+//   if (button.innerText === "Follow") {
+//     button.innerText = "Unfollow";
+//   } else {
+//     button.innerText = "Follow";
+//   }
+// }
