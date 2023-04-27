@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e50ffc07-a15d-4fba-a21a-70b336a67b67" name="Changes" comment="Created all crossword puzzles page both frontend and backend">
       <change beforePath="$PROJECT_DIR$/../IT314_Project_20" beforeDir="false" afterPath="$PROJECT_DIR$/../IT314_Project_20" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IT314_Project_20/crosswordApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/IT314_Project_20/crosswordApp/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +142,7 @@
       <workItem from="1682518840459" duration="33000" />
       <workItem from="1682519016027" duration="293000" />
       <workItem from="1682529535976" duration="9294000" />
-      <workItem from="1682547059667" duration="941000" />
+      <workItem from="1682547059667" duration="1529000" />
     </task>
     <task id="LOCAL-00001" summary="Created all crossword puzzle page both frontend and backend">
       <created>1682190576891</created>
