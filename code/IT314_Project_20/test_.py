@@ -1,6 +1,8 @@
 import os
+import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IT314_Project_20.settings')
+django.setup()
 
 
 from crosswordApp.views import *
