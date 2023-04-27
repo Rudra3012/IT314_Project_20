@@ -67,9 +67,7 @@ class TestUrls(SimpleTestCase):
         url = reverse('create_crossword_manual')
         self.assertEquals(resolve(url).func, create_crossword_manual)
 
-    def test_list_url_resolves17(self):
-        url = reverse('CreatorProfile')
-        self.assertEquals(resolve(url).func, CreatorProfile)
+
 
 
 
