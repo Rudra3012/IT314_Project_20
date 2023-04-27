@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <title>Home Page</title>
+    <title>Profile Page</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -126,30 +125,48 @@
                         <div class="prof_text">
                             <div class="top_name">
                                 <div class="data">
-                                    <h2>User Name</h2>
+                                    <h2>{{ username }}</h2>
 
                                     <!-- <span>Developer & Designer</span> -->
                                 </div>
-                                <div class="foll">
-                                    <h6><button class="follow-button followed">Follow</button></h6>
-                                </div>
+                                {% if isFollowing %}
+                                    <div class="foll">
+                                        <h6>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+
+                                                <input type="submit" name="ActionFollow" value="unFollow" class="followed"/>
+                                            </form>
+                                        </h6>
+                                    </div>
+                                {% else %}
+                                    <div class="foll">
+                                        <h6>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+
+                                                <input type="submit" name="ActionFollow" value="Follow" class="followed"/>
+                                            </form>
+                                        </h6>
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="row">
                                 <div class="info">
                                     <h3>Following</h3>
-                                    <span>120</span>
+                                    <span>{{ following }}</span>
                                 </div>
                                 <div class="info">
                                     <h3>Followers</h3>
-                                    <span>5000</span>
+                                    <span>{{ followers }}</span>
                                 </div>
                                 <div class="info">
                                     <h3>Solved</h3>
-                                    <span>209</span>
+                                    <span>{{ crosswordsSolved }}</span>
                                 </div>
                                 <div class="info">
                                     <h3>Created</h3>
-                                    <span>20</span>
+                                    <span>{{ crosswordsCreated }}</span>
                                 </div>
                             </div>
                             <!-- <div class="data"> -->
@@ -169,27 +186,19 @@
                             <table class="styled-table">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
+                                        <th>Title</th>
                                         <th>Date</th>
-                                        <th>Score</th>
+                                        <th>Time Taken</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>{crossword name}</td>
-                                        <td>{Date}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{crossword name}</td>
-                                        <td>{Date}</td>
-                                        <td>{Score}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{crossword name}</td>
-                                        <td>{Date}</td>
-                                        <td>{Score}</td>
-                                    </tr>
-                                    <!-- and so on... -->
+                                    {% for cw in crosswordsSolvedList %}
+                                        <tr>
+                                            <td><a href="/solve_crossword/{{ cw.crosswordID }}/">{{ cw.crosswordTitle }}</a></td>
+                                            <td>{{ cw.date }}</td>
+                                            <td>{{ cw.time }}</td>
+                                        </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -206,22 +215,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>{crossword name}</td>
-                                        <td>{Date}</td>
-                                        <td>{Discription}</td>
-                                    </tr>
-                                    <!-- <tr class="active-row"> -->
-                                    <tr>
-                                        <td>{crossword name}</td>
-                                        <td>{Date}</td>
-                                        <td>{Discription}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>{crossword name}</td>
-                                        <td>{Date}</td>
-                                        <td>{Discription}</td>
-                                    </tr>
+                                    {% for cw in crosswordsCreatedList %}
+                                        <tr>
+                                            <td><a href="/create_crossword/{{ cw.crosswordID }}/">{{ cw.crosswordTitle }}</a></td>
+                                            <td>{{ cw.description }}</td>
+                                            <td>{{ cw.timesSolved }}</td>
+                                        </tr>
+                                    {% endfor %}
                                     <!-- and so on... -->
                                 </tbody>
                             </table>
