@@ -712,3 +712,103 @@
     box-shadow: 0 4px #999;
 
 }
+
+.backBtn{
+    position: absolute;
+    top: 25%;
+    left: 50px;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    background-color: #ffffff;
+    color: #01285e;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+    z-index: 1;
+}
+
+.tableDisplayInput::-webkit-scrollbar{
+    display: none;
+}
+
+.homeButton{
+    position: absolute;
+    top: 15%;
+    left: 50px;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    background-color: #ffffff;
+    color: #01285e;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #01285e;
+    z-index: 1;
+    border: 1px solid #01285e;
+}
+
+#navBar{
+    position: absolute;
+    top: 10%;
+    left:0;
+    height: 40px;
+    width: 20px;
+    background-color: #01285e;
+    transition: 0.5s;
+    display: flex;
+}
+
+#navBarDots{
+    font-size: 30px;
+    color: white;
+}
+
+#navBar:hover{
+    width: 150px;
+    height: 100px;
+    transition: 0.3s;
+}
+
+#navBar:hover #navButtonDiv{
+    visibility: visible;
+}
+
+#navButtonDiv{
+    position: relative;
+    width: 100%;
+    left: 0;
+    background-color: #ffffff;
+    visibility: hidden;
+}
+
+#navButtonDiv{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#navButtonDiv div{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    justify-content: center;
+    vertical-align: center;
+    border-bottom: 1px solid #01285e;
+    font-size: 20px;
+    color: #01285e;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#navButtonDiv div:hover{
+   background-color: #e1e7ef;
+    color: #01285e;
+}

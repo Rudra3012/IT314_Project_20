@@ -327,6 +327,7 @@ a.article:hover {
 .styled-table td {
   padding: 12px 15px;
   background-color: transparent;
+  text-align: center;
 }
 
 .styled-table tbody td:first-child,
@@ -476,4 +477,19 @@ foll h6 {
   width: 70%;
   justify-content: center;
   display: flex;
+}
+
+#home-Btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  background-color: #01285e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
 }

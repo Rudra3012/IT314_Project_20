@@ -603,7 +603,7 @@ class SolvecrosswordView(UnicornView):
             print(f'Time passed: {timePassed} seconds')
             print("Congratulations, you have completed the crossword")
             db_solvedCrossword = db["solvedCrosswords"]
-            db_solvedCrossword.insert({"crosswordID": self.crosswordId, "crosswordTitle": self.title, "user": self.username, "time": timePassed, "date": datetime.datetime.now()})
+            db_solvedCrossword.insert({"crosswordID": self.crosswordId, "crosswordTitle": self.title, "user": self.username, "time": timePassed, "date": datetime.datetime.now().strftime('%m/%d/%Y')})
 
             newAvgTime = (self.avgTime * self.timesSolved + timePassed)/(self.timesSolved + 1)
             newTimesSolved = self.timesSolved + 1

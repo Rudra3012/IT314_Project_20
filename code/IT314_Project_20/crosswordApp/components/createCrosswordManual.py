@@ -1,9 +1,10 @@
+from django.shortcuts import redirect
 from django_unicorn.components import UnicornView
 
 from crosswordApp.Classes.Crossword import Crossword
 from crosswordApp.Classes.User import User
 from pymongo import MongoClient
-from django.contrib import messages
+
 import json
 
 client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
@@ -16,8 +17,9 @@ class CreatecrosswordmanualView(UnicornView):
 
     title = ""
     description = ""
-    rows: int = 0
-    columns: int = 0
+
+    rows: str = '0'
+    cols: str = '0'
     grid = []
     characters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
                   'U', 'V', 'W', 'X', 'Y', 'Z', '_']
@@ -66,23 +68,46 @@ class CreatecrosswordmanualView(UnicornView):
     verClue14 = ""
     verClue15 = ""
     verClues = {}
+    currentStep:str = 'Enter Title and Description'
+    message_content: str = ""
+    message_type = ""
+    displayMessage: str = "no"
 
     def __init__(self, *args, **kwargs):
         super().__init__(**kwargs)
         username = kwargs.get("username")
 
+
     def incrementStep(self):
+        if self.activeStep == 1:
+            if self.title == "":
+                self.message_content = "Please enter a title"
+                self.message_type = "errorMessage"
+                self.displayMessage = "yes"
+                return
+            if self.description == "":
+                self.message_content = "Please enter a description"
+                self.message_type = "errorMessage"
+                self.displayMessage = "yes"
+                return
         self.activeStep += 1
         if self.activeStep == 2:
             self.roadMapStatusLabel2 = ""
+            self.displayMessage = "no"
+            self.currentStep = "Generate Grid"
         if self.activeStep == 3:
             self.roadMapStatusLabel3 = ""
+            self.displayMessage = "no"
+            self.currentStep = "Fill Grid"
         if self.activeStep == 4:
             self.roadMapStatusLabel4 = ""
+            self.displayMessage = "no"
+            self.currentStep = "Enter Clues"
         if self.activeStep == 5:
             self.roadMapStatusLabel5 = ""
-
-        # messages.success(self.request, "Step " + str(self.activeStep) + " completed")
+            self.currentStep = "Saved Successfully"
+            self.displayMessage = "no"
+        print(self.activeStep)
 
     def roadMapBack(self):
         if self.activeStep == 2:
@@ -100,30 +125,62 @@ class CreatecrosswordmanualView(UnicornView):
         print(self.title)
         print(self.description)
         print(self.rows)
-        print(self.columns)
-
-    def set(self, height, width):
-        self.rows = height
-        self.columns = width
+        print(self.cols)
 
     def createGrid(self):
         print("Create grid called")
         gridRow = []
         self.grid = []
         print(type(self.rows))
-        print(type(self.columns))
+        print(type(self.cols))
+
+        # if self.rows == '':
+        #     self.message_content = "Please enter a number of rows"
+        #     self.message_type = "errorMessage"
+        #     self.displayMessage = "yes"
+        #     return
+        #
+        # if self.cols == '':
+        #     self.message_content = "Please enter a number of columns"
+        #     self.message_type = "errorMessage"
+        #     self.displayMessage = "yes"
+        #     return
+
+        if not self.rows.isnumeric():
+            self.message_content = "Number of rows must be an integer"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
+        if not self.cols.isnumeric():
+            self.message_content = "Number of columns must ba an integer"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
 
         if type(self.rows) != int:
-            self.rows = int(self.rows)
+            rowsInt = int(self.rows)
+            if rowsInt < 3:
+                self.message_content = "Number of rows must be greater than 3"
+                self.message_type = "errorMessage"
+                self.displayMessage = "yes"
+                return
 
-        if type(self.columns) != int:
-            self.columns = int(self.columns)
+        if type(self.cols) != int:
+            colsInt = int(self.cols)
+            if colsInt < 3:
+                self.message_content = "Number of columns must be greater than 3"
+                self.message_type = "errorMessage"
+                self.displayMessage = "yes"
+                return
 
+        rowsInt = int(self.rows)
+        colsInt = int(self.cols)
         print(type(self.rows))
-        print(type(self.columns))
+        print(type(self.cols))
 
-        for i in range(0, self.rows):
-            for j in range(0, self.columns):
+
+        for i in range(0, rowsInt):
+            for j in range(0, colsInt):
                 gridRow.append('_')
             self.grid.append(gridRow)
             gridRow = []
@@ -145,7 +202,7 @@ class CreatecrosswordmanualView(UnicornView):
         print("Get word vertical helper called")
         print("Start: ", start)
         word = ""
-        for i in range(start[0], self.rows):
+        for i in range(start[0], int(self.rows)):
             if self.grid[i][start[1]] != '_':
                 word += self.grid[i][start[1]]
             else:
@@ -156,7 +213,7 @@ class CreatecrosswordmanualView(UnicornView):
         print("Get word horizontal helper called")
         print("Start: ", start)
         word = ""
-        for i in range(start[1], self.columns):
+        for i in range(start[1], int(self.cols)):
             if self.grid[start[0]][i] != '_':
                 word += self.grid[start[0]][i]
             else:
@@ -168,9 +225,10 @@ class CreatecrosswordmanualView(UnicornView):
         self.wordsVerticalStart = []
         self.wordsHorizontal = []
         self.wordsVertical = []
-
-        for i in range(0, self.rows):
-            for j in range(0, self.columns):
+        rowsInt = int(self.rows)
+        colsInt = int(self.cols)
+        for i in range(0, int(self.rows)):
+            for j in range(0, int(self.cols)):
                 if self.grid[i][j] != '_':
                     if i == 0 and j == 0:
                         if self.grid[i][j + 1] != '_':
@@ -178,22 +236,22 @@ class CreatecrosswordmanualView(UnicornView):
                         if self.grid[i + 1][j] != '_':
                             self.wordsVerticalStart.append([i, j])
                     elif i == 0:
-                        if self.grid[i][j - 1] == '_' and self.grid[i][j + 1] != '_':
+                        if j-1 >=0 and self.grid[i][j - 1] == '_' and j+1<colsInt and self.grid[i][j + 1] != '_':
                             self.wordsHorizontalStart.append([i, j])
                         if self.grid[i + 1][j] != '_':
                             self.wordsVerticalStart.append([i, j])
                     elif j == 0:
-                        if self.grid[i - 1][j] == '_' and self.grid[i + 1][j] != '_':
+                        if i-1>=0 and self.grid[i - 1][j] == '_' and i+1 < rowsInt and self.grid[i + 1][j] != '_':
                             self.wordsVerticalStart.append([i, j])
                         if self.grid[i][j + 1] != '_':
                             self.wordsHorizontalStart.append([i, j])
                     else:
-                        if self.grid[i][j - 1] == '_' and self.grid[i][j + 1] != '_':
+                        if j-1>=0 and self.grid[i][j - 1] == '_' and j+1<colsInt and self.grid[i][j + 1] != '_':
                             self.wordsHorizontalStart.append([i, j])
-                        if self.grid[i - 1][j] == '_' and self.grid[i + 1][j] != '_':
+                        if i-1>=0 and self.grid[i - 1][j] == '_' and i+1<rowsInt and self.grid[i + 1][j] != '_':
                             self.wordsVerticalStart.append([i, j])
-        # print("Horizontal: ", self.wordsHorizontalStart)
-        # print("Vertical: ", self.wordsVerticalStart)
+        print("Horizontal: ", self.wordsHorizontalStart)
+        print("Vertical: ", self.wordsVerticalStart)
 
         for i in range(0, len(self.wordsHorizontalStart)):
             self.wordsHorizontal.append(self.getWordHorizontalHelper(self.wordsHorizontalStart[i]))
@@ -203,6 +261,35 @@ class CreatecrosswordmanualView(UnicornView):
 
         print("Horizontal: ", self.wordsHorizontal)
         print("Vertical: ", self.wordsVertical)
+
+        for i in range(rowsInt):
+            for j in range(colsInt):
+                if self.grid[i][j] != '_':
+                    hasAdjacent= False
+                    if i+1<rowsInt:
+                        if self.grid[i+1][j]!='_':
+                            hasAdjacent = True
+                    if i-1>=0:
+                        if self.grid[i-1][j]!='_':
+                            hasAdjacent = True
+                    if j+1<colsInt:
+                        if self.grid[i][j+1]!='_':
+                            hasAdjacent = True
+                    if j-1>=0:
+                        if self.grid[i][j-1]!='_':
+                            hasAdjacent = True
+
+                    if hasAdjacent == False:
+                        self.message_content = f"Cell {i+1}, {j+1} is not adjacent to any other cell"
+                        self.message_type = "errorMessage"
+                        self.displayMessage = "yes"
+                        return
+
+        if self.wordsHorizontal == [] and self.wordsVertical == []:
+            self.message_content = "At least two cells must be adjacent"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
 
         self.incrementStep()
 
@@ -239,7 +326,7 @@ class CreatecrosswordmanualView(UnicornView):
         print("Title: ", self.title)
         print("Description: ", self.description)
         print("Rows: ", self.rows)
-        print("Columns: ", self.columns)
+        print("Columns: ", self.cols)
         print("Grid: ", self.grid)
         print("Words horizontal: ", self.wordsHorizontal)
         print("Words vertical: ", self.wordsVertical)
@@ -247,8 +334,28 @@ class CreatecrosswordmanualView(UnicornView):
         print("Words vertical start: ", self.wordsVerticalStart)
         print("Vertical clues: ", self.verClues)
         print("Horizontal clues: ", self.horClues)
-        newCrossword = Crossword(self.username, self.title, self.description, self.rows, self.columns, self.verClues,self.horClues, self.wordsHorizontal, self.wordsVertical, self.grid, self.wordsHorizontalStart, self.wordsVerticalStart)
+        newCrossword = Crossword(self.username, self.title, self.description, int(self.rows), int(self.cols), self.verClues,self.horClues, self.wordsHorizontal, self.wordsVertical, self.grid, self.wordsHorizontalStart, self.wordsVerticalStart)
         print("New crossword: ", newCrossword)
 
         if newCrossword.check():
             collections.insert_one(newCrossword.__dict__)
+            self.message_content = "Crossword saved successfully"
+            self.message_type = "successMessage"
+            self.displayMessage = "yes"
+            self.incrementStep()
+        else:
+            self.message_content = newCrossword.message
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+
+    def hideMessage(self):
+        print("hide message called")
+        self.displayMessage = "no"
+
+    def goHome(self):
+        print("go home called")
+        return redirect("/home")
+
+    def createAnother(self):
+        print("create another called")
+        return redirect("/create_crossword_manual/")

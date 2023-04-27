@@ -6,8 +6,10 @@
     <div class="verticalLine"></div>
 {#    <h1> Create New Crossword</h1>#}
     <div class="crosswordCreateInputLeft">
-        {% if activeStep > 1 %}
-        <button id="RoadMapBackBtn" unicorn:click="roadMapBack">Back</button>
+        {% if activeStep > 1 and activeStep < 5 %}
+            <button id="RoadMapBackBtn" unicorn:click="roadMapBack">Back</button>
+        {% elif activeStep == 1 %}
+            <button id="RoadMapBackBtn" onclick="window.location.href='/home'">Home</button>
         {% endif %}
         <div class="StepsRoadMap">
             <div class="horizontalLine"></div>
@@ -37,11 +39,11 @@
             <div class="LeftInputMainDiv">
                 <div class="LeftInputMainSubDiv">
                     <label id="enterTitleLabel"> Title:</label>
-                    <input unicorn:model="title" type="text" placeholder="title" />
+                    <input unicorn:model="title" type="text" placeholder="title" maxlength="50"/>
                 </div>
                 <div class="LeftInputMainSubDiv">
                     <label> Description:</label>
-                    <textarea unicorn:model="description" type="text" placeholder="description" rows="5" cols="20" ></textarea>
+                    <textarea unicorn:model="description" type="text" placeholder="description" rows="5" cols="20" maxlength="300"></textarea>
                 </div>
                 <div class="LeftInputMainSubDiv">
                     <button id="LeftNextBtn" unicorn:click="incrementStep">Next</button>
@@ -51,18 +53,19 @@
              <div class="LeftInputMainDiv">
                 <div class="LeftInputMainSubDiv">
                     <label> Rows:</label>
-                    <input  type="number" unicorn:model.lazy="rows" id="EnterRowText"  placeholder="rows" min="1" />
-                </div>
-                <div class="LeftInputMainSubDiv">
-                    <label> Columns:</label>
-                    <input  type="number" unicorn:model.lazy="columns" id="EnterColumnText"  placeholder="columns" min="1" />
-                </div>
+                            <input unicorn:model="rows" type="number" placeholder="rows" min="1" max="20"/>
+                        </div>
+                        <div class="LeftInputMainSubDiv">
+                            <label> Columns:</label>
+                            <input unicorn:model="cols" type="number" placeholder="columns" min="1" max="20"/>
+                        </div>
                      <div class="LeftInputMainSubDiv">
                         <button id="LeftNextBtn" unicorn:click="createGrid">Next</button>
                     </div>
+
             </div>
         {% elif activeStep == 3 %}
-            <div class="LeftInputMainDiv">
+            <div class="LeftInputMainDivStep3">
                 <table class="characterInputTable">
                     {% with divisor=7 %}
                     <tr>
@@ -96,12 +99,10 @@
                         <div id="displayCurrentActiveCharDiv">{{ activeChar }}</div>
                     {% endif %}
                 </div>
-                <div class="LeftInputMainSubDiv">
-                    <button id="LeftNextBtnClues" unicorn:click="getWordOrient">Next</button>
-                </div>
+                <button id="LeftNextBtnCluesStep3" unicorn:click="getWordOrient">Next</button>
             </div>
         {% elif activeStep == 4 %}
-            <div class="LeftInputSuperMainDiv">
+            <div class="LeftInputSuperMainDivStep4">
                 <div id="fillClues">
                     <div class="fillCluesColumn">
                         <div class="fillCluesColumnHeading">
@@ -124,19 +125,22 @@
                 </div>
                     <button unicorn:click="getClues" id="LeftNextBtnSetClues">Save</button>
             </div>
+        {% else %}
+            <div class="afterMessage">
+                <div class="afterMessageDiv">
+                    Go to home Page: <button class="goHomeBtn" u:click="goHome">Home</button>
+                </div>
+                <div class="afterMessageDiv">
+                    Create another crossword: <button class="createAnotherBtn" u:click="createAnother">Create</button>
+                </div>
+            </div>
         {% endif %}
 
         </div>
 
     <div class="crosswordCreatedGridRight">
-        <div class="titleBar">Welcome to crossword creation page </div>
-{#        {% if messages %}#}
-{#            <ul class="messages">#}
-{#                {% for message in messages %}#}
-{#                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>#}
-{#                {% endfor %}#}
-{#            </ul>#}
-{#        {% endif %}#}
+        <div class="titleBar">{{ currentStep }}</div>
+
         <table class="manualCrosswordGrid">
             {%  for row in grid %}
                 <tr>
@@ -159,5 +163,11 @@
             {% endfor %}
         </table>
     </div>
+    {% if displayMessage == "yes" %}
+        <div class="message {{ message_type }}">
+            <p class="messageText">{{ message_content }}</p>
+            <button class="messageBtn" unicorn:click="hideMessage"> X </button>
+        </div>
+    {% endif %}
 
 </div>

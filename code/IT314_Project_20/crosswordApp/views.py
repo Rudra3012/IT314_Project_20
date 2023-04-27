@@ -103,6 +103,11 @@ def LoginPage(request):
         username = request.POST.get('username')
         pass1 = request.POST.get('pass')
         # user = authenticate(request, username=username, password=pass1)
+
+        if username=='admin' and pass1=='admin':
+            request.session['username'] = username
+            return redirect('/admin')
+
         redirect_url = request.session.get('redirectTo')
 
         if redirect_url is None:
@@ -234,6 +239,8 @@ def creatorProfile(request):
 
 
 def adminPage(request):
+    if request.session.get('username')!= 'admin':
+        return HttpResponse("<h1>Access Denied</h1>You are not authorized to view this page")
     return render(request, "Admin/admin.html")
 
 
@@ -249,25 +256,50 @@ def AdminUserListPage(request):
 
 
 def AdminCrosswordListPage(request):
-    return render(request, "Admin/crosswordlist.html")
+
+    collections = db['crosswordApp_crossword']
+
+    crosswords = collections.find({})
+
+    crosswords = list(crosswords)
+
+    for crossword in crosswords:
+        crossword['crossword_id'] = str(ObjectId(crossword['_id']))
+        print(crossword['crossword_id'])
+    print(crosswords)
+
+    context = {
+        "crosswords": crosswords,
+    }
+
+    return render(request, "Admin/crosswordlist.html", context)
 
 
 def AdminModifyCrosswordPage(request):
     return render(request, "Admin/modify_crossword.html")
 
+def ProcessModifyCrosswordRequest(request, crossword_id):
 
-def ProcessModifyUserRequest(request, username, email):
+    collections = db['crosswordApp_crossword']
+
+    collections.delete_one({"_id": ObjectId(crossword_id)   })
+
+    reply = collections.find_one({"_id": ObjectId(crossword_id)})
+
+    return redirect('/admin/crosswordList')
+
+
+def ProcessModifyUserRequest(request, username):
     print('Processing Modify User Request for user: ', username)
 
     collections = db['crosswordApp_user']
     reply = collections.find_one({"username": username})
     if request.method == 'POST':
-        nusername = request.POST.get('new_username')
         nemail = request.POST.get('new_email')
-        prev2 = {"username": username}
-        nexxt2 = {"$set": {"username": nusername, "email": nemail}}
-        collections.update_one(prev2, nexxt2)
-        return redirect('login')
+
+        collections.update_one({"username": username}, {"$set": {"email": nemail}})
+
+        return redirect('/admin/userList')
 
     print(reply)
     if reply is not None:
@@ -277,6 +309,17 @@ def ProcessModifyUserRequest(request, username, email):
         return render(request, f"Admin/modify_user.html", context)
 
     return render(request, f"Admin/modify_user.html")
+
+
+def DeleteModifyUserRequest(request, username):
+
+    print('Processing Delete User Request for user: ', username)
+
+    collections = db['crosswordApp_user']
+
+    collections.delete_one({"username": username})
+
+    return redirect('/admin/userList')
 
 
 def forget_password(request):
@@ -504,3 +547,12 @@ def CreatorProfile(request, username):
 
 def create_auto(request):
     return render(request,"automatic.html")
+
+def tutorial(request):
+    return render(request,"tutorial_page_v2/webpage1.html")
+
+def tutorial_auto(request):
+    return render(request,"tutorial_page_v2/create_automatically.html")
+
+def tutorial_manual(request):
+    return render(request,"tutorial_page_v2/create_manually.html")

@@ -207,3 +207,105 @@ def test8():
                    AnswersHorStart, AnswersVerStart)
 
     assert c1.check() == False
+    
+def test4():
+        
+    title = "Test"
+    description = "Test"
+    creator = "Test"
+    width = 15
+    height = 5
+    grid = [["N","A","I","L","_","_","_","_","_","_","_","_","_","_","_"],
+              ["_","_","R","_","_","_","_","_","_","_","_","_","_","_","_"],
+              ["_","_","O","_","_","_","_","_","_","_","_","_","_","_","_"],
+              ["_","_","N","_","_","_","_","_","_","_","_","_","_","_","_"],
+              ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"]]
+    wordsUp = ["IRON"]
+    wordsDown = ["NAIL"]
+    AnswersHor = ["NAIL"]
+    AnswersVer = ["IRON"]
+    AnswersHorStart = [(0,0)]
+    AnswersVerStart = [(0,2)]
+    cluesHor = ["a body part"]
+    cluesVer = ["an element "]
+    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+    assert c1.check() == True
+
+# for 1 size word : expected output false
+
+def test51():
+    title = "Test"
+    description = "Test"
+    creator = "Test"
+    width = 5
+    height = 5
+    grid = [["N", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
+    wordsUp = ["N"]
+    wordsDown = ["N"]
+    AnswersHor = ["N"]
+    AnswersVer = ["N"]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 0)]
+    cluesHor = ["a body part"]
+    cluesVer = ["an element "]
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
+    assert c1.check() == False
+
+
+def test52():
+    title = "Test"
+    description = "Test"
+    creator = "Test"
+    width = 5
+    height = 5
+    grid = [["_", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "A"]]
+    wordsUp = ["A"]
+    wordsDown = ["A"]
+    AnswersHor = ["A"]
+    AnswersVer = ["A"]
+    AnswersHorStart = [(4, 4)]
+    AnswersVerStart = [(4, 4)]
+    cluesHor = ["a body part"]
+    cluesVer = ["an element "]
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
+    assert c1.check() == False
+
+
+def test53():
+    title = "Test"
+    description = "Test"
+    creator = "Test"
+    width = 5
+    height = 5
+    grid = [["_", "_", "W", "_", "_"],
+            ["A", "_", "O", "_", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "D", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
+    wordsUp = ["A"]
+    wordsDown = ["WORD"]
+    AnswersHor = ["A"]
+    AnswersVer = ["WORD"]
+    AnswersHorStart = [(1, 0)]
+    AnswersVerStart = [(0, 2)]
+    cluesHor = ["a body part"]
+    cluesVer = ["an element "]
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
+    assert c1.check() == False

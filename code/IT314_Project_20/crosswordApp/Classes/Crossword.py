@@ -48,7 +48,7 @@ class Crossword:
         self.cluesVer = cluesVer
         self.AnswersHorStart = AnswersHorStart
         self.AnswersVerStart = AnswersVerStart
-        self.timeOfCreation = datetime.datetime.now()
+        self.timeOfCreation = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.timesSolved = 0
         self.timesRating = 0
         self.rating = 0
@@ -74,13 +74,13 @@ class Crossword:
 
         print("Title is not empty")
     
-        if self.description == "" or len(self.description) > 500:
+        if self.description == "" or len(self.description) > 300:
             self.message = "Description is empty or too long"
             return False
 
         print("Description is not empty")
 
-        if self.AnswersHor == [] or self.AnswersVer == []:
+        if self.AnswersHor == [] and self.AnswersVer == []:
             self.message = "Answers are empty"
             return False
 
@@ -98,13 +98,13 @@ class Crossword:
 
         print("Height is not too long")
 
-        if self.cluesHor == [] or self.cluesVer == []:
+        if self.cluesHor == {} and self.cluesVer == {}:
             self.message = "Clues are empty"
             return False
 
         print("Clues are not empty")
 
-        if self.grid == []:
+        if not self.grid:
             self.message = "Grid is empty"
             return False
 
@@ -124,6 +124,18 @@ class Crossword:
                 return False
 
         print("Grid width is equal to width")
+
+        if len(self.AnswersHor) != len(self.cluesHor):
+            self.message = "Number of Horizontal answers is not equal to number of Horizontal clues"
+            return False
+
+        print("Number of Horizontal answers is equal to number of Horizontal clues")
+
+        if len(self.AnswersVer) != len(self.cluesVer):
+            self.message = "Number of Vertical answers is not equal to number of Vertical clues"
+            return False
+
+        print("Number of Vertical answers is equal to number of Vertical clues")
 
         for i in range(len(self.AnswersHor)):
             list1 = list(self.AnswersHorStart[i])

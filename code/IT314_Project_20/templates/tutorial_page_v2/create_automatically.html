@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webpage3</title>
-    <link rel="stylesheet" type="text/css" href="web2.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'TutorialPage/web2.css' %}">
 
 </head>
 <body>
@@ -13,7 +14,7 @@
     <div class="cover">
 
         <div class="box">
-            <img src="STEP1_1.jpg" >
+            <img src="{% static 'STEP1_1.jpg' %}" >
             <h2 class="new">STEP:1</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores harum magnam quos dolorum facere iste fuga sapiente necessitatibus provident molestias. Itaque aut illum corporis ducimus debitis maiores. Sint, quasi soluta.</p>
         </div>

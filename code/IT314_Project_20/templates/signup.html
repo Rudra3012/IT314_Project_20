@@ -63,7 +63,19 @@ form{
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
+
 }
+
+form a{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #ffffff;
+    {#text-decoration: none;#}
+}
+
 form *{
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
@@ -157,7 +169,7 @@ button{
         <input type="password" placeholder="Confirm Password" id="password2" name="password2">
         <button type="submit">Signup</button>
         
-        <a href="{% url 'login' %}" >i have already account</a>
+        <a href="{% url 'login' %}" >I have already account</a>
     </form>
 </body>
 </html>

@@ -96,23 +96,21 @@
         <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>Difficulty</th>
+            <th>Creator</th>
+            <th>Rating</th>
             <th>Action</th>
+
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Crossword 1</td>
-            <td>Easy</td>
-            <td>
-                <button class="modify-btn" onclick="redirectToModifyPageCrossword()">Modify</button>
-                <script>
-                    function redirectToModifyPageCrossword() {
-                        window.location.href = "modify_crossword.html";
-                    }
-                </script>
-                <button class="delete-btn">Delete</button>
-            </td>
-        </tr>
+        {% for cw in crosswords %}
+            <tr>
+
+                <td>{{ forloop.counter }}</td>
+                <td>{{ cw.title }}</td>
+                <td>{{ cw.creator }}</td>
+                <td> {{ cw.rating }}</td>
+                <td> <button class="delete-btn" onclick="window.location.href='deleteCrosswordRequest/{{ cw.crossword_id }}/'">Delete</button></td>
+            </tr>
+        {% endfor %}
 
     </table>
 

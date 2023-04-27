@@ -16,9 +16,9 @@
                 {% if step == 1 %}
                     <div class="lowerDivLeftMain">
                         <div class="lowerDivLeftMainInputRowLabel" u:click="nextStep">Enter Title </div>
-                        <input class="lowerDivLeftMainInputRowInputText" unicorn:model="title" type="text" placeholder="title">
+                        <input class="lowerDivLeftMainInputRowInputText" unicorn:model="title" type="text" placeholder="title" maxlength="50">
                         <div class="lowerDivLeftMainInputRowLabel" >Enter Description</div>
-                        <textarea class="lowerDivLeftMainInputRowInputTextarea" unicorn:model="description" placeholder="description" rows="4" ></textarea>
+                        <textarea class="lowerDivLeftMainInputRowInputTextarea" unicorn:model="description" placeholder="description" rows="4" maxlength="300"></textarea>
                     </div>
                     <div class="nextButtonDiv">
                         <button unicorn:click="nextStep" class="nextButton">Next</button>
@@ -39,6 +39,7 @@
                     <div class="addButtonDiv">
                             <button unicorn:click="add_clue_and_word" class="addButton">Add</button>
                     </div>
+                    {% if wordsInserted > 0 %}
                     <table class="tableDisplayInput">
                         <tr>
                             <td class="tableWordCol Heading">Word</td><td class="tableClueCol Heading">Clue</td>
@@ -50,9 +51,11 @@
                             </tr>
                         {% endfor %}
                     </table>
+                    {% endif %}
                     <button unicorn:click="generate" class="generateBtn">
                         Generate
                     </button>
+
                 {% elif step == 3 %}
                     <div class="afterMessage">
                         <div class="afterMessageDiv">
@@ -90,7 +93,7 @@
         </div>
     </div>
     {% if step == 2 %}
-    <button unicorn:click="save_crossword" class="saveButton">Save</button>
+        <button unicorn:click="save_crossword" class="saveButton">Save</button>
     {% endif %}
     {% if displayMessage == "yes" %}
         <div class="message {{ message_type }}">
@@ -98,5 +101,16 @@
             <button class="messageBtn" unicorn:click="hideMessage"> X </button>
         </div>
     {% endif %}
-
+    <div id="navBar">
+        <span id="navBarDots">&#8285;</span>
+            <div id="navButtonDiv">
+                <div onclick="window.location.href='/home'">
+                    <p>Home</p>
+                </div>
+                <div u:click="previousStep">
+                    <p>Back</p>
+                </div>
+            </div>
+    </div>
+{#    <button class="homeButton">Home</button>#}
 </div>

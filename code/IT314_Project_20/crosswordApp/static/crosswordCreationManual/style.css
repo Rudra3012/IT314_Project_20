@@ -7,10 +7,10 @@
 
 .verticalLine{
     border-left: 5px solid #01285e;
-    height: 88%;
+    height: 100%;
     position: absolute;
     left: 50%;
-    top: 13%;
+    top: 15%;
 }
 
 .crosswordCreateInputLeft{
@@ -24,14 +24,15 @@
 }
 
 .StepsRoadMap{
-    position: relative;
-    width: 80%;
-    left: 10%;
+    position: absolute;
+    top:0;
+    width: 50%;
+    left: 0;
+    height: 15%;
     /*margin-top: 5px;*/
     /*margin-bottom: 10px;*/
-    height: 80px;
-    /*background-color: #dde7f1;*/
-    /*border: 1px    solid #003e8c;*/
+    background-color: #01285e;
+    /*border: 1px      solid #003e8c;*/
     /*vertical-align: top;*/
     display: flex;
 }
@@ -40,14 +41,15 @@
     position: absolute;
     width: 100%;
     height: 5px;
-    background-color: #01285e;
+    background-color: #ffffff;
     top: 50%;
     border-radius: 20px;
 }
 
 #RoadMapBackBtn{
     position: fixed;
-    top: -50px;
+    /*top: -50px;*/
+    top: 10%;
     left: 0;
     width: 70px;
     height: 40px;
@@ -61,6 +63,7 @@
     letter-spacing: -0.2px;
     cursor: pointer;
     margin-top: 50px;
+    z-index: 1;
 }
 
 #horizontalLineLeftDiff{
@@ -68,8 +71,17 @@
     width: 100%;
     height: 2px;
     background-color: #01285e;
-    top: 13%;
+    top: 15%;
     left: 0;
+}
+
+.LeftInputSuperMainDivStep4{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 40%;
+    /*background-color: #01285e;*/
+    justify-content: center;
 }
 
 /*#LeftNextBtn{*/
@@ -99,6 +111,10 @@
     top: 70%;
     text-align: center;
     margin-top: 5px;
+    color: #ffffff;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 .statusCircle{
@@ -107,8 +123,8 @@
     height: 20px;
     top: 40%;
     border-radius: 50%;
-    background-color: #01285e;
-    border: 1px solid #01285e;
+    background-color: #86be93;
+    border: 3px solid #01285e;
     margin-left: 40%;
 }
 
@@ -118,7 +134,7 @@
     height: 20px;
     top: 40%;
     border-radius: 50%;
-    background-color: #c2e9fb;
+    background-color: #eeb4b4;
     border: 3px solid #01285e;
     margin-left: 40%;
 }
@@ -152,11 +168,11 @@
 .characterInputTable{
     position: relative;
     width: 80%;
-    left: 5%;
+    top: 10%;
+    left: 10%;
+    justify-self: center;
     /*border: 1px solid #003e8c;*/
-    margin-top: 10px;
     /*background-color: #dde7f1;*/
-    padding: 10px;
 }
 
 .characterInputTable td{
@@ -168,6 +184,7 @@
     background-color: #01285e;
     color: white;
     cursor: pointer;
+    font-size: 20px;
 }
 
 .crosswordCreatedGridRight {
@@ -219,21 +236,19 @@
 
 #currentActiveCharDiv{
     position: relative;
-    left: 20%;
-    margin-top: 30px;
     /*background-color: #e8c45f;*/
-    width: 180px;
-    height: 15px;
-    float: left;
-    /*box-shadow:  inset 1px 1px 4px #BABECC, inset -1px -1px 4px #FFF;*/
-    padding: 16px;
-    /* text-shadow: 1px 1px 0 #FFF; */
-    color: #01285e;
-    border: 2px solid #ccc;
-    border-color: #031286;
-    /* font-weight: bold; */
+    width: 80% ;
+    left: 10%;
+    margin-top: 10%;
+    text-align: center;
+    justify-content: center;
     border-radius: 10px;
     display: flex;
+    height: 40px;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #01285e;
+    font-weight: bold;
 }
 
 #displayCurrentActiveCharDiv {
@@ -256,10 +271,21 @@
     border-radius: 10%;
 }
 
+.LeftInputMainDivStep3{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+    vertical-align: center;
+        /*background-color: #0f5132;*/
+}
+
 .LeftInputMainDiv{
-    position: relative;
-    top: 50px;
-    left: 20%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
     width: 450px;
     height: 400px;
     /*background-color: #fff;*/
@@ -339,11 +365,26 @@
 }
 
 #fillClues{
-    width: 80%;
+    width: 100%;
     display: flex;
     background-color: transparent;
 }
 
+#LeftNextBtnCluesStep3{
+    position: relative;
+    margin-top: 20px;
+    width: 60%;
+    height: 40px;
+    background-color: #01285e;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+}
 
 .fillCluesColumn{
     width: 50%;
@@ -393,7 +434,9 @@
 
 
 #LeftNextBtnSetClues{
+    position: relative;
     margin-top: 20px;
+    left: 100px;
     width: 420px;
     height: 40px;
     background-color: #01285e;
@@ -405,6 +448,7 @@
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.2px;
     cursor: pointer;
+    justify-self: center;
 }
 
 .LeftInputSuperMainDiv{
@@ -422,10 +466,87 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 10%;
+    height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /*background-color: #e8c45f;*/
+    background-color: #01285e;
+    font-size: 23px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
 }
 
+
+.message{
+    position: fixed;
+    width: 30%;
+    height: 5%;
+    top: 0;
+    left: 35%;
+    /*background-color: #9fd7bc;*/
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid #055d31;*/
+    border-radius: 3px;
+}
+
+.messageText{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    /*color: #055d31;*/
+    font-weight: bold;
+    align-items: center;
+}
+
+.messageBtn{
+    position: absolute;
+    right: 0;
+}
+
+.messageBtn:hover{
+
+}
+
+.errorMessage{
+    border: 1px solid #620101;
+    background-color: #f2d2d2;
+    color: #620101;
+}
+
+.successMessage{
+    border: 1px solid #055d31;
+    background-color: #9fd7bc;
+    color: #055d31;
+}
+
+.afterMessage{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 25%;
+    color: #003e8c;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.afterMessageDiv{
+    margin-bottom: 15%;
+}
+
+.afterMessageDiv button{
+    float: right;
+    width: 100px;
+    background-color: #01285e;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: 0 4px #999;
+
+}

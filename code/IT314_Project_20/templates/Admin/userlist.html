@@ -124,13 +124,13 @@
                 <td class="inputTd">{{ User.username }}</td>
                 <td class="inputTd">{{ User.email }}</td>
                 <td class="inputTd">
-                    <button class="modify-btn" onclick="window.location.href='/admin/modifyUserRequest/{{ User.username }}/{{ User.email }}/'">Modify</button>
+                    <button class="modify-btn" onclick="window.location.href='/admin/modifyUserRequest/{{ User.username }}/'">Modify</button>
 {#                    <script>#}
 {#                        function redirectToModifyPageUser() {#}
 {#                        }#}
 {#                    </script>#}
 
-                    <button class="delete-btn" href = "#">Delete</button>
+                    <button class="delete-btn" onclick="window.location.href='/admin/deleteUserRequest/{{ User.username }}/'">Delete</button>
                         {% csrf_token %}
                 </td>
             </tr>

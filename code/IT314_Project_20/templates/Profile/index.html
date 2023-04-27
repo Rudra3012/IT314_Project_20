@@ -38,6 +38,7 @@
 </head>
 
 <body>
+    <button id="home-Btn" onclick="window.location.href = '/home'">Home</button>
 
     <section>
 
@@ -187,17 +188,17 @@
                             <table class="styled-table">
                                 <thead>
                                     <tr>
-                                        <th>Title</th>
-                                        <th>Date</th>
-                                        <th>Time Taken</th>
+                                        <th class="colTitle">Title</th>
+                                        <th class="colDate">Date</th>
+                                        <th class="colTime">Time Taken</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {% for cw in crosswordsSolvedList %}
                                         <tr>
-                                            <td><a href="/solve_crossword/{{ cw.crosswordID }}/">{{ cw.crosswordTitle }}</a></td>
-                                            <td>{{ cw.date }}</td>
-                                            <td>{{ cw.time }}</td>
+                                            <td class="colTitle"><a href="/solve_crossword/{{ cw.crosswordID }}/">{{ cw.crosswordTitle }}</a></td>
+                                            <td class="colDate">{{ cw.date }}</td>
+                                            <td class="colTime">{{ cw.time }} seconds</td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>
@@ -210,17 +211,19 @@
                             <table class="styled-table">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Points</th>
-                                        <th>Discription</th>
+                                        <th>Title</th>
+                                        <th>Number of times Solved</th>
+                                        <th>Rating</th>
+                                        <th>Avg Time</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {% for cw in crosswordsCreatedList %}
                                         <tr>
                                             <td><a href="/create_crossword/{{ cw.crosswordID }}/">{{ cw.crosswordTitle }}</a></td>
-                                            <td>{{ cw.description }}</td>
                                             <td>{{ cw.timesSolved }}</td>
+                                            <td>{{ cw.rating }}</td>
+                                            <td>{{ cw.avgTime }} seconds</td>
                                         </tr>
                                     {% endfor %}
                                     <!-- and so on... -->

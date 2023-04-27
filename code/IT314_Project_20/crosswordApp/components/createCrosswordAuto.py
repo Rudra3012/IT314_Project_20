@@ -13,6 +13,7 @@ class CreatecrosswordautoView(UnicornView):
     step: int = 1
     word: str = ""
     clue: str = ""
+    wordsInserted: int = 0
     clues_and_words = []
     crossword_grid = []
     wordsHorizontalStart = []
@@ -33,12 +34,54 @@ class CreatecrosswordautoView(UnicornView):
         super().__init__(**kwargs)
         username = kwargs.get("username")
 
+    def previousStep(self):
+        if self.step  > 1:
+            self.step -= 1
+
     def nextStep(self):
+
+        if self.step == 1:
+            if self.title == "":
+                self.message_content = "Please enter a title"
+                self.message_type = "errorMessage"
+                self.displayMessage = "yes"
+                return
+            if self.description == "":
+                self.message_content = "Please enter a description"
+                self.message_type = "errorMessage"
+                self.displayMessage = "yes"
+                return
+
         self.step += 1
 
     def add_clue_and_word(self):
         print(f'add clue and word: {self.clue} {self.word}')
+
+        if self.word == "":
+            self.message_content = "Please enter a word"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
+        if self.clue == "":
+            self.message_content = "Please enter a clue"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
+
+        if len(self.word) > 15:
+            self.message_content = "Word is too long"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
+
+        if len(self.clue) > 50:
+            self.message_content = "Clue is too long"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
+
         self.clues_and_words.append((self.clue, self.word))
+        self.wordsInserted += 1
         self.word = ""
         self.clue = ""
 
@@ -145,7 +188,7 @@ class CreatecrosswordautoView(UnicornView):
         grid_dict = {}
         gridList = []
         crosswordStr = ""
-        words = [word.upper() for clue, word in self.clues_and_words]
+        words = [word for clue, word in self.clues_and_words]
         for i in range(len(self.crossword_grid)):
             for j in range(len(self.crossword_grid[i])):
                 grid_dict[(i, j)] = self.crossword_grid[i][j]
@@ -162,15 +205,18 @@ class CreatecrosswordautoView(UnicornView):
         self.getWordOrient()
 
         for i in range(len(self.clues_and_words)):
-            self.wordCluesMap[self.clues_and_words[i][1].upper()] = self.clues_and_words[i][0].upper()
+            # print(self.clues_and_words[i][1].upper())
+            self.wordCluesMap[self.clues_and_words[i][1].upper()] = self.clues_and_words[i][0]
 
         verClues= {}
         horClues = {}
 
+        print("wordCluesMap: ", self.wordCluesMap)
+
         print(self.wordCluesMap)
 
         for i in range(len(self.wordsHorizontal)):
-            horClues[str(i)] = self.wordCluesMap[self.wordsHorizontal[i]]
+            horClues[str(i)] = self.wordCluesMap[self.wordsHorizontal[i].upper()]
 
         for i in range(len(self.wordsVertical)):
             verClues[str(i)] = self.wordCluesMap[self.wordsVertical[i]]

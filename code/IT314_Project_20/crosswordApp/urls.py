@@ -37,7 +37,9 @@ urlpatterns = [
     # path("admin/crosswordList/<int:crossword_id>/delete/", views.AdminCrosswordDelete, name="AdminCrosswordDeletePage"),
     path("admin/userList", views.AdminUserListPage, name="AdminUserListPage"),
     # path("admin/userList/<int:user_id>/", views.AdminUserListPage, name="AdminUserListPage"),
-    path("admin/modifyUserRequest/<username>/<email>/", views.ProcessModifyUserRequest, name="ProcessModifyUserRequest"),
+    path("admin/modifyUserRequest/<username>/", views.ProcessModifyUserRequest, name="ProcessModifyUserRequest"),
+    path("admin/deleteUserRequest/<username>/", views.DeleteModifyUserRequest, name="DeleteModifyUserRequest"),
+    path("admin/deleteCrosswordRequest/<str:crossword_id>/", views.ProcessModifyCrosswordRequest,   name="ProcessModifyCrosswordRequest"),
     path('forget_password/', views.forget_password, name='forget_password'),
     path('change-password/<token>/<email>/', views.ChangePassword, name="change_password"),
 
@@ -47,4 +49,7 @@ urlpatterns = [
     path('create_auto/', views.create_auto, name='temp'),
     # path('/delete_user',views.delete_user, name='delete_user')
     path('profile/<str:username>/', views.CreatorProfile, name='CreatorProfile'),
+    path('tutorial', views.tutorial, name='tutorial'),
+    path('tutorial_create_auto', views.tutorial_auto, name='tutorial'),
+    path('tutorial_create_manual', views.tutorial_manual, name='tutorial'),
 ]
