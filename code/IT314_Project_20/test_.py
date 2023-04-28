@@ -8,6 +8,7 @@ django.setup()
 from crosswordApp.views import *
 
 from crosswordApp.Classes.Crossword import Crossword
+from crosswordApp.Classes.User import User
 
 def test1():
     title = "Test"
@@ -1477,3 +1478,15 @@ def test53():
                    cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
 
     assert c1.check() == False
+    
+def testUser1():
+    username="kavish"
+    password="kS@24022002"
+    email="kavishshah@gmail.com"
+
+    u1=User(username,email,password)
+    
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+    
