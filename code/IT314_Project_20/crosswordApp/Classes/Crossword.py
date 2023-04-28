@@ -85,7 +85,13 @@ class Crossword:
             return False
 
         print("Answers are not empty")
-
+        
+        if type(self.width) != int or type(self.height) != int:
+            self.message = "Width or Height is not an integer"
+            return False
+        
+        print("Width and Height are integers")
+        
         if self.width > 15 or type(self.width) != int:
             self.message = "Width is too long or not an integer"
             return False
@@ -179,4 +185,21 @@ class Crossword:
         
         print("Grid contains only uppercase characters")    
             
+        
+        for i in range(self.height):
+            for j in range(self.width):
+                hasAfjaccent = False
+                if self.grid[i][j] != "_":
+                    if i-1>=0 and self.grid[i-1][j] != "_":
+                        hasAfjaccent = True
+                    if i+1<self.height and self.grid[i+1][j] != "_":
+                        hasAfjaccent = True
+                    if j-1>=0 and self.grid[i][j-1] != "_":
+                        hasAfjaccent = True
+                    if j+1<self.width and self.grid[i][j+1] != "_":
+                        hasAfjaccent = True
+                        
+                    if hasAfjaccent == False:
+                        self.message = "Grid contains isolated characters"
+                        return False
         return True

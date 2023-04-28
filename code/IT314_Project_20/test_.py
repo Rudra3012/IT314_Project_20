@@ -802,8 +802,8 @@ def test28():
     c1 = Crossword(creator, title, description, width, height, cluesVer,
                    cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
 
-    assert c1.check() == True
-# Output : True
+    assert c1.check() == False
+# Output : False
 
 
 def test29():
