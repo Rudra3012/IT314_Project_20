@@ -154,9 +154,7 @@ class Crossword:
             x = list1[0]
             y = list1[1]
             for j in range(len(self.AnswersVer[i])):
-                print("x:", x)
-                print("j:", j)
-                print("y:", y)
+
                 if self.grid[x+j][y] != self.AnswersVer[i][j]:
                     self.message = "Start of Vertical word in grid is not correct"
                     return False
@@ -165,7 +163,7 @@ class Crossword:
 
         for i in range(len(self.grid)):
             for j in range(len(self.grid[i])):
-                print(self.grid[i][j])
+                # print(self.grid[i][j])
                 if self.grid[i][j].isalpha() == False and self.grid[i][j] != "_":
                     print(self.grid[i][j])
                     self.message = "Grid contains non-characters"

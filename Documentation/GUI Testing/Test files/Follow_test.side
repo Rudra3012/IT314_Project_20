@@ -1,0 +1,112 @@
+{
+  "id": "f2381159-fba1-4a04-9a7a-bbe21a83720c",
+  "version": "2.0",
+  "name": "Follow_test",
+  "url": "http://127.0.0.1:8000",
+  "tests": [{
+    "id": "7d9116e9-f3eb-4dad-9844-57f25691aefc",
+    "name": "Follow_test",
+    "commands": [{
+      "id": "ab0fedf7-a5be-42fb-ba4e-d497be276d88",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "706c479e-d4cc-455c-9036-1eaf0598c6d4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c3da094-0d35-46db-8b19-990d79638267",
+      "comment": "",
+      "command": "click",
+      "target": "css=.solve",
+      "targets": [
+        ["css=.solve", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='button']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Solve CrossWord')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d730d887-f8f3-4bf2-9f79-50fcdd4a5503",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=HwakEye",
+      "targets": [
+        ["linkText=HwakEye", "linkText"],
+        ["css=.row:nth-child(6) a", "css:finder"],
+        ["xpath=//a[contains(text(),'HwakEye')]", "xpath:link"],
+        ["xpath=//div[@id='questionBoxContainer']/div[6]/div/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/profile/HwakEye/')]", "xpath:href"],
+        ["xpath=//div[6]/div/p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'HwakEye')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "80a7d1b1-31b3-4f16-af35-3b5cfd0f2264",
+      "comment": "",
+      "command": "click",
+      "target": "name=ActionFollow",
+      "targets": [
+        ["name=ActionFollow", "name"],
+        ["css=.followed", "css:finder"],
+        ["xpath=//input[@name='ActionFollow']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/main/div/div[2]/div/div[2]/h6/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3b90699-4d27-49a4-9ba7-be21f3d5e305",
+      "comment": "",
+      "command": "click",
+      "target": "id=home-Btn",
+      "targets": [
+        ["id=home-Btn", "id"],
+        ["css=#home-Btn", "css:finder"],
+        ["xpath=//button[@id='home-Btn']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "afc3680b-ec94-4fa1-afeb-4a00fc1a5782",
+      "comment": "",
+      "command": "click",
+      "target": "css=.list-group-item:nth-child(2) .sidebar-text",
+      "targets": [
+        ["css=.list-group-item:nth-child(2) .sidebar-text", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'vivek')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "26a49f8a-5212-4bf4-9e2d-fa62c1686fa4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.full",
+      "targets": [
+        ["css=.full", "css:finder"],
+        ["xpath=//div[@id='content']/main", "xpath:idRelative"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3edaacec-02c2-41e8-959a-7a99e06b29bb",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["7d9116e9-f3eb-4dad-9844-57f25691aefc"]
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}

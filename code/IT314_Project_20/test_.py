@@ -7,6 +7,11 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IT314_Project_20.settings')
 django.setup()
 
 
+from crosswordApp.views import *
+
+from crosswordApp.Classes.Crossword import Crossword
+from crosswordApp.Classes.User import User
+
 def test1():
     title = "Test"
     description = "Test"
@@ -1515,210 +1520,18 @@ def test53():
                    cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
 
     assert c1.check() == False
+    
+def testUser1():
+    username="kavish"
+    password="kS@24022002"
+    email="kavishshah@gmail.com"
 
-
-# ############################################################
-
-
-def test54():
-    username = "kavish"
-    password = "kS@24022002"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
+    u1=User(username,email,password)
+    
     assert u1.check_username() == True
     assert u1.check_password() == True
     assert u1.check_email() == True
 
 
-def testUser55():
-    username = "Ruchir"
-    password = "ruchir"
-    email = "kavishshah@gmail.com"
 
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == False
-    assert u1.check_email() == True
-
-
-def testUser56():
-    username = "Ruchir"
-    password = "Ruchir"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == False
-    assert u1.check_email() == True
-
-
-def testUser57():
-    username = "Ruchir"
-    password = "Rsd12"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == False
-    assert u1.check_email() == True
-
-
-def testUser58():
-    username = "Ruchir"
-    password = "Rsd@12"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == False
-    assert u1.check_email() == True
-
-
-def testUser59():
-    username = "Ruchir"
-    password = "Rsd@12345"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == False
-    assert u1.check_email() == True
-
-
-def testUser60():
-    username = "Ruchir"
-    password = "Abcd@12efghijklmnopqrstuvwxyz"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == False
-    assert u1.check_email() == True
-
-
-def testUser61():
-    username = "Ruchir"
-    password = "Rsd@12345"
-    email = "ruchir1707@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == True
-    assert u1.check_email() == False
-
-
-def testUser62():
-    username = "kavish@"
-    password = "kS@24022002"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == False
-    assert u1.check_password() == True
-    assert u1.check_email() == True
-
-
-def testUser63():
-    username = "kav"
-    password = "kS@24022002"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == False
-    assert u1.check_password() == True
-    assert u1.check_email() == True
-
-
-def testUser64():
-    username = "kavishabcdefghijk"
-    password = "kS@24022002"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == False
-    assert u1.check_password() == True
-    assert u1.check_email() == True
-
-
-def testUser65():
-    username = "kav_ish"
-    password = "kS@24022002"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == True
-    assert u1.check_email() == True
-
-
-def testUser66():
-    username = "kav_ish1"
-    password = "kS@24022002"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == True
-    assert u1.check_email() == True
-
-
-def testUser67():
-    username = "kavi"
-    password = "kS@24022002"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == True
-    assert u1.check_email() == True
-
-
-def testUser68():
-    username = "kav_ish12345678"
-    password = "kS@24022002"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == True
-    assert u1.check_email() == True
-
-
-def testUser69():
-    username = "kav_ish1"
-    password = "kS@24022"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == True
-    assert u1.check_email() == True
-
-
-def testUser70():
-    username = "kav_ish1"
-    password = "kS@240225678912345678901"
-    email = "kavishshah@gmail.com"
-
-    u1 = User(username, email, password)
-
-    assert u1.check_username() == True
-    assert u1.check_password() == True
-    assert u1.check_email() == True
+    

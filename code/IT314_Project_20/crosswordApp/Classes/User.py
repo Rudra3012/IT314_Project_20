@@ -76,6 +76,7 @@ class User:
             self.message = "Email already exists"
             return False
         return True
+    
     def check_password(self):
 
         if len(self.password) <= 8:
@@ -95,13 +96,14 @@ class User:
         upperCase = False
         lowerCase = False
         number = False
-        aplhabet = False
+        alphabet = False
         special = False
 
         for i in self.password:
             if i.isupper():
                 upperCase = True
             elif i.islower():
+                print(i)
                 lowerCase = True
             elif i.isnumeric():
                 number = True
@@ -110,6 +112,12 @@ class User:
             else:
                 special = True
 
+        print("upperCase: " + str(upperCase))
+        print("lowerCase: " + str(lowerCase))
+        print("number: " + str(number))
+        print("alphabet: " + str(alphabet))
+        print("special: " + str(special))
+        
         if not upperCase:
             print("Password must contain at least one uppercase letter")
             self.message = "Password must contain at least one uppercase letter"
