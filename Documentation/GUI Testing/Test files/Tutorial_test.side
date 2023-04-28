@@ -1,0 +1,337 @@
+{
+  "id": "b45869a3-aec5-486c-9bef-0e97dc08fb6c",
+  "version": "2.0",
+  "name": "Tutorial_test",
+  "url": "http://127.0.0.1:8000",
+  "tests": [{
+    "id": "29639a68-b7cf-40ab-a807-3147e69b9383",
+    "name": "Tut",
+    "commands": [{
+      "id": "79ceaf15-4398-4045-903a-361873f69d7e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7d6c777-1263-4a45-bb96-4e49f40ac90d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eff66a41-8945-400a-8ac0-deca1c855338",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Tutorial",
+      "targets": [
+        ["linkText=Tutorial", "linkText"],
+        ["css=.list-group-item:nth-child(4) > a", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/Tutorial_page_v3/Tut_main')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Tutorial')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "add97be1-20b3-41fc-be03-ae06ab951fd8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='button']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b412dbcb-c6d2-48d3-8bda-ef200418aa1a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb79069d-5eb4-43d2-bde9-53999c494bde",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b83f7cb1-1074-48f5-83be-b8f9fcaff500",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd0f17d6-c804-4e33-a131-508504cfcd92",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1de5e17f-a521-4c27-ae20-c786641bcb9c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee5e757e-1ff6-4eac-adbd-076e07ceb7b7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e4178bd-4fde-4be2-a64a-d2ee21c20184",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-back",
+      "targets": [
+        ["css=.btn-back", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location.href='/Tutorial_page_v3/Tut_main'\"]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Back')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b151c52-5b45-4cf1-862f-81650c8df2fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(2)",
+      "targets": [
+        ["css=.btn:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='button']/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1269b8fa-9ad6-4cdf-a074-88f495bfe0c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1db14724-13d8-4997-ad7a-806e56c4ce1e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bcb7b2e-aacf-4520-89a6-57743ac323be",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd6d5447-018b-4a5e-8f96-04f07937d8cc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2fed1e9-49f4-4c1b-9cda-ecbcfa66b04c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "51a78345-97bf-4fae-a5d9-85e4b92537c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-back",
+      "targets": [
+        ["css=.btn-back", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location.href='/Tutorial_page_v3/Tut_main'\"]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Back')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cf09fe8-0b7f-45a9-854e-6f5c2b983bf7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(3)",
+      "targets": [
+        ["css=.btn:nth-child(3)", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='button']/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c6e03c5-6fbe-4c3b-9a38-de83b4f28332",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "023c34b9-4231-4b5a-a12c-34307dfceccf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71a00a47-be6b-4a6f-a3fe-345e0d9aa008",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d909a34d-d6df-47fd-b9f4-b70eebfbec5e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7827c5b-ec7f-4417-90cd-c291bf223e67",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "41db6dfa-483d-4945-bf78-e10b397b38e7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w3-display-right",
+      "targets": [
+        ["css=.w3-display-right", "css:finder"],
+        ["xpath=//button[@onclick='plusDivs(1)']", "xpath:attributes"],
+        ["xpath=//div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'❯')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "73b8676d-1a44-4707-aa62-6cc5e7c7ad74",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-back",
+      "targets": [
+        ["css=.btn-back", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location.href='/Tutorial_page_v3/Tut_main'\"]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Back')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "36196946-ddeb-47a2-a56f-2c2038179e7e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-home",
+      "targets": [
+        ["css=.btn-home", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location.href='/home'\"]", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "70ed1dac-bbbf-4c52-8e2f-13cbbc0cf053",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["29639a68-b7cf-40ab-a807-3147e69b9383"]
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}

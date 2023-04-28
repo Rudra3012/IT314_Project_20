@@ -1,0 +1,133 @@
+{
+  "id": "31598c17-feaf-4479-b999-b54c58239269",
+  "version": "2.0",
+  "name": "LOGIN_SIGNUP",
+  "url": "http://127.0.0.1:8000",
+  "tests": [{
+    "id": "3cf3f9f6-bd35-4e3e-ad87-a64cd6720c7c",
+    "name": "Login",
+    "commands": [{
+      "id": "d70c2ef6-f0db-4dd2-962c-8c91526b0a3b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0f33f7d2-5fe3-45b7-a80d-c84d830e2be6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ba4a2dd-4b99-49d1-94c3-cd3149c5ad23",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["linkText=Login", "linkText"],
+        ["css=#login-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//a[@id='login-button']", "xpath:attributes"],
+        ["xpath=//div[@id='sidebar']/ul/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "129bc1dc-bf8a-4cbe-9a1b-1440d62c790e",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "36d30300-9bcd-4fea-bdc6-1cb35d0d33e2",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "vivek"
+    }, {
+      "id": "bea8ea69-8178-48cb-a773-fd71d7ea0586",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=pass", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c659ef58-8191-48c9-aa1c-f19a97986282",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=pass", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "Vivek12345678@"
+    }, {
+      "id": "d847066d-f450-4595-ada5-bc2c30595a46",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb2fe663-5186-4369-8aca-26f5495b8bd8",
+      "comment": "",
+      "command": "click",
+      "target": "id=logout-button",
+      "targets": [
+        ["id=logout-button", "id"],
+        ["linkText=Log Out", "linkText"],
+        ["css=#logout-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Log Out')]", "xpath:link"],
+        ["xpath=//a[@id='logout-button']", "xpath:attributes"],
+        ["xpath=//div[@id='sidebar']/ul/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Log Out')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5711efde-b662-491f-871e-e420149768e7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}

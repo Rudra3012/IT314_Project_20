@@ -1,0 +1,177 @@
+{
+  "id": "270c8cb7-eac5-4a43-ac2b-25a42386f922",
+  "version": "2.0",
+  "name": "SOLVE",
+  "url": "http://127.0.0.1:8000",
+  "tests": [{
+    "id": "f6e4a3c2-76e3-40b4-8c02-09b2d2fe7f11",
+    "name": "Solve_puz",
+    "commands": [{
+      "id": "130c9de6-b822-4a7e-9b67-baa4638bb758",
+      "comment": "",
+      "command": "open",
+      "target": "/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d55cce66-7626-41c3-9b91-cb690cdd1ad4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b66b8537-dd2a-406d-a182-fe48757e7f68",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=vivek",
+      "targets": [
+        ["linkText=vivek", "linkText"],
+        ["css=.list-group-item:nth-child(2) > a", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/profile/vivek/')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'vivek')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d33c24fe-8cf5-4522-aa5e-42e216848f65",
+      "comment": "",
+      "command": "click",
+      "target": "id=home-Btn",
+      "targets": [
+        ["id=home-Btn", "id"],
+        ["css=#home-Btn", "css:finder"],
+        ["xpath=//button[@id='home-Btn']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1f680f9-2b89-4278-ac21-15303f6a8a6b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.solve",
+      "targets": [
+        ["css=.solve", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='button']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Solve CrossWord')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "809d5e85-964c-4ca7-982a-4f94732b0c1a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(2) .btn",
+      "targets": [
+        ["css=.row:nth-child(2) .btn", "css:finder"],
+        ["xpath=//button[@onclick=\"window.location.href='/solve_crossword/644bad1ea31f9a32a3680b30/'\"]", "xpath:attributes"],
+        ["xpath=//div[@id='questionBoxContainer']/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43607bb5-1e4f-43eb-bf69-46675e32eace",
+      "comment": "",
+      "command": "click",
+      "target": "css=.startDivButton",
+      "targets": [
+        ["css=.startDivButton", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Start')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a64bb2bb-aff5-4a01-9ee3-41a9612469f6",
+      "comment": "",
+      "command": "click",
+      "target": "id=AnswerInputHor1",
+      "targets": [
+        ["id=AnswerInputHor1", "id"],
+        ["css=#AnswerInputHor1", "css:finder"],
+        ["xpath=//input[@id='AnswerInputHor1']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be15c049-0637-44ed-9378-63131ce0f099",
+      "comment": "",
+      "command": "type",
+      "target": "id=AnswerInputHor1",
+      "targets": [
+        ["id=AnswerInputHor1", "id"],
+        ["css=#AnswerInputHor1", "css:finder"],
+        ["xpath=//input[@id='AnswerInputHor1']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "chemistry"
+    }, {
+      "id": "3df88372-a94b-4fd1-9aca-53eb65256071",
+      "comment": "",
+      "command": "type",
+      "target": "id=AnswerInputHor2",
+      "targets": [
+        ["id=AnswerInputHor2", "id"],
+        ["css=#AnswerInputHor2", "css:finder"],
+        ["xpath=//input[@id='AnswerInputHor2']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "physics"
+    }, {
+      "id": "bced0224-c688-4de0-b9e2-8ab87b33cb4b",
+      "comment": "",
+      "command": "type",
+      "target": "css=.lowerDivLeftVerClues .cluesInput",
+      "targets": [
+        ["css=.lowerDivLeftVerClues .cluesInput", "css:finder"],
+        ["xpath=//div[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "maths"
+    }, {
+      "id": "3f4cc2aa-06e0-4efd-a564-65e014ad8353",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitButton",
+      "targets": [
+        ["css=.submitButton", "css:finder"],
+        ["xpath=//div[@id='loweDivRight']/div[2]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcddf319-b95c-462e-8526-9169fa86d0f7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.starempty:nth-child(5)",
+      "targets": [
+        ["css=.starempty:nth-child(5)", "css:finder"],
+        ["xpath=//span[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bc4fddb-6375-463e-be90-cc396a095823",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ratingSubmitButton",
+      "targets": [
+        ["css=.ratingSubmitButton", "css:finder"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit Rating')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "35e82f5d-4933-4ab2-8a44-a6684599aa6d",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f6e4a3c2-76e3-40b4-8c02-09b2d2fe7f11"]
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}
