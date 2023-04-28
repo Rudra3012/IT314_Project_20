@@ -1489,4 +1489,7 @@ def testUser1():
     assert u1.check_username() == True
     assert u1.check_password() == True
     assert u1.check_email() == True
+
+
+
     
