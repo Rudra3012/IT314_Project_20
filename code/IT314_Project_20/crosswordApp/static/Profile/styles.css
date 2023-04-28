@@ -259,11 +259,10 @@ a.article:hover {
   border-radius: 50%;
   object-fit: cover;
   padding: 2px;
-  /* border: 3px solid linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
   border: 2px solid;
   border-image-slice: 1;
   /* border-width: 2px; */
-  border-image-source: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  /* border-image-source: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
   border-radius: 50%;
 }
 .prof_text {
@@ -326,8 +325,9 @@ a.article:hover {
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
-  background-color: transparent;
+  background-color: #fff;
   text-align: center;
+  color: black;
 }
 
 .styled-table tbody td:first-child,
@@ -371,15 +371,14 @@ a.article:hover {
   /*background-color: #0dcaf0;*/
   text-align: center;
   vertical-align: middle;
-    border-radius: 14px;
+  border-radius: 14px;
   justify-content: center;
   padding: 10px;
 }
 
 span {
   font-size: 18px;
-    font-weight: 600;
-
+  font-weight: 600;
 }
 .row .info {
   text-align: center;
