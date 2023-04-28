@@ -1,3 +1,7 @@
+{% load static %}
+{% comment %} {% load bootstrap4 %} {% endcomment %}
+{% comment %} {% bootstrap_css %} {% endcomment %}
+{% comment %} {% bootstrap_javascript %} {% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +11,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual Creation Tutorial</title>
     <!-- <link rel="stylesheet" href="web.css"> -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+    <!-- CSS Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="{% static "Tutorial_v3/w3.css" %}">
 </head>
 <style>
     .mySlides {
@@ -16,6 +32,7 @@
     }
 
     body {
+        font-family: 'Poppins', sans-serif;
         background-color: rgb(130, 167, 238);
     }
 
@@ -81,15 +98,16 @@
 <body>
 
     <div>
-        <button class="btn-home">Home</button>
-        <button class="btn-back">Back</button>
-    </div>
+        <button class="btn-home" onclick="window.location.href='/home'">Home</button>
+        <button class="btn-back" onclick="window.location.href='/Tutorial_page_v3/Tut_main'">Back</button>
+      </div>
 
     <div class="w3-content w3-display-container">
         <div class="w3-display-container mySlides">
             <h3><b> Step 1</b></h3>
             <p>Click on "Manual Creation" Button to create crossword puzzle manually.</p>
-            <img src="STEP1_1.jpg" style="width:100%">
+            <!-- <img src="STEP1_1.jpg" style="width:100%"> -->
+            <img src="{% static "Tutorial_v3/STEP1_1.jpg" %}" alt="preview"style="width:100%">
             <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
                 STEP 1
             </div>
@@ -99,7 +117,8 @@
         <div class="w3-display-container mySlides">
             <h3><b> Step 2</b></h3>
             <p>Enter Title and Description of the crossword Puzzle. After click on "Next" Button.</p>
-            <img src="STEP1_2.jpg" style="width:100%">
+            <!-- <img src="STEP1_2.jpg" style="width:100%"> -->
+            <img src="{% static "Tutorial_v3/STEP1_2.jpg" %}" alt="preview"style="width:100%">
             <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
                 STEP 2
             </div>
@@ -107,7 +126,8 @@
         <div class="w3-display-container mySlides">
             <h3><b> Step 3</b></h3>
             <p>Enter the number of Rows and Columns as per you requirments of the grid. After Click on "Next" Button.</p>
-            <img src="STEP2_2.jpg" style="width:100%">
+            <!-- <img src="STEP2_2.jpg" style="width:100%"> -->
+            <img src="{% static "Tutorial_v3/STEP2_2.jpg" %}" alt="preview"style="width:100%">
             <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
                 STEP 3
             </div>
@@ -115,7 +135,8 @@
         <div class="w3-display-container mySlides">
             <h3><b> Step 4</b></h3>
             <p>Now you have to Put all the character in the grid and Click on the "Next" button.</p>
-            <img src="STEP3_1.jpg" style="width:100%">
+            <!-- <img src="STEP3_1.jpg" style="width:100%"> -->
+            <img src="{% static "Tutorial_v3/STEP3_1.jpg" %}" alt="preview"style="width:100%">
             <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
                 STEP 4
             </div>
@@ -123,7 +144,8 @@
         <div class="w3-display-container mySlides">
             <h3><b> Step 5</b></h3>
             <p>Active Character shows the current Selected Character on Grid.</p>
-            <img src="STEP4_2.jpg" style="width:100%">
+            <!-- <img src="STEP4_2.jpg" style="width:100%"> -->
+            <img src="{% static "Tutorial_v3/STEP4_2.jpg" %}" alt="preview"style="width:100%">
             <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
                 STEP 5
             </div>
@@ -131,7 +153,8 @@
         <div class="w3-display-container mySlides">
             <h3><b> Step 6</b></h3>
             <p>Add  All the clues in Horizontal and vertical description boxes. After that clicking on "Save" button. Manually Grid crossword puzzle will created.</p>
-            <img src="STEP5_2.jpg" style="width:100%">
+            <!-- <img src="STEP5_2.jpg" style="width:100%"> -->
+            <img src="{% static "Tutorial_v3/STEP5_2.jpg" %}" alt="preview"style="width:100%">
             <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
                 STEP 6
             </div>

@@ -49,12 +49,12 @@
                 {% endif %}
 
                 <li class="list-group-item">
-                    <a href="/daily_puzzle/"><i class="fas fa-gamepad"></i><span class="sidebar-text"> Daily
+                    <a href="puzzle_of_day"><i class="fas fa-gamepad"></i><span class="sidebar-text"> Daily
                             Puzzles</span></a>
                 </li>
 
                 <li class="list-group-item">
-                    <a href="#"><i class="fas fa-envelope"></i><span class="sidebar-text"> Tutorial</span></a>
+                    <a href="/Tutorial_page_v3/Tut_main"><i class="fas fa-envelope"></i><span class="sidebar-text"> Tutorial</span></a>
                 </li>
 
 {#                <li class="list-group-item">#}
@@ -100,20 +100,12 @@
                 </div>
 
                 <div id="button" class="style_button">
-                    <button type="button" class="btn btn-info btn-dark solve btn-lg">
-                        <!-- <span class="material-icons logo">task_alt</span> -->
-				        <span class="login-solve-create" onclick="window.location.href='crossword_browsing'">Solve CrossWord</span>
-                    </button>
+                    <button type="button" class="btn btn-info btn-dark solve btn-lg login-solve-create" onclick="window.location.href='puzzle_of_day'">Solve CrossWord</button>
 
-                    <button type="button" class="btn btn-info btn-dark a-create btn-lg">
-                        <!-- <span class="material-icons logo">draw</span> -->
-				        <span class="login-solve-create" onclick="window.location.href='/create_crossword_automatic/'">Automatic Creation</span>
-                    </button>
+                    <button type="button" class="btn btn-info btn-dark a-create btn-lg login-solve-create" onclick="window.location.href='/create_crossword_automatic/'">Automatic Creation</button>
 
-                    <button type="button" class="btn btn-info btn-dark m-create btn-lg">
-                        <!-- <span class="material-icons logo">draw</span> -->
-				        <span class="login-solve-create" onclick="window.location.href='/create_crossword_manual/'">Manual Creation</span>
-                    </button>
+                    <button type="button" class="btn btn-info btn-dark m-create btn-lg login-solve-create" onclick="window.location.href='/create_crossword_manual/'"> Manual Creation</button>
+
                 </div>
 
             </div>

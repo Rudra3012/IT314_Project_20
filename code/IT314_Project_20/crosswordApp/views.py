@@ -538,13 +538,16 @@ def create_auto(request):
     return render(request,"automatic.html")
 
 def tutorial(request):
-    return render(request,"tutorial_page_v2/webpage1.html")
+    return render(request,"Tutorial_page_v3/Tut_main.html")
 
 def tutorial_auto(request):
-    return render(request,"tutorial_page_v2/create_automatically.html")
+    return render(request,"Tutorial_page_v3/Tut_auto.html")
 
 def tutorial_manual(request):
-    return render(request,"tutorial_page_v2/create_manually.html")
+    return render(request,"Tutorial_page_v3/Tut_manual.html")
+
+def tutorial_solving(request):
+    return render(request,"Tutorial_page_v3/Tut_solver.html")
 
 def daily_puzzle(request):
     return HttpResponse("<h1>Daily Puzzle</h1><h2>Feature Coming Soon</h2>")

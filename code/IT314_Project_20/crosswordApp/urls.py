@@ -49,8 +49,9 @@ urlpatterns = [
     path('create_auto/', views.create_auto, name='temp'),
     # path('/delete_user',views.delete_user, name='delete_user')
     path('profile/<str:username>/', views.CreatorProfile, name='CreatorProfile'),
-    path('tutorial', views.tutorial, name='tutorial'),
-    path('tutorial_create_auto', views.tutorial_auto, name='tutorial'),
-    path('tutorial_create_manual', views.tutorial_manual, name='tutorial'),
+    path("Tutorial_page_v3/Tut_main", views.tutorial, name='tut_main'),
+    path('Tutorial_page_v3/Tut_auto', views.tutorial_auto, name='tut_auto'),
+    path('Tutorial_page_v3/Tut_manual', views.tutorial_manual, name='tut_manual'),
+    path('Tutorial_page_v3/Tut_solver',views.tutorial_solving, name='tut_solver'),
     path('daily_puzzle/', views.daily_puzzle, name='daily_puzzle'),
 ]
