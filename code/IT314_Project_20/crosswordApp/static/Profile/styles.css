@@ -312,6 +312,7 @@ a.article:hover {
   border-collapse: separate;
   border-spacing: 0px 10px;
   background-color: transparent;
+  overflow-y: hidden;
 }
 
 .styled-table thead tr {
@@ -469,13 +470,14 @@ foll h6 {
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
+  /* display: none; */
   /* padding: 6px 12px; */
   border: 1px solid #ccc;
   border-top: none;
   width: 70%;
   justify-content: center;
   display: flex;
+  overflow-y: hidden;
 }
 
 #home-Btn {

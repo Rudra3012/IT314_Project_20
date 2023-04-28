@@ -1,0 +1,110 @@
+{
+  "id": "3d4126d7-6e29-4368-8696-3594847d5e93",
+  "version": "2.0",
+  "name": "Profile_test",
+  "url": "http://127.0.0.1:8000",
+  "tests": [{
+    "id": "01a44389-1f9e-4575-b0f2-5eb1585dab64",
+    "name": "Profile_test",
+    "commands": [{
+      "id": "2369e3ff-0665-4597-8967-413bc35ab763",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0100c24d-df99-4b86-9bbd-5c058d8b6ed3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b935c412-8425-44df-b85c-d7060c30401a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.list-group-item:nth-child(2) .sidebar-text",
+      "targets": [
+        ["css=.list-group-item:nth-child(2) .sidebar-text", "css:finder"],
+        ["xpath=//div[@id='sidebar']/ul/li[2]/a/span", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'vivek')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24a19127-c292-49f4-a40f-91bf8fb12a09",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tablinks:nth-child(2)",
+      "targets": [
+        ["css=.tablinks:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"openCity(event, 'Create')\"]", "xpath:attributes"],
+        ["xpath=//div[@id='content']/main/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Created Problems')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fff71d79-904d-4862-8f3a-8860dab870b0",
+      "comment": "",
+      "command": "click",
+      "target": "id=defaultOpen",
+      "targets": [
+        ["id=defaultOpen", "id"],
+        ["css=#defaultOpen", "css:finder"],
+        ["xpath=//button[@id='defaultOpen']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/main/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c5161bd-0170-4758-88f3-29dd46876c19",
+      "comment": "",
+      "command": "click",
+      "target": "css=.tablinks:nth-child(2)",
+      "targets": [
+        ["css=.tablinks:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick=\"openCity(event, 'Create')\"]", "xpath:attributes"],
+        ["xpath=//div[@id='content']/main/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Created Problems')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2699c2fb-2557-46cd-8733-9155e0081129",
+      "comment": "",
+      "command": "click",
+      "target": "css=.full",
+      "targets": [
+        ["css=.full", "css:finder"],
+        ["xpath=//div[@id='content']/main", "xpath:idRelative"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16e28147-b0d1-4972-92cc-298dc5be1507",
+      "comment": "",
+      "command": "click",
+      "target": "id=defaultOpen",
+      "targets": [
+        ["id=defaultOpen", "id"],
+        ["css=#defaultOpen", "css:finder"],
+        ["xpath=//button[@id='defaultOpen']", "xpath:attributes"],
+        ["xpath=//div[@id='content']/main/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "99a19aaf-2f17-4305-bc9d-c6c600d41bba",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["01a44389-1f9e-4575-b0f2-5eb1585dab64"]
+  }],
+  "urls": ["http://127.0.0.1:8000/"],
+  "plugins": []
+}

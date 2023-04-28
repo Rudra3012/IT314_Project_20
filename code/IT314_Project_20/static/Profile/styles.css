@@ -175,7 +175,7 @@ a.article:hover {
 #content {
   width: 100%;
   padding: 20px;
-  min-height: 130vh;
+  min-height: 100vh;
   transition: all 0.3s;
 }
 
@@ -239,7 +239,7 @@ a.article:hover {
 .prof {
   display: flex;
   flex-direction: row;
-  width: 60%;
+  width: 70%;
   height: 30%;
   align-items: center;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
@@ -259,7 +259,11 @@ a.article:hover {
   border-radius: 50%;
   object-fit: cover;
   padding: 2px;
-  border: 3px solid #01285e;
+  border: 2px solid;
+  border-image-slice: 1;
+  /* border-width: 2px; */
+  /* border-image-source: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
+  border-radius: 50%;
 }
 .prof_text {
   display: flex;
@@ -273,7 +277,7 @@ a.article:hover {
 [19:19, 4/24/2023] Rudra DA: background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);*/
 .full {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -308,6 +312,7 @@ a.article:hover {
   border-collapse: separate;
   border-spacing: 0px 10px;
   background-color: transparent;
+  overflow-y: hidden;
 }
 
 .styled-table thead tr {
@@ -321,8 +326,9 @@ a.article:hover {
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
-  background-color: transparent;
-  width: 30%;
+  background-color: #fff;
+  text-align: center;
+  color: black;
 }
 
 .styled-table tbody td:first-child,
@@ -336,7 +342,6 @@ a.article:hover {
   border: 0px solid black;
   border-radius: 0 10px 10px 0;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
-  width: 30%;
 }
 
 .styled-table tbody tr {
@@ -363,14 +368,23 @@ a.article:hover {
   display: flex;
   align-items: center;
   margin-top: 30px;
+  width: 130%;
+  /*background-color: #0dcaf0;*/
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 14px;
+  justify-content: center;
+  padding: 10px;
 }
 
 span {
   font-size: 18px;
+  font-weight: 600;
 }
 .row .info {
   text-align: center;
-  padding: 0 20px;
+  /*padding: 0 20px;*/
+  width: 25%;
 }
 .data {
   display: flex;
@@ -387,8 +401,8 @@ span {
 
 .follow-button {
   background-color: #fafafa;
-  border: 2px solid #6d7fcc;
-  color: #7386d5;
+  border: 2px solid #01285e;
+  color: #76a7ec;
   border-radius: 14px;
 }
 .foll {
@@ -413,18 +427,20 @@ foll h6 {
 }
 
 .followed {
-  background-color: #7386d5;
-  color: #fafafa;
+  position: relative;
+  margin-top: 15px;
+  background-color: #73a6ec;
+  color: #01285e;
+  width: 100px;
+  height: 35px;
 }
 
 .tabs {
   overflow: hidden;
   /* border: 1px solid #ccc; */
   border: none;
-  /* background-color: #f1f1f1;
-   */
-   background-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  width: 60%;
+  background-color: #f1f1f1;
+  width: 70%;
   margin-top: 20px;
   border-radius: 10px 10px;
 }
@@ -444,23 +460,37 @@ foll h6 {
 
 /* Change background color of buttons on hover */
 .tabs button:hover {
-  /* background-color: #ddd; */
-  background: rgba(0, 0, 0, 0.2);
+  background-color: #ddd;
 }
 
 /* Create an active/current tablink class */
 .tabs button.active {
-  /* background-color: #ccc; */
-  background: rgba(0, 0, 0, 0.11);
+  background-color: #ccc;
 }
 
 /* Style the tab content */
 .tabcontent {
-  display: none;
+  /* display: none; */
   /* padding: 6px 12px; */
   border: 1px solid #ccc;
   border-top: none;
-  width: 60%;
+  width: 70%;
   justify-content: center;
   display: flex;
+  overflow-y: hidden;
+}
+
+#home-Btn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  background-color: #01285e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
 }
