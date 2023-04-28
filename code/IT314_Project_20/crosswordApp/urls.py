@@ -43,7 +43,7 @@ urlpatterns = [
     path('forget_password/', views.forget_password, name='forget_password'),
     path('change-password/<token>/<email>/', views.ChangePassword, name="change_password"),
 
-    path('puzzle_of_day',views.puzzle_of_day, name='puzzle_of_day'),
+    path('crossword_browsing',views.crossword_browsing, name='puzzle_of_day'),
 
     path('solve_crossword/<str:crossword_id>/', views.solve_crossword, name='solve_crossword'),
     path('create_auto/', views.create_auto, name='temp'),
@@ -52,4 +52,5 @@ urlpatterns = [
     path('tutorial', views.tutorial, name='tutorial'),
     path('tutorial_create_auto', views.tutorial_auto, name='tutorial'),
     path('tutorial_create_manual', views.tutorial_manual, name='tutorial'),
+    path('daily_puzzle/', views.daily_puzzle, name='daily_puzzle'),
 ]

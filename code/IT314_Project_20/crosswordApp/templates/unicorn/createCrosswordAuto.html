@@ -18,7 +18,7 @@
                         <div class="lowerDivLeftMainInputRowLabel" u:click="nextStep">Enter Title </div>
                         <input class="lowerDivLeftMainInputRowInputText" unicorn:model="title" type="text" placeholder="title" maxlength="50">
                         <div class="lowerDivLeftMainInputRowLabel" >Enter Description</div>
-                        <textarea class="lowerDivLeftMainInputRowInputTextarea" unicorn:model="description" placeholder="description" rows="4" maxlength="300"></textarea>
+                        <textarea class="lowerDivLeftMainInputRowInputTextarea" unicorn:model="description" placeholder="description" rows="15" maxlength="300"></textarea>
                     </div>
                     <div class="nextButtonDiv">
                         <button unicorn:click="nextStep" class="nextButton">Next</button>
@@ -34,7 +34,7 @@
                         <div class="lowerDivLeftMainInputRowLabelStep2" u:click="previousStep" id="textInputWord">New Word</div>
                         <input unicorn:model="word" class="lowerDivLeftMainInputRowInputTextStep2" />
                         <div class="lowerDivLeftMainInputRowLabelStep2" >New Clue</div>
-                        <textarea unicorn:model="clue" class="lowerDivLeftMainInputRowInputTextarea"  rows="4" ></textarea>
+                        <textarea unicorn:model="clue" class="lowerDivLeftMainInputRowInputTextarea"  rows="14" ></textarea>
                     </div>
                     <div class="addButtonDiv">
                             <button unicorn:click="add_clue_and_word" class="addButton">Add</button>
@@ -92,7 +92,7 @@
             </div>
         </div>
     </div>
-    {% if step == 2 %}
+    {% if step == 2 and canSave%}
         <button unicorn:click="save_crossword" class="saveButton">Save</button>
     {% endif %}
     {% if displayMessage == "yes" %}

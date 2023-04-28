@@ -28,12 +28,18 @@
                             class="sidebar-heading"> CrossWord</span></a>
 
                 </li>
-                <li class="list-group-item">
-                    <a href="#"><i class="fas fa-book"></i><span class="sidebar-text"> Profile</span></a>
+                {% if userPresent %}
+                    <li class="list-group-item">
+                   <a href="/profile/{{ username }}/" ><i class="fas fa-book"></i>
+                        <span class="sidebar-text">
+                             {{ username }}
+                        </span>
+                    </a>
                 </li>
+                {% endif %}
 
                 <li class="list-group-item">
-                    <a href="index.html"><i class="fas fa-gamepad"></i><span class="sidebar-text"> Daily
+                    <a href="/daily_puzzle/"><i class="fas fa-gamepad"></i><span class="sidebar-text"> Daily
                             Puzzles</span></a>
                 </li>
 
@@ -41,13 +47,13 @@
                     <a href="#"><i class="fas fa-envelope"></i><span class="sidebar-text"> Tutorial</span></a>
                 </li>
 
-                <li class="list-group-item">
-                    <a href="#"><i class="fas fa-chart-line"></i><span class="sidebar-text"> Stats</span></a>
-                </li>
-
-                <li class="list-group-item">
-                    <a href="#"><i class="fas fa-wrench"></i><span class="sidebar-text"> Settings</span></a>
-                </li>
+{#                <li class="list-group-item">#}
+{#                    <a href="#"><i class="fas fa-chart-line"></i><span class="sidebar-text"> Stats</span></a>#}
+{#                </li>#}
+{##}
+{#                <li class="list-group-item">#}
+{#                    <a href="#"><i class="fas fa-wrench"></i><span class="sidebar-text"> Settings</span></a>#}
+{#                </li>#}
 
                 <div class="menu-buttons">
                     {% if userPresent %}

@@ -5,70 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55e88c57-bc78-4727-b82b-c4b3d819e944" name="Changes" comment="Completed solving page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IT314_Project_20/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/IT314_Project_20/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/Classes/Crossword.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/Classes/Crossword.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/Classes/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/Classes/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/Classes/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/Testing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/Testing/test_urls.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/crosswordApp/components/createCrosswordAuto.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/components/createCrosswordAuto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/components/createCrosswordManual.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/components/createCrosswordManual.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/components/solveCrossword.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/components/solveCrossword.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/static/Profile/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/static/Profile/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/static/crosswordCreation/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/static/crosswordCreation/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/static/crosswordCreationManual/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/static/crosswordCreationManual/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crosswordApp/templates/unicorn/createCrosswordAuto.html" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/templates/unicorn/createCrosswordAuto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/templates/unicorn/createCrosswordManual.html" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/templates/unicorn/createCrosswordManual.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosswordApp/test_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crosswordApp/testviews.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/crosswordApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crosswordApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crosswordApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid08684nx7tvosohl7ptcwaurel9uy7xno" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid0nex19ve44v6cgh2pwjhp154x56aagj4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid1v1d8iby1wp3wri2mtgjelxaoareh4ov" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid1zj4w2le49g5mjz3652hmozw1ase4x2g" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid4fpxtqtan75artoqnts8n38bbr4lwx4s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid4tuohqf8mf80lt1gi0vbfkfa2hvxwz53" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid594segp9yx1oj9jlykgurzfuv705eo5z" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid6y5kcufd55uzrnyuexwpadpk0vse6iu1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid7jr8sxross06e4a3bc8gy9suxjktyt7h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid8bdieb0dkm34n2unxnqjg79bmum1iny8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid8lgrkctsv8ijtmkvi4spou0d1plbytbq" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid9jcyj8e053dr7kszyhhmzbiemqnpb36f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionid9jrcodmknfzc87oe252zcwasorzlikhy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidajzxc4wk5y3cl1c3g8u33qe2elh3j1jd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidaz01ojmil3voovuzhw4kb9s51wax8gsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidazt2zpzghsyoupgpc1b3qnhskgtmhu5d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidc30oocq17ykurwkq2ommjo7lqlxoiwlb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidd5s5u0bn00hcjcwmq0i3d2adha1bg4jp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionide50sqi45vhkj4ine5h8trqbgms4mpaya" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionideldd7fs72bqqakd3gw5ctcz5zmptmclb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidev4ys168gcfgitqdsdu2ap01vt6rb3cp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidg0rdci5chq4enbxgb3182fjr2p8yzt6s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidg9r9n8n9nkmkd9ay687uzbovsto5pw1r" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidia5fsrh1v5wxd35og6saze5az34kq0yn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidk2qlo8w16qcg9v4c4xuft9di5o7o7ebx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidkqvdp5bqhntrbw8pwpaeqfz7ldmazey0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidmwqmoozemlo1il0y9a1hz8lltxzkp5od" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidomu9fjz074dipwm0sy5auz84gh4b0cpk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidossvo7kyiqq5eimnjnusk05ryvg7f77q" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidp3xtbx5jahlrcz8i1djizqx6tkgu493c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidp5gt61eyh0i39fctxcv41tuodcxkbckh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidp7a7ivhb2ynzz3g1mtz6e1cbotsjsrbi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidpael5ke0as1c9whn4hq045hqm14k5os7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidqdvk2rbfns6w3nvy8772gwm6839x6zq6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidqe1zbm2r009ogntg2e0lb2t5b36sjgdi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidstkki72tt0dm1ujxge3xqhu6p0rk4i19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidtgd0gk04ti5bhfjndh1xwhezg3xgm7f7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidyoklxpjtnnu5ncx3z5g37ebp2579ot3l" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessions/sessionidzlvrffwgo795d3ovfw8g354zwvr5jp9l" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/crosswordlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/crosswordlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Admin/userlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Admin/userlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Profile/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Profile/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbarBase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbarBase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/puzzle_of_day.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crossword_browsing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial_page_v2/bg4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial_page_v2/create_automatically.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial_page_v2/create_automatically.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial_page_v2/create_manually.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial_page_v2/create_manually.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial_page_v2/webpage1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial_page_v2/webpage1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,6 +289,7 @@
       <workItem from="1682568266213" duration="8118000" />
       <workItem from="1682582956632" duration="23730000" />
       <workItem from="1682617693870" duration="5356000" />
+      <workItem from="1682658210782" duration="5879000" />
     </task>
     <servers />
   </component>

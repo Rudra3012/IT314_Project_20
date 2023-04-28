@@ -15,6 +15,7 @@ class CreatecrosswordautoView(UnicornView):
     clue: str = ""
     wordsInserted: int = 0
     clues_and_words = []
+    canSave: bool = False
     crossword_grid = []
     wordsHorizontalStart = []
     wordsVerticalStart = []
@@ -113,6 +114,8 @@ class CreatecrosswordautoView(UnicornView):
         print(self.crossword_grid)
         self.rows = len(self.crossword_grid)
         self.columns = len(self.crossword_grid[0])
+
+        self.canSave = True
 
     def getWordVerticalHelper(self, start):
         print("Get word vertical helper called")

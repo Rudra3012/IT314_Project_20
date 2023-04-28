@@ -21,17 +21,57 @@ db = client['CrossWordManagement']
 
 def SignupPage(request):
     collections = db['crosswordApp_user']
+    template = loader.get_template("signup.html")
+
+    context = {
+    }
+
     if request.method == 'POST':
         uname = request.POST.get('username')
         email = request.POST.get('email')
         pass1 = request.POST.get('password1')
         pass2 = request.POST.get('password2')
 
+
         if pass1 != pass2:
-            return HttpResponse("Your password and confrom password are not Same!!")
+            print("Passwords do not match")
+            context['displayMessage'] = True
+            context['message_type'] = 'errorMessage'
+            context['message_content'] = "Passwords do not match"
+            return render(request, "signup.html", context)
         else:
 
+
             new_user = User.User(uname, email, pass1)
+
+            context['displayMessage'] = False
+
+            if not new_user.check_username():
+                context['displayMessage'] = True
+                print("Username is invalid")
+                context['message_type'] = 'errorMessage'
+                context['message_content'] = new_user.message
+                return render(request, "signup.html", context)
+
+            print("Username is valid")
+
+            if not new_user.check_email():
+                print("Email is invalid")
+                context['displayMessage'] = True
+                context['message_type'] = 'errorMessage'
+                context['message_content'] = new_user.message
+                return render(request, "signup.html", context)
+
+            print("Email is valid")
+
+            if not new_user.check_password():
+                context['displayMessage'] = True
+                context['message_type'] = 'errorMessage'
+                context['message_content'] = new_user.message
+                return render(request, "signup.html", context)
+
+            print("Password is valid")
+
             collections.insert_one(new_user.__dict__)
 
             db['crosswordApp_Subscribers'].insert_one({"username": uname, "followers": [], "following": []})
@@ -41,63 +81,11 @@ def SignupPage(request):
     return render(request, 'signup.html')
 
 
-# username does not include space, greater than 4 less than 15, should be unique
-# password does not include space, greater than 8, less than 24, at least one special
-# character, at least one number, at least one uppercase letter, at least one lowercase letter,
-# if not match "username or password is incorrect"
-
 def LoginPage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         pass1 = request.POST.get('pass')
 
-        # if 4 < len(username) < 15:
-        #     for i in username:
-        #         if i == ' ':
-        #             response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
-        #             return response
-        # else:
-        #     response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
-        #     return response
-        #
-        # if 8 < len(pass1) < 24:
-        #     upperCase = False
-        #     lowerCase = False
-        #     number = False
-        #     special = False
-        #
-        #     for i in pass1:
-        #         if i == ' ':
-        #             response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
-        #             return response
-        #         if i.isupper():
-        #             upperCase = True
-        #         if i.islower():
-        #             lowerCase = True
-        #         if i.isdigit():
-        #             number = True
-        #         if i in ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|',
-        #                  ':', ';', '"', "'", '<', '>', ',', '.', '?', '/']:
-        #             special = True
-        #     if upperCase and lowerCase and number and special:
-        #         pass
-        #     else:
-        #         response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
-        #         return response
-        # else:
-        #     response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
-        #     return response
-    #     collections = db['crosswordApp_user']
-    #     reply = collections.find_one({"username": username})
-    #
-    #     # if username is not in database
-    #     if reply is None:
-    #         response = JsonResponse({'message': 'Login Unsuccessful'}, status=401)
-    #         return response
-    #
-    #     response = JsonResponse({'message': 'Login Successful'}, status=401)
-    #     return response
-    # #
     collections = db['crosswordApp_user']
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -372,7 +360,7 @@ def changeDetails(request, username, email):
     return render(request, f"Admin/modify_user.html")
 
 
-def puzzle_of_day(request):
+def crossword_browsing(request):
     username = request.session.get('username')
     print("Current User in browsing page: ", username)
     if username is None:
@@ -381,7 +369,7 @@ def puzzle_of_day(request):
             "message_content": "Please login to solve crosswords ",
             "message_type": "errorMessage",
         }
-        request.session['redirectTo'] = '/puzzle_of_day'
+        request.session['redirectTo'] = '/crossword_browsing'
         return render(request, "login.html", context)
         # return redirect('login')
 
@@ -434,8 +422,8 @@ def puzzle_of_day(request):
                    'username': username,
         }
         print("context: ", context)
-        return render(request, 'puzzle_of_day.html', context)
-        # return render(request, 'puzzle_of_day.html', {'puzzles': puzzles})
+        return render(request, 'crossword_browsing.html', context)
+        # return render(request, 'crossword_browsing.html', {'puzzles': puzzles})
     else:
         client = MongoClient("mongodb+srv://Group20:Group20@cluster0.vl47pk0.mongodb.net/?retryWrites=true&w=majority")
         db = client['CrossWordManagement']
@@ -458,7 +446,7 @@ def puzzle_of_day(request):
                    'username': username,
         }
         print("context: ", context)
-        return render(request, 'puzzle_of_day.html', context)
+        return render(request, 'crossword_browsing.html', context)
 
 
 def solve_crossword(request, crossword_id):
@@ -495,28 +483,7 @@ def CreatorProfile(request, username):
         'following': 0,
     }
 
-    reply_cCreated = list(db["crosswordApp_crossword"].find({"creator":username}))
-    reply_cSolved = list(db["solvedCrosswords"].find({"user":username}))
-    print("reply_ccreated: ", len(reply_cCreated))
-    print("reply_csolved: ", len(reply_cSolved))
 
-    context['crosswordsCreated'] = len(reply_cCreated)
-    context['crosswordsSolved'] = len(reply_cSolved)
-    context['crosswordsCreatedList'] = reply_cCreated
-    context['crosswordsSolvedList'] = reply_cSolved
-
-    reply = list(collections.find({"username":username}))
-
-    context['followers'] = len(reply[0]['followers'])
-    context['following'] = len(reply[0]['following'])
-
-    print(context)
-    if len(reply)>0:
-        if activeUser in reply[0]['followers']:
-            print(f'{activeUser} is following {username}')
-            context['isFollowing'] = True
-    else:
-        context['isFollowing'] = False
 
     if request.method == 'POST':
         action = request.POST.get('ActionFollow')
@@ -543,6 +510,28 @@ def CreatorProfile(request, username):
 
         reply = collection_crossword.find({"creator":username})
 
+    reply_cCreated = list(db["crosswordApp_crossword"].find({"creator":username}))
+    reply_cSolved = list(db["solvedCrosswords"].find({"user":username}))
+    print("reply_ccreated: ", len(reply_cCreated))
+    print("reply_csolved: ", len(reply_cSolved))
+
+    context['crosswordsCreated'] = len(reply_cCreated)
+    context['crosswordsSolved'] = len(reply_cSolved)
+    context['crosswordsCreatedList'] = reply_cCreated
+    context['crosswordsSolvedList'] = reply_cSolved
+
+    reply = list(collections.find({"username":username}))
+
+    context['followers'] = len(reply[0]['followers'])
+    context['following'] = len(reply[0]['following'])
+
+    print(context)
+    if len(reply)>0:
+        if activeUser in reply[0]['followers']:
+            print(f'{activeUser} is following {username}')
+            context['isFollowing'] = True
+    else:
+        context['isFollowing'] = False
     return render(request,f"Profile/index.html", context)
 
 def create_auto(request):
@@ -556,3 +545,6 @@ def tutorial_auto(request):
 
 def tutorial_manual(request):
     return render(request,"tutorial_page_v2/create_manually.html")
+
+def daily_puzzle(request):
+    return HttpResponse("<h1>Daily Puzzle</h1><h2>Feature Coming Soon</h2>")
