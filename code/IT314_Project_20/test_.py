@@ -1,13 +1,11 @@
+from crosswordApp.Classes.Crossword import Crossword
+from crosswordApp.views import *
 import os
 import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IT314_Project_20.settings')
 django.setup()
 
-
-from crosswordApp.views import *
-
-from crosswordApp.Classes.Crossword import Crossword
 
 def test1():
     title = "Test"
@@ -96,9 +94,12 @@ def test4():
     width = 15
     height = 5
     grid = [["N", "A", "I", "L", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
-            ["_", "_", "R", "_", "_", "_", "_", "_","_", "_", "_", "_", "_", "_", "_"],
-            ["_", "_", "O", "_", "_", "_", "_", "_","_", "_", "_", "_", "_", "_", "_"],
-            ["_", "_", "N", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+            ["_", "_", "R", "_", "_", "_", "_", "_",
+                "_", "_", "_", "_", "_", "_", "_"],
+            ["_", "_", "O", "_", "_", "_", "_", "_",
+                "_", "_", "_", "_", "_", "_", "_"],
+            ["_", "_", "N", "_", "_", "_", "_", "_",
+                "_", "_", "_", "_", "_", "_", "_"],
             ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
@@ -660,28 +661,31 @@ def test23():
     assert c1.check() == False
 
 # new added
-def test24():                              
+
+
+def test24():
     title = ""
     description = "Test"
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 # Output : False
@@ -693,22 +697,23 @@ def test25():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == True
 # Output : True
 
@@ -719,22 +724,23 @@ def test26():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
@@ -746,22 +752,23 @@ def test27():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
@@ -773,22 +780,23 @@ def test28():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == True
 # Output : True
 
@@ -799,22 +807,23 @@ def test29():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
@@ -827,22 +836,23 @@ def test30():
     creator = ""
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
@@ -854,22 +864,23 @@ def test31():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = []
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
@@ -882,22 +893,23 @@ def test32():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = []
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
@@ -910,22 +922,23 @@ def test33():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["FROG"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 # Output : False
 
@@ -936,22 +949,23 @@ def test34():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["FROG"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 # Output : False
@@ -963,22 +977,23 @@ def test35():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IROG"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 # Output : False
@@ -990,22 +1005,23 @@ def test36():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["ZAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 # Output : False
@@ -1017,22 +1033,23 @@ def test37():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIZ"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 # Output : False
@@ -1044,22 +1061,23 @@ def test38():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAQL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 # Output : False
@@ -1071,22 +1089,23 @@ def test39():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["QRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 # Output : False
@@ -1098,27 +1117,27 @@ def test40():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["&","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["&", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
 # Output : False
-
 
 
 def test41():
@@ -1127,27 +1146,27 @@ def test41():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["N","5","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["N", "5", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
 # Output : False
-
 
 
 def test42():
@@ -1156,28 +1175,29 @@ def test42():
     creator = "Test"
     width = 5
     height = 5
-    grid = [["n","A","I","L","_"],
-              ["_","_","R","_","_"],
-              ["_","_","O","_","_"],
-              ["_","_","N","_","_"],
-              ["_","_","_","_","_"]]
+    grid = [["n", "A", "I", "L", "_"],
+            ["_", "_", "R", "_", "_"],
+            ["_", "_", "O", "_", "_"],
+            ["_", "_", "N", "_", "_"],
+            ["_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
-        
+
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+
     assert c1.check() == False
 
 
 # Output : False
-# 
-#test case 43 - user has given correct answers in the correct boxes
+#
+# test case 43 - user has given correct answers in the correct boxes
 def test43():
     title = "Test"
     description = "Test"
@@ -1203,7 +1223,9 @@ def test43():
 
     assert c1.check() == True
 
-#test case 44 - user has given correct answers in the correct boxes
+# test case 44 - user has given correct answers in the correct boxes
+
+
 def test44():
     title = "Test"
     description = "Test"
@@ -1227,7 +1249,9 @@ def test44():
 
     assert c1.check() == True
 
-#test case 45 - user has given correct answers in the correct boxes
+# test case 45 - user has given correct answers in the correct boxes
+
+
 def test45():
     title = "Test"
     description = "Test"
@@ -1251,7 +1275,9 @@ def test45():
 
     assert c1.check() == True
 
-#test case 46 - user has given incorrect answers
+# test case 46 - user has given incorrect answers
+
+
 def test46():
     title = "Test"
     description = "Test"
@@ -1266,7 +1292,7 @@ def test46():
     AnswersHor = ["WATCH"]
     AnswersVer = ["CHAIR", "TOOL"]
     AnswersHorStart = [(0, 0)]
-    AnswersVerStart = [(0, 0,), (0, 1)  ]
+    AnswersVerStart = [(0, 0,), (0, 1)]
     cluesHor = ["tells the time"]
     cluesVer = ["sitting", "baking"]
 
@@ -1275,7 +1301,9 @@ def test46():
 
     assert c1.check() == False
 
-#test case 47 - user has put input in the wrong box with wrong answers
+# test case 47 - user has put input in the wrong box with wrong answers
+
+
 def test47():
     title = "Test"
     description = "Test"
@@ -1301,7 +1329,7 @@ def test47():
     assert c1.check() == False
 
 
-#test case 48 - user has given an incorrect input/ incorrect answer
+# test case 48 - user has given an incorrect input/ incorrect answer
 def test48():
     title = "Test"
     description = "Test"
@@ -1326,7 +1354,9 @@ def test48():
 
     assert c1.check() == False
 
-#test case 49 - user has not completed the puzzle
+# test case 49 - user has not completed the puzzle
+
+
 def test49():
     title = "Test"
     description = "Test"
@@ -1351,7 +1381,9 @@ def test49():
 
     assert c1.check() == False
 
-#test case 50 - user has not completed the puzzle
+# test case 50 - user has not completed the puzzle
+
+
 def test50():
     title = "Test"
     description = "Test"
@@ -1375,31 +1407,37 @@ def test50():
                    AnswersHorStart, AnswersVerStart)
 
     assert c1.check() == False
-    
+
+
 def test4():
-        
+
     title = "Test"
     description = "Test"
     creator = "Test"
     width = 15
     height = 5
-    grid = [["N","A","I","L","_","_","_","_","_","_","_","_","_","_","_"],
-              ["_","_","R","_","_","_","_","_","_","_","_","_","_","_","_"],
-              ["_","_","O","_","_","_","_","_","_","_","_","_","_","_","_"],
-              ["_","_","N","_","_","_","_","_","_","_","_","_","_","_","_"],
-              ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"]]
+    grid = [["N", "A", "I", "L", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"],
+            ["_", "_", "R", "_", "_", "_", "_", "_",
+                "_", "_", "_", "_", "_", "_", "_"],
+            ["_", "_", "O", "_", "_", "_", "_", "_",
+                "_", "_", "_", "_", "_", "_", "_"],
+            ["_", "_", "N", "_", "_", "_", "_", "_",
+                "_", "_", "_", "_", "_", "_", "_"],
+            ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]]
     wordsUp = ["IRON"]
     wordsDown = ["NAIL"]
     AnswersHor = ["NAIL"]
     AnswersVer = ["IRON"]
-    AnswersHorStart = [(0,0)]
-    AnswersVerStart = [(0,2)]
+    AnswersHorStart = [(0, 0)]
+    AnswersVerStart = [(0, 2)]
     cluesHor = ["a body part"]
     cluesVer = ["an element "]
-    c1 = Crossword(creator, title, description, width, height, cluesVer, cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
+    c1 = Crossword(creator, title, description, width, height, cluesVer,
+                   cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
     assert c1.check() == True
 
 # for 1 size word : expected output false
+
 
 def test51():
     title = "Test"
@@ -1477,3 +1515,210 @@ def test53():
                    cluesHor, AnswersHor, AnswersVer, grid, AnswersHorStart, AnswersVerStart)
 
     assert c1.check() == False
+
+
+# ############################################################
+
+
+def test54():
+    username = "kavish"
+    password = "kS@24022002"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser55():
+    username = "Ruchir"
+    password = "ruchir"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == False
+    assert u1.check_email() == True
+
+
+def testUser56():
+    username = "Ruchir"
+    password = "Ruchir"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == False
+    assert u1.check_email() == True
+
+
+def testUser57():
+    username = "Ruchir"
+    password = "Rsd12"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == False
+    assert u1.check_email() == True
+
+
+def testUser58():
+    username = "Ruchir"
+    password = "Rsd@12"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == False
+    assert u1.check_email() == True
+
+
+def testUser59():
+    username = "Ruchir"
+    password = "Rsd@12345"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == False
+    assert u1.check_email() == True
+
+
+def testUser60():
+    username = "Ruchir"
+    password = "Abcd@12efghijklmnopqrstuvwxyz"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == False
+    assert u1.check_email() == True
+
+
+def testUser61():
+    username = "Ruchir"
+    password = "Rsd@12345"
+    email = "ruchir1707@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == False
+
+
+def testUser62():
+    username = "kavish@"
+    password = "kS@24022002"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == False
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser63():
+    username = "kav"
+    password = "kS@24022002"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == False
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser64():
+    username = "kavishabcdefghijk"
+    password = "kS@24022002"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == False
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser65():
+    username = "kav_ish"
+    password = "kS@24022002"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser66():
+    username = "kav_ish1"
+    password = "kS@24022002"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser67():
+    username = "kavi"
+    password = "kS@24022002"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser68():
+    username = "kav_ish12345678"
+    password = "kS@24022002"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser69():
+    username = "kav_ish1"
+    password = "kS@24022"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == True
+
+
+def testUser70():
+    username = "kav_ish1"
+    password = "kS@240225678912345678901"
+    email = "kavishshah@gmail.com"
+
+    u1 = User(username, email, password)
+
+    assert u1.check_username() == True
+    assert u1.check_password() == True
+    assert u1.check_email() == True

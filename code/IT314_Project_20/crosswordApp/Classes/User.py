@@ -33,14 +33,14 @@ class User:
 
     def check_username(self):
 
-        if len(self.username) < 4:
+        if len(self.username) <= 4:
             print("Username must be at least 4 characters long")
             self.message = "Username must be at least 4 characters long"
             return False
 
         print("Username is greater than 4 characters")
 
-        if len(self.username) > 15:
+        if len(self.username) >= 15:
             print("Username must be less than 15 characters long")
             self.message = "Username must be less than 15 characters long"
             return False
@@ -78,14 +78,14 @@ class User:
         return True
     def check_password(self):
 
-        if len(self.password) < 8:
+        if len(self.password) <= 8:
             print("Password must be at least 8 characters long")
             self.message = "Password must be at least 8 characters long"
             return False
 
         print("Password is greater than 8 characters")
 
-        if len(self.password) > 24:
+        if len(self.password) >= 24:
             print("Password must be less than 25 characters long")
             self.message = "Password must be less than 25 characters long"
             return False
