@@ -246,8 +246,8 @@ a.article:hover {
   border-radius: 14px 14px 14px 14px;
   background-color: #01285e;
   color: #fafafa;
-  border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   -webkit-backdrop-filter: blur(10px);
 }
 .fl {
@@ -379,7 +379,6 @@ span {
   margin-top: 15px;
   width: 65%;
   height: auto;
-
 }
 .data h2 {
   font-size: 33px;
@@ -422,7 +421,9 @@ foll h6 {
   overflow: hidden;
   /* border: 1px solid #ccc; */
   border: none;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1;
+   */
+   background-color: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   width: 60%;
   margin-top: 20px;
   border-radius: 10px 10px;
@@ -443,12 +444,14 @@ foll h6 {
 
 /* Change background color of buttons on hover */
 .tabs button:hover {
-  background-color: #ddd;
+  /* background-color: #ddd; */
+  background: rgba(0, 0, 0, 0.2);
 }
 
 /* Create an active/current tablink class */
 .tabs button.active {
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  background: rgba(0, 0, 0, 0.11);
 }
 
 /* Style the tab content */
