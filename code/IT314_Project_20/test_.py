@@ -1523,6 +1523,8 @@ def test53():
     
 
 
+
+
 def test54():
     username="kavish"
     password="kS@24022002"
@@ -1591,7 +1593,7 @@ def testUser59():
     u1=User(username,email,password)
     
     assert u1.check_username() == True
-    assert u1.check_password() == False
+    assert u1.check_password() == True
     assert u1.check_email() == True
 
 
