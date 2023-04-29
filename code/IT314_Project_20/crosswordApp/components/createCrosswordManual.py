@@ -147,12 +147,12 @@ class CreatecrosswordmanualView(UnicornView):
         #     return
 
         if not self.rows.isnumeric():
-            self.message_content = "Number of rows must be an integer"
+            self.message_content = "Number of rows must be positive integer"
             self.message_type = "errorMessage"
             self.displayMessage = "yes"
             return
         if not self.cols.isnumeric():
-            self.message_content = "Number of columns must ba an integer"
+            self.message_content = "Number of columns must ba positive integer"
             self.message_type = "errorMessage"
             self.displayMessage = "yes"
             return
@@ -166,8 +166,8 @@ class CreatecrosswordmanualView(UnicornView):
                 self.message_type = "errorMessage"
                 self.displayMessage = "yes"
                 return
-            if rowsInt>12:
-                self.message_content = "Number of rows must be less than 12"
+            if rowsInt>15:
+                self.message_content = "Number of rows must be less than 15"
                 self.message_type = "errorMessage"
                 self.displayMessage = "yes"
                 return
@@ -180,8 +180,8 @@ class CreatecrosswordmanualView(UnicornView):
                 self.message_type = "errorMessage"
                 self.displayMessage = "yes"
                 return
-            if colsInt>12:
-                self.message_content = "Number of columns must be less than 12"
+            if colsInt>15:
+                self.message_content = "Number of columns must be less than 15"
                 self.message_type = "errorMessage"
                 self.displayMessage = "yes"
                 return
