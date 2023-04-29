@@ -488,7 +488,7 @@ def CreatorProfile(request, username):
     if request.method == 'POST':
         action = request.POST.get('ActionFollow')
 
-        if action=='Follow':
+        if action=='Subscribe':
             print(f'{activeUser} wants to follow {username}')
             reply = collections.find({"username":username})
             # reply = list(reply)
@@ -519,7 +519,8 @@ def CreatorProfile(request, username):
     context['crosswordsSolved'] = len(reply_cSolved)
     context['crosswordsCreatedList'] = reply_cCreated
     context['crosswordsSolvedList'] = reply_cSolved
-
+    print(reply_cCreated)
+    print(reply_cSolved)
     reply = list(collections.find({"username":username}))
 
     context['followers'] = len(reply[0]['followers'])

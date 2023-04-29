@@ -32,9 +32,9 @@
 
                     <div class="lowerDivLeftMainStepMiddle">
                         <div class="lowerDivLeftMainInputRowLabelStep2" u:click="previousStep" id="textInputWord">New Word</div>
-                        <input unicorn:model="word" class="lowerDivLeftMainInputRowInputTextStep2" />
+                        <input unicorn:model="word" class="lowerDivLeftMainInputRowInputTextStep2" maxlength="12"/>
                         <div class="lowerDivLeftMainInputRowLabelStep2" >New Clue</div>
-                        <textarea unicorn:model="clue" class="lowerDivLeftMainInputRowInputTextarea"  rows="14" ></textarea>
+                        <textarea unicorn:model="clue" class="lowerDivLeftMainInputRowInputTextarea"  rows="14" maxlength="200"></textarea>
                     </div>
                     <div class="addButtonDiv">
                             <button unicorn:click="add_clue_and_word" class="addButton">Add</button>
