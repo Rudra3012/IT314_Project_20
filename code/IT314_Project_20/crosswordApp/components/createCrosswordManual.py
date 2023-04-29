@@ -160,16 +160,28 @@ class CreatecrosswordmanualView(UnicornView):
         if type(self.rows) != int:
             print("rows is not an int")
             rowsInt = int(self.rows)
-            if 3 < rowsInt <= 12:
-                self.message_content = "Number of rows must be greater than 3 and less  than 12"
+            print("number of rows is: " + str(rowsInt))
+            if rowsInt<=3:
+                self.message_content = "Number of rows must be greater than 3"
+                self.message_type = "errorMessage"
+                self.displayMessage = "yes"
+                return
+            if rowsInt>=12:
+                self.message_content = "Number of rows must be less than 12"
                 self.message_type = "errorMessage"
                 self.displayMessage = "yes"
                 return
 
         if type(self.cols) != int:
             colsInt = int(self.cols)
-            if 3 < colsInt <= 12:
-                self.message_content = "Number of columns must be greater than 3 and less than 12"
+            print("number of cols is: " + str(colsInt))
+            if colsInt<=3:
+                self.message_content = "Number of columns must be greater than 3"
+                self.message_type = "errorMessage"
+                self.displayMessage = "yes"
+                return
+            if colsInt>=12:
+                self.message_content = "Number of columns must be less than 12"
                 self.message_type = "errorMessage"
                 self.displayMessage = "yes"
                 return

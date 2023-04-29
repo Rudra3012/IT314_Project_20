@@ -114,8 +114,16 @@ class CreatecrosswordautoView(UnicornView):
         print(self.crossword_grid)
         self.rows = len(self.crossword_grid)
         self.columns = len(self.crossword_grid[0])
-
         self.canSave = True
+
+        self.getWordOrient()
+
+        if len(self.wordsHorizontal) + len(self.wordsVertical) != len(self.clues_and_words):
+            self.message_content = "Some words could not be placed"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
+
 
     def getWordVerticalHelper(self, start):
         print("Get word vertical helper called")
@@ -149,19 +157,19 @@ class CreatecrosswordautoView(UnicornView):
             for j in range(0, self.columns):
                 if self.crossword_grid[i][j] != '_':
                     if i == 0 and j == 0:
-                        if self.crossword_grid[i][j + 1] != '_':
+                        if j+1< self.columns and self.crossword_grid[i][j + 1] != '_':
                             self.wordsHorizontalStart.append([i, j])
-                        if self.crossword_grid[i + 1][j] != '_':
+                        if i+1< self.rows and self.crossword_grid[i + 1][j] != '_':
                             self.wordsVerticalStart.append([i, j])
                     elif i == 0:
                         if j+1>=0 and self.crossword_grid[i][j - 1] == '_' and j+1<self.columns and self.crossword_grid[i][j + 1] != '_':
                             self.wordsHorizontalStart.append([i, j])
-                        if self.crossword_grid[i + 1][j] != '_':
+                        if i+1 < self.rows and self.crossword_grid[i + 1][j] != '_':
                             self.wordsVerticalStart.append([i, j])
                     elif j == 0:
                         if i-1>=0 and self.crossword_grid[i - 1][j] == '_' and i+1<self.rows and self.crossword_grid[i + 1][j] != '_':
                             self.wordsVerticalStart.append([i, j])
-                        if self.crossword_grid[i][j + 1] != '_':
+                        if j+1<self.columns and self.crossword_grid[i][j + 1] != '_':
                             self.wordsHorizontalStart.append([i, j])
                     else:
                         print("i: ", i, " j: ", j)
@@ -171,6 +179,8 @@ class CreatecrosswordautoView(UnicornView):
                             self.wordsVerticalStart.append([i, j])
         # print("Horizontal: ", self.wordsHorizontalStart)
         # print("Vertical: ", self.wordsVerticalStart)
+
+
 
         for i in range(0, len(self.wordsHorizontalStart)):
             self.wordsHorizontal.append(self.getWordHorizontalHelper(self.wordsHorizontalStart[i]))
@@ -183,6 +193,13 @@ class CreatecrosswordautoView(UnicornView):
 
 
     def save_crossword(self):
+
+        if len(self.crossword_grid) <= 3 or len(self.crossword_grid[0]) <= 3:
+            self.message_content = "Crossword is too small"
+            self.message_type = "errorMessage"
+            self.displayMessage = "yes"
+            return
+
         print("Save crossword")
         print("Title: " + self.title)
         print("Description: " + self.description)
