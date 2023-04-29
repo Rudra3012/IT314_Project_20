@@ -137,7 +137,7 @@
                                             <form action="" method="post">
                                                 {% csrf_token %}
 
-                                                <input type="submit" name="ActionFollow" value="unFollow" class="followed follow-button"/>
+                                                <input type="submit" name="ActionFollow" value="Unsubscribe" class="followed follow-button"/>
                                             </form>
                                         </h6>
                                     </div>
@@ -147,7 +147,7 @@
                                             <form action="" method="post">
                                                 {% csrf_token %}
 
-                                                <input type="submit" name="ActionFollow" value="Follow" class="followed follow-button"/>
+                                                <input type="submit" name="ActionFollow" value="Subscribe" class="followed follow-button"/>
                                             </form>
                                         </h6>
                                     </div>
@@ -155,11 +155,11 @@
                             </div>
                             <div class="row">
                                 <div class="info">
-                                    <h3>Following</h3>
+                                    <h3>Subscribed</h3>
                                     <span>{{ following }}</span>
                                 </div>
                                 <div class="info">
-                                    <h3>Followers</h3>
+                                    <h3>Subscribers</h3>
                                     <span>{{ followers }}</span>
                                 </div>
                                 <div class="info">
@@ -220,7 +220,7 @@
                                 <tbody>
                                     {% for cw in crosswordsCreatedList %}
                                         <tr>
-                                            <td><a href="/create_crossword/{{ cw.crosswordID }}/">{{ cw.crosswordTitle }}</a></td>
+                                            <td><a href="/create_crossword/{{ cw.crosswordID }}/">{{ cw.title }}</a></td>
                                             <td>{{ cw.timesSolved }}</td>
                                             <td>{{ cw.rating }}</td>
                                             <td>{{ cw.avgTime }} seconds</td>
